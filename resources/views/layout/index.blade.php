@@ -238,7 +238,7 @@
 					</div>
 					@if (is_null(Auth::id()))
 						<a href="{{ url('/login') }}">
-							<button class="btn btn-color-gg-3 ctn-up no-bdr" id="login">
+							<button class="btn btn-main2-color btn-radius ctn-up" id="login">
 								<span class="ttl-post">Login</span>
 							</button>
 						</a>

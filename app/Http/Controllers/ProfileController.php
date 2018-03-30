@@ -141,7 +141,7 @@ class ProfileController extends Controller
 
 		    //create image real
 		    $destination = 'profile/photos/';
-		    $image->move($destination, $filename);	
+		    $image->move($destination, $filename);
 
 		    //set array data
 		    $data = array(
