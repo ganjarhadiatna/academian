@@ -46,8 +46,7 @@
 			close_progress();
 		})
 		.fail(function(data) {
-			console.log(data.responseJSON);
-			//alert(data.responseJSON);
+			alert("There is an error, please try again.");
 			close_progress();
 		})
 		.always(function() {
