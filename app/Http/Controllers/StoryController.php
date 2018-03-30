@@ -110,7 +110,7 @@ class StoryController extends Controller
 	    //create thumbnail
 	    $destination = 'story/thumbnails/'.$filename;
 	    $img = Image::make($image->getRealPath());
-	    $img->resize(200, 200, function ($constraint) {
+	    $img->resize(400, 400, function ($constraint) {
 	    	$constraint->aspectRatio();
 	    })->save($destination);
 
