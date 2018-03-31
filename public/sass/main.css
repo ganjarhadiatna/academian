@@ -603,7 +603,7 @@
 
 .frame-story {
   position: relative;
-  width: 730px;
+  width: 760px;
   margin: 0 auto;
   background-color: #fff;
   z-index: 1; }
@@ -618,7 +618,7 @@
   .frame-story[width] {
     width: 100%; }
   .frame-story .pos {
-    padding: 20px 30px; }
+    padding: 20px; }
     @media (max-width: 768px) {
       .frame-story .pos {
         padding: 10px 0; } }
@@ -1608,7 +1608,7 @@
   .panel-bottom .pb-place {
     position: relative;
     padding: 7.5px 0;
-    width: 700px;
+    width: 800px;
     height: 40px;
     overflow: hidden;
     margin: auto;
