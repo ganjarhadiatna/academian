@@ -235,7 +235,7 @@
 						</div>
 					</div>
 					<div class="panel-bottom fixed bdr-top" id="tool-panel">
-						<div>
+						
 							<div class="pb-place">
 								<div class="grid-1">
 									<button class="btn btn-color-gg-2 btn-radius" id="frame-loves">
@@ -263,7 +263,7 @@
 									</button>
 								</div>
 							</div>
-						</div>
+						
 					</div>
 					<div class="loved top-comment" id="tr-comment">
 						@if (Auth::id())
