@@ -235,8 +235,8 @@
 						</div>
 					</div>
 					<div class="panel-bottom fixed bdr-top" id="tool-panel">
-						<div class="col-small">
-							<div class="pb-place grid grid-2x">
+						<div>
+							<div class="pb-place">
 								<div class="grid-1">
 									<button class="btn btn-color-gg-2 btn-radius" id="frame-loves">
 										<span class="far fa-lg fa-heart"></span>

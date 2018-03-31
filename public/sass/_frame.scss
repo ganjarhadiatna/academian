@@ -465,6 +465,9 @@
 	background-color: $sek-color;
 	padding: 10px;
 	z-index: 1;
+	@media (max-width: $max-width) {
+		padding: 10px 0;
+	}
 	img {
 		width: 100%;
 	}
@@ -473,6 +476,9 @@
 	}
 	.pos {
 		padding: 10px 20px;
+		@media (max-width: $max-width) {
+			padding: 10px 0;
+		}
 		.date {
 			font-size: $txt-size-small;
 			color: $txt-sek-color;
