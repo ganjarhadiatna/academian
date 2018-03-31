@@ -153,187 +153,169 @@
 		$('#progressbar').progressbar({
 			value: false,
 		});
-		$('#change-size-full').on('click',  function(event) {
-			event.preventDefault();
-			/* Act on the event */
-			var tr = $(this).attr('key');
-			if (tr == 'small') {
-				$(this).attr('key', 'big').find('#icn').attr('class', 'fa fa-lg fa-times');
-				$('#frame-create').addClass('max-compose-2');
-			} else {
-				$(this).attr('key', 'small').find('#icn').attr('class', 'rotate fas fa-lg fa-arrows-alt-h');
-				$('#frame-create').removeClass('max-compose-2');
-			}
-		});
 		$('#btnToolStory').on('click', function(e) {
 			e.preventDefault();
 			var stt = $('#btnToolStory #tool-icn').attr('key');
 			if (stt == 'hidden') {
-				var x = ($(this).offset().top);
-				var y = ($(this).offset().left - 145);
+				var x = ($(this).offset().top - 150);
+				var y = ($(this).offset().left - 140);
 				$('#toolStory')
 				.css({
 					'top': x+'px',
-					'left': y+'px'
+					'right': '40px'
 				})
 				.show();
 				$('#btnToolStory #tool-icn').attr('key','open');
-				$('#btnToolStory #tool-icn').attr('class', 'fa fa-lg fa-times');
+				$('#btnToolStory #tool-icn').attr('class', 'icn fa fa-lg fa-times');
+				$('#btnToolStory').addClass('active');
 			} else {
 				$('#toolStory').hide();
 				$('#btnToolStory #tool-icn').attr('key','hidden');
-				$('#btnToolStory #tool-icn').attr('class', 'fa fa-lg fa-plus');
+				$('#btnToolStory #tool-icn').attr('class', 'icn fa fa-lg fa-plus');
+				$('#btnToolStory').removeClass('active');
 			}
 		});
 	});
 </script>
-@foreach ($getStory as $story)
-<div id="frame-create">
-	<div class="sc-header">
-		<div class="sc-place pos-fix">
-			<div class="col-small">
-				<div class="sc-grid sc-grid-3x">
-					<div class="sc-col-1"></div>
-					<div class="sc-col-2">
-						<h3 class="ttl-head ttl-main-color ctn-serif ctn-up">Edit Story</h3>
-					</div>
-					<div class="sc-col-3 txt-right">
-						<!--
-						<button class="close btn-circle btn-black2-color btn-focus" title="Mazimize Composer" id="change-size-small" key="small">
-							<span class="fa fa-lg fa-arrows-alt-h" id="icn"></span>
-						</button>
-						-->
-						<button class="close btn-circle btn-black2-color btn-focus" title="Mazimize Composer" id="change-size-full" key="small">
-							<span class="rotate fas fa-lg fa-arrows-alt-h" id="icn"></span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="compose" id="create">
-		<div class="main">
-			<div class="create-body">
-				<div class="create-mn">
-
-					<!--tool content-->
-					<div class="tool" id="toolStory">
-						<ul>
-							<form id="form-image" method="post" action="javascript:void(0)" enctype="multipart/form-data" onchange="getImage()">
-								<input type="file" name="get-image" id="get-image" class="get">
-							</form>
-							<label for="get-image">
-								<li class="bdr-bottom" title="Insert Image">
-									<span class="icn fa fa-lg fa-image"></span>
-								</li>
-							</label>
-							<li class="bdr-bottom" onclick="opDialog('open', 'image-dialog')" title="Insert Link Image">
-								<span class="icn fa fa-lg fa-globe"></span>
-							</li>
-							<li class="bdr-bottom" onclick="opDialog('open', 'link-dialog')" title="Insert Link">
-								<span class="icn fa fa-lg fa-link"></span>
-							</li>
-							<li class="" onclick="opDialog('open', 'embed-dialog')" title="Insert Embeded Code">
-								<span class="icn fa fa-lg fa-code"></span>
-							</li>
-						</ul>
-					</div>
-
-					<form id="form-publish" method="post" action="javascript:void(0)" enctype="multipart/form-data" onsubmit="publish()">
-						<div class="create-block">
-							<!--progress bar-->
-							<div class="loading mrg-bottom" id="progressbar"></div>
-
-							<input type="hidden" name="idstory" id="title-story" required="required" value="{{ $story->idstory }}">
-
-							<div class="block-field">
-								<div class="pan">
-									<div class="left">
-										<p class="ttl">Story Title</p>
-									</div>
-									<div class="right"></div>
-								</div>
-								<input type="text" name="title" class="mrg-bottom txt txt-main-color txt-box-shadow" id="title-story" required="required" value="{{ $story->title }}">
-							</div>
-
-							<div class="block-field">
-								<div class="pan">
-									<div class="left">
-										<p class="ttl">Edit your Story Here</p>
-									</div>
-									<div class="right">
-										<div class="btn-circle btn-main2-color btn-focus" id="btnToolStory" title="Add Something" key="hidden">
-											<span id="tool-icn" class="fa fa-lg fa-plus"></span>
-										</div>
-									</div>
-								</div>
-								<div class="edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" id="write-story" contenteditable="true">
-									<?php echo $story->description; ?>
-								</div>
-							</div>
-						</div>
-						<div class="create-block">
-							<div class="place-tags">
-								<div class="block-field">
-									<input type="text" name="tags" id="tags-story" class="tg txt txt-main-color txt-box-shadow" placeholder="Tags1, Tags2, Tags N..." value="{{ $tags }}">
-								</div>
-							</div>
-						</div>
-						<div class="create-bot">
-							<input type="button" name="edit-save" class="btn btn-main2-color" value="Cancel" onclick="goBack()">
-							<input type="submit" name="save" class="btn btn-main-color" value="Save Editing" id="btn-publish">
-						</div>
-					</form>
-
-				</div>
-			</div>
-		</div>
-		<div class="padding-5px"></div>
-
-		<!--navigator-->
-		<div class="create-dialog" id="image-dialog">
-			<div class="place-dialog">
-				<div class="top">
-					Image URL
-				</div>
-				<div class="mid">
-					<input type="text" name="image-url" class="txt txt-primary-color" placeholder="http://" id="image-url">
-				</div>
-				<div class="bot">
-					<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
-					<input type="button" name="put" class="btn btn-main-color" value="Place" onclick="getImageUrl()">
-				</div>
-			</div>
-		</div>
-		<div class="create-dialog" id="link-dialog">
-			<div class="place-dialog">
-				<div class="top">
-					Link URL
-				</div>
-				<div class="mid">
-					<input type="text" name="link-url" class="txt txt-primary-color" placeholder="http://" id="link-url">
-				</div>
-				<div class="bot">
-					<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
-					<input type="button" name="put" class="btn btn-main-color" value="Place" onclick="getLinkUrl()">
-				</div>
-			</div>
-		</div>
-		<div class="create-dialog" id="embed-dialog">
-			<div class="place-dialog">
-				<div class="top">
-					Embeded Code
-				</div>
-				<div class="mid">
-					<input type="text" name="embed-code" class="txt txt-primary-color" placeholder="Code" id="embed-code">
-				</div>
-				<div class="bot">
-					<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
-					<input type="button" name="put" class="btn btn-main-color" value="Place" onclick="getEmbed()">
-				</div>
+<div class="sc-header padding-10px">
+	<div class="sc-place pos-fix">
+		<div class="sc-block">
+			<div class="sc-col-1">
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-mikro">Edit Story</h1>
 			</div>
 		</div>
 	</div>
 </div>
+@foreach ($getStory as $story)
+	<div class="frame-home">
+		<div class="compose" id="create">
+			<div class="main">
+				<div class="create-body">
+					<div class="create-mn">
+
+						<!--tool content-->
+						<div class="tool" id="toolStory">
+							<ul>
+								<form id="form-image" method="post" action="javascript:void(0)" enctype="multipart/form-data" onchange="getImage()">
+									<input type="file" name="get-image" id="get-image" class="get">
+								</form>
+								<label for="get-image">
+									<li class="bdr-bottom" title="Insert Image">
+										<span class="icn fa fa-lg fa-image"></span>
+									</li>
+								</label>
+								<li class="bdr-bottom" onclick="opDialog('open', 'image-dialog')" title="Insert Link Image">
+									<span class="icn fa fa-lg fa-globe"></span>
+								</li>
+								<li class="bdr-bottom" onclick="opDialog('open', 'link-dialog')" title="Insert Link">
+									<span class="icn fa fa-lg fa-link"></span>
+								</li>
+								<li class="" onclick="opDialog('open', 'embed-dialog')" title="Insert Embeded Code">
+									<span class="icn fa fa-lg fa-code"></span>
+								</li>
+							</ul>
+						</div>
+
+						<form id="form-publish" method="post" action="javascript:void(0)" enctype="multipart/form-data" onsubmit="publish()">
+							<div class="create-block">
+								<!--progress bar-->
+								<div class="loading mrg-bottom" id="progressbar"></div>
+
+								<input type="hidden" name="idstory" id="title-story" required="required" value="{{ $story->idstory }}">
+
+								<div class="block-field">
+									<div class="pan">
+										<div class="left">
+											<p class="ttl">Story Title</p>
+										</div>
+										<div class="right"></div>
+									</div>
+									<input type="text" name="title" class="mrg-bottom txt txt-main-color txt-box-shadow" id="title-story" value="{{ $story->title }}">
+								</div>
+
+								<div class="block-field">
+									<div class="pan">
+										<div class="left">
+											<p class="ttl">Edit your Story Here</p>
+										</div>
+										<div class="right">
+											<div class="btn btn-circle btn-sekunder-color btn-focus" id="btnToolStory" title="Add Something" key="hidden">
+												<span id="tool-icn" class="fa fa-lg fa-plus"></span>
+											</div>
+										</div>
+									</div>
+									<div class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" id="write-story" contenteditable="true">
+										<?php echo $story->description; ?>
+									</div>
+								</div>
+								<div class="padding-5px"></div>
+								<div class="block-field">
+									<div class="pan">
+										<div class="left">
+											<p class="ttl">Tags</p>
+										</div>
+									</div>
+									<div class="place-tags">
+										<div class="block-field">
+											<input type="text" name="tags" id="tags-story" class="tg txt txt-main-color txt-box-shadow" placeholder="Tags1, Tags2, Tags N..." value="{{ $tags }}">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="create-bot">
+								<input type="button" name="edit-save" class="btn btn-primary-color" value="Cancel" onclick="goBack()">
+								<input type="submit" name="save" class="btn btn-main-color" value="Save" id="btn-publish">
+							</div>
+						</form>
+					</div>
+					<div class="padding-10px"></div>
+				</div>
+			</div>
+
+			<!--navigator-->
+			<div class="create-dialog" id="image-dialog">
+				<div class="place-dialog">
+					<div class="top">
+						Image URL
+					</div>
+					<div class="mid">
+						<input type="text" name="image-url" class="txt txt-primary-color" placeholder="http://" id="image-url">
+					</div>
+					<div class="bot">
+						<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
+						<input type="button" name="put" class="btn btn-main-color" value="Place" onclick="getImageUrl()">
+					</div>
+				</div>
+			</div>
+			<div class="create-dialog" id="link-dialog">
+				<div class="place-dialog">
+					<div class="top">
+						Link URL
+					</div>
+					<div class="mid">
+						<input type="text" name="link-url" class="txt txt-primary-color" placeholder="http://" id="link-url">
+					</div>
+					<div class="bot">
+						<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
+						<input type="button" name="put" class="btn btn-main-color" value="Place" onclick="getLinkUrl()">
+					</div>
+				</div>
+			</div>
+			<div class="create-dialog" id="embed-dialog">
+				<div class="place-dialog">
+					<div class="top">
+						Embeded Code
+					</div>
+					<div class="mid">
+						<input type="text" name="embed-code" class="txt txt-primary-color" placeholder="Code" id="embed-code">
+					</div>
+					<div class="bot">
+						<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
+						<input type="button" name="put" class="btn btn-main-color" value="Place" onclick="getEmbed()">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 @endforeach
 @endsection

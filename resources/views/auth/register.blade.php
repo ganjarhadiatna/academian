@@ -6,7 +6,7 @@
     <div class="frame-sign">
         <div class="mid">
             <div class="block">
-                <h1>Register</h1>
+                <h1 class="ctn-main-font ctn-sans-serif ctn-bold ctn-small">Register</h1>
             </div>
             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
@@ -58,7 +58,7 @@
                 <div class="block">
                     <input type="submit" name="signup" class="btn btn-main-color" value="Register">
                     <a href="{{ url('/login') }}">
-                        <input type="button" name="login" class="btn btn-grey-color" value="Login">
+                        <input type="button" name="login" class="btn btn-sekunder-color" value="Login">
                     </a>
                 </div>
             </form>

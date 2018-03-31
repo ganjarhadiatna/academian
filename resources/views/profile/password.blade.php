@@ -2,15 +2,11 @@
 @section('title',$title)
 @section('path', $path)
 @section('content')
-<div class="sc-header">
+<div class="sc-header padding-10px">
 	<div class="sc-place pos-fix">
-		<div class="col-full">
-			<div class="sc-grid sc-grid-3x">
-				<div class="sc-col-1"></div>
-				<div class="sc-col-2">
-					<h3 class="ttl-head ttl-main-color ctn-serif ctn-up">Change Password</h3>
-				</div>
-				<div class="sc-col-3"></div>
+		<div class="sc-block">
+			<div class="sc-col-1">
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-desc">Change Password</h1>
 			</div>
 		</div>
 	</div>
@@ -48,8 +44,8 @@
 						</div>
 						<div class="place-edit">
 							<div class="pe-2 pe-btn">
-								<input type="submit" name="edit-save" class="btn btn-main-color" value="Change Password">
-								<input type="button" name="edit-save" class="btn btn-main2-color" value="Cancel" onclick="goBack()">
+								<input type="button" name="edit-save" class="btn btn-primary-color" value="Cancel" onclick="goBack()">
+								<input type="submit" name="edit-save" class="btn btn-main-color" value="Save">
 							</div>
 						</div>
 					</div>

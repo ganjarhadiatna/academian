@@ -13,18 +13,11 @@
     <!-- ICON -->
     <link href="{{ asset('img/P/4.png') }}" rel='SHORTCUT ICON'/>
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/css/fontawesome-all.css') }}">
+	<!-- sass -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/css/fontawesome-all.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/assets.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/body.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/search.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/story.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/sign.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/notifications.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('sass/main.css') }}">
 
 	<!-- font 
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Lora|Noto+Serif|Playfair+Display|Slabo+27px" rel="stylesheet"> -->
@@ -220,7 +213,7 @@
 					</div>
 				</div>
 				<div class="pos rig">
-					<div class="main-menu" id="main-menu">
+					<div class="main-menu mobile" id="main-menu">
 						<ul>
 							<a href="{{ url('/') }}">
 								<li id="home">Home Feeds</li>
@@ -238,24 +231,24 @@
 					</div>
 					@if (is_null(Auth::id()))
 						<a href="{{ url('/login') }}">
-							<button class="btn btn-main2-color btn-radius ctn-up" id="login">
+							<button class="btn btn-sekunder-color btn-radius btn-upp" id="login">
 								<span class="ttl-post">Login</span>
 							</button>
 						</a>
 					@else
-						<button class="btn-circle btn-black2-color" id="op-notif">
+						<button class="btn btn-circle btn-sekunder-color btn-no-border" id="op-notif">
 							<div class="notif-icn absolute fas fa-lg fa-circle" id="main-notif-sign" key="hide"></div>
 							<span class="far fa-lg fa-bell"></span>
 						</button>
 						@foreach (ProfileModel::UserSmallData(Auth::id()) as $dt)
 							<a href="{{ url('/user/'.$dt->id) }}">
-								<button class="pp btn-circle btn-black2-color" id="profile">
+								<button class="pp btn btn-circle btn-main4-color" id="profile">
 									<span class="pp-head image image-30px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$dt->foto) }});"></span>
 								</button>
 							</a>	
 						@endforeach
 						<a href="{{ url('/compose') }}">
-							<button class="create btn btn-main2-color btn-radius" id="compose">
+							<button class="create btn btn-sekunder-color btn-radius" id="compose">
 								<span class="fas fa-lg fa-plus-circle"></span>
 								<span class="ttl-post">Create Story</span>
 							</button>

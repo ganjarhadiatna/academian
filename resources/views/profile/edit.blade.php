@@ -45,8 +45,8 @@
 			}
 			close_progress();
 		})
-		.fail(function(data) {
-			alert("There is an error, please try again.");
+		.fail(function() {
+			alert("there is an error, please try again.");
 			close_progress();
 		})
 		.always(function() {
@@ -73,15 +73,11 @@
 		}
 	}
 </script>
-<div class="sc-header">
+<div class="sc-header padding-10px">
 	<div class="sc-place pos-fix">
-		<div class="col-full">
-			<div class="sc-grid sc-grid-3x">
-				<div class="sc-col-1"></div>
-				<div class="sc-col-2">
-					<h3 class="ttl-head ttl-main-color ctn-serif ctn-up">Edit Profile</h3>
-				</div>
-				<div class="sc-col-3"></div>
+		<div class="sc-block">
+			<div class="sc-col-1">
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-desc">Edit Profile</h1>
 			</div>
 		</div>
 	</div>
@@ -95,10 +91,10 @@
 					<div class="edit-block">
 						<div>
 							<div class="change" id="change">
-								<div class="foto" id="place-picture" style="background-image: url({{ asset('/profile/photos/'.$p->foto) }});"></div>
+								<div class="foto image image-200px image-circle" id="place-picture" style="background-image: url({{ asset('/profile/photos/'.$p->foto) }});"></div>
 								<input type="file" name="change-picture" id="change-picture" onchange="loadFoto()">
 								<label for="change-picture">
-									<div class="btn btn-sekunder-color" id="btn-save-foto">
+									<div class="btn btn-main3-color" id="btn-save-foto">
 										<span class="fas fa-lg fa-camera"></span>
 									</div>
 								</label>
@@ -125,7 +121,7 @@
 								<span class="fa fa-lg fa-info"></span>
 							</div>
 							<div class="pe-2">
-								<div class="edit-text txt-primary-color" id="edit-about" contenteditable="true" required="true">{{ $p->about }}</div>
+								<textarea class="txt edit-text txt-primary-color" id="edit-about" contenteditable="true" required="true">{{ $p->about }}</textarea>
 							</div>
 						</div>
 						<div class="place-edit">
@@ -138,8 +134,8 @@
 						</div>
 						<div class="place-edit">
 							<div class="pe-2 pe-btn">
+								<input type="button" name="edit-save" class="btn btn-primary-color" value="Cancel" onclick="goBack()">
 								<input type="submit" name="edit-save" class="btn btn-main-color" value="Save Edit">
-								<input type="button" name="edit-save" class="btn btn-main2-color" value="Cancel" onclick="goBack()">
 							</div>
 						</div>
 					</div>

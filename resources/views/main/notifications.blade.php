@@ -25,7 +25,7 @@
 				dt += '\
 					<div class="frame-notif" onclick="toLink('+"'"+server_post+"'"+')">\
 						<div class="notif-sid">\
-							<div class="foto" style="background-image: url('+server_cover+');"></div>\
+							<div class="foto image image-35px image-circle" style="background-image: url('+server_cover+');"></div>\
 						</div>\
 						<div class="notif-mid">\
 							<div class="ntf-mid">\
@@ -78,7 +78,7 @@
 				dt += '\
 					<div class="frame-notif">\
 						<div class="notif-sid">\
-							<div class="foto" style="background-image: url('+server_foto+');" onclick="toLink('+"'"+server_user+"'"+')"></div>\
+							<div class="foto image image-35px image-circle" style="background-image: url('+server_foto+');" onclick="toLink('+"'"+server_user+"'"+')"></div>\
 						</div>\
 						<div class="notif-mid">\
 							<div class="desc">\
@@ -226,7 +226,7 @@
 				<input type="hidden" name="offset-notif-following" id="offset-notif-following" value="0">
 				<div id="val-following"></div>
 				<div class="frame-more padding-15px" id="btn-following">
-					<button class="btn btn-main2-color btn-radius" id="load-more-notif-following" onclick="getNotifFollowing('none')">
+					<button class="btn btn-sekunder-color btn-radius" id="load-more-notif-following" onclick="getNotifFollowing('none')">
 						<span class="Load More Comment">Load More</span>
 					</button>
 				</div>
@@ -235,7 +235,7 @@
 				<input type="hidden" name="offset-notif-story" id="offset-notif-story" value="0">
 				<div id="val-storys"></div>
 				<div class="frame-more padding-15px" id="btn-story">
-					<button class="btn btn-main2-color btn-radius" id="load-more-notif-story" onclick="getNotifStory('none')">
+					<button class="btn btn-sekunder-color btn-radius" id="load-more-notif-story" onclick="getNotifStory('none')">
 						<span class="Load More Comment">Load More</span>
 					</button>
 				</div>

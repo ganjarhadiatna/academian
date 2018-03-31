@@ -4,11 +4,9 @@
 @section('content')
 <div class="sc-header padding-20px">
 	<div class="sc-place">
-		<div class="col-full">
-			<div class="sc-grid sc-grid-1x">
-				<div class="sc-col-2">
-					<strong class="ttl-head-2 ttl-main-color ctn-serif ctn-up">{{ $title }}</strong>
-				</div>
+		<div class="sc-block">
+			<div class="sc-col-1">
+				<h1 class="ttl-head ctn-main-font ctn-serif ctn-upp ctn-thin ctn-standar ctn-main-color">{{ $title }}</h1>
 			</div>
 		</div>
 	</div>
