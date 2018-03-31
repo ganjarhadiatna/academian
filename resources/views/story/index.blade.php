@@ -303,5 +303,5 @@
 		</div>
 	</div>
 </div>
-<div class="padding-bottom"></div>
+<div class="padding-10px"></div>
 @endsection
