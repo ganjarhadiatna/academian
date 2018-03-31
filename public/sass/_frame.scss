@@ -21,9 +21,21 @@
 		height: auto;
 		column-count: 2;
 		column-gap: 10;
+		-moz-column-count: 2;
+		-moz-column-gap: 10;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 10;
+		-ms-column-count: 2;
+		-ms-column-gap: 10;
 		@media (max-width: $max-width) {
 			column-count: 1;
 			column-gap: 0;
+			-moz-column-count: 1;
+			-moz-column-gap: 0;
+			-webkit-column-count: 1;
+			-webkit-column-gap: 0;
+			-ms-column-count: 1;
+			-ms-column-gap: 0;
 		}
 		.frame-image {
 			position: relative;
@@ -44,6 +56,12 @@
 	.tb-side {
 		column-count: 2;
 		column-gap: 10;
+		-moz-column-count: 2;
+		-moz-column-gap: 10;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 10;
+		-ms-column-count: 2;
+		-ms-column-gap: 10;
 		.frame-image {
 			position: relative;
 			width: 100%;
