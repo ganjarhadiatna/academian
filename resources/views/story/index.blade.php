@@ -215,7 +215,7 @@
 					</div>
 				</div>
 				<div class="pos bot">
-					<div class="here">
+					<div class="here padding-bottom-5px">
 						<div class="here-block">
 							<ul class="menu-share">
 								<li class="mn btn btn-color-fb">
