@@ -622,6 +622,12 @@
     @media (max-width: 768px) {
       .frame-story .pos {
         padding: 10px 0; } }
+    .frame-story .pos .story-cover {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      margin-bottom: 15px; }
     .frame-story .pos .date {
       font-size: 14px;
       color: rgba(0, 0, 0, 0.54); }
@@ -672,16 +678,18 @@
           vertical-align: middle; }
   .frame-story .top {
     border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
-  .frame-story .mid .pict img {
-    border-radius: 5px; }
-  .frame-story .mid .content {
-    line-height: 1.5;
-    color: rgba(0, 0, 0, 0.84); }
-  .frame-story .mid .main-title h1 {
-    line-height: 1.2;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.84);
-    padding-bottom: 10px; }
+  .frame-story .mid {
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+    .frame-story .mid .pict img {
+      border-radius: 5px; }
+    .frame-story .mid .content {
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.84); }
+    .frame-story .mid .main-title h1 {
+      line-height: 1.2;
+      font-weight: 900;
+      color: rgba(0, 0, 0, 0.84);
+      padding-bottom: 10px; }
   .frame-story .bot {
     color: rgba(0, 0, 0, 0.84); }
     .frame-story .bot .loved {

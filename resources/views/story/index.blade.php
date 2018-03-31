@@ -159,49 +159,48 @@
 <div class="place-story">
 	<div class="main">
 		<div class="place">
-			<div class="place-cover">
-				<div class="main" style="background-image: url({{ asset('/story/covers/'.$story->cover) }})"></div>
-			</div>
 			<div class="frame-story" id="main-story">
 				<div class="pos top">
-						<div class="profile">
-								<div class="foto">
-									<a href="{{ url('/user/'.$story->id) }}">
-										<div class="image image-70px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
-									</a>
-								</div>
-								<div class="info">
-									<div class="name">
-										<div>
-											<span class="mn">
-												<a href="{{ url('/user/'.$story->id) }}">{{ $story->name }}</a>
-											</span>
-											<span>
-												@if ($story->id != Auth::id())
-													@if (is_int($statusFolow))
-														<input type="button" name="follow" class="btn btn-main3-color" id="add-follow-{{ $story->id }}" value="Unfollow" onclick="opFollow('{{ $story->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
-													@else
-														<input type="button" name="follow" class="btn btn-sekunder-color" id="add-follow-{{ $story->id }}" value="Follow" onclick="opFollow('{{ $story->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
-													@endif
-												@endif
-											</span>
-										</div>
-										<div class="ctn-main-font ctn-sekunder-color ctn-thin ctn-sans-serif ctn-date">{{ $story->about }}</div>
-										<div class="ctn-main-font ctn-sekunder-color ctn-thin ctn-sans-serif ctn-date">Published on {{ date('F d, Y h:i:sa', strtotime($story->created)) }}</div>
-									</div>
-								</div>
+					<div class="profile">
+						<div class="foto">
+							<a href="{{ url('/user/'.$story->id) }}">
+								<div class="image image-70px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
+							</a>
 						</div>
+						<div class="info">
+							<div class="name">
+								<div>
+									<span class="mn">
+										<a href="{{ url('/user/'.$story->id) }}">{{ $story->name }}</a>
+									</span>
+									<span>
+										@if ($story->id != Auth::id())
+											@if (is_int($statusFolow))
+												<input type="button" name="follow" class="btn btn-main3-color" id="add-follow-{{ $story->id }}" value="Unfollow" onclick="opFollow('{{ $story->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
+											@else
+												<input type="button" name="follow" class="btn btn-sekunder-color" id="add-follow-{{ $story->id }}" value="Follow" onclick="opFollow('{{ $story->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
+											@endif
+										@endif
+									</span>
+								</div>
+								<div class="ctn-main-font ctn-sekunder-color ctn-thin ctn-sans-serif ctn-date">{{ $story->about }}</div>
+								<div class="ctn-main-font ctn-sekunder-color ctn-thin ctn-sans-serif ctn-date">Published on {{ date('F d, Y h:i:sa', strtotime($story->created)) }}</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="pos mid">
-					<div class="main-title padding-15px">
+					<div class="main-title padding-bottom-15px">
 						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small"><?php echo $story->title; ?></h1>
+					</div>
+					<div class="story-cover">
+						<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="cover">
 					</div>
 					<div class="content">
 						<p class="ctn-main-font ctn-main-color ctn-serif ctn-desc"><?php echo $story->description; ?></p>
 					</div>
-				</div>
-				<div class="pos bot">
-					<div class="here-block">
+					<div class="padding-bottom-15px"></div>
+					<div>
 						@if (count($tags) > 0)
 							@foreach($tags as $tag)
 							<?php 
@@ -214,12 +213,8 @@
 							@endforeach
 						@endif
 					</div>
-					<div class="here padding-15px">
-						<div class="ctn ctn-sans-serif">
-							<strong class="ttl-main-color">Published to Story on {{ date('F d, Y h:i:sa', strtotime($story->created)) }}</strong>
-						</div>
-					</div>
-					<div class="padding-bottom-15px"></div>
+				</div>
+				<div class="pos bot">
 					<div class="here">
 						<div class="here-block">
 							<ul class="menu-share">

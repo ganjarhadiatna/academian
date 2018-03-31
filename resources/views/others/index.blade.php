@@ -6,7 +6,7 @@
 	<div class="sc-place">
 		<div class="sc-block">
 			<div class="sc-col-1">
-				<h1 class="ttl-head ctn-main-font ctn-serif ctn-upp ctn-thin ctn-standar ctn-main-color">{{ $title }}</h1>
+				<h1 class="ttl-head ctn-main-font ctn-serif ctn-upp ctn-bold ctn-standar ctn-main-color">{{ $title }}</h1>
 			</div>
 		</div>
 	</div>

@@ -498,6 +498,13 @@
 		@media (max-width: $max-width) {
 			padding: 10px 0;
 		}
+		.story-cover {
+			position: relative;
+			width: 100%;
+			max-height: 400px;
+			overflow: hidden;
+			margin-bottom: 15px;
+		}
 		.date {
 			font-size: $txt-size-small;
 			color: $txt-sek-color;
@@ -554,6 +561,7 @@
 		@include bdr_bottom();
 	}
 	.mid {
+		@include bdr_bottom();
 		.pict {
 			img {
 				border-radius: 5px;
