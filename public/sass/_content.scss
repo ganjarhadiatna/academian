@@ -455,6 +455,18 @@
 	margin: auto;
 	.frame {
 		width: calc(100% - 20px);
+		&.frame-post-list {
+			.main {
+				.sd-right {
+					@media (max-width: $max-width) {
+						padding: 0 0;
+					}
+				}
+			}
+		}
+		@media (max-width: $max-width) {
+			width: 100%;
+		}
 	}
 	&.grid {
 		@include grid_2x(1fr, 400px);
@@ -478,6 +490,7 @@
 			position: relative;
 			width: 100%;
 			top: 0;
+			padding-bottom: 15px;
 		}
 	}
 	.side-absolute {
@@ -489,11 +502,12 @@
 			position: relative;
 			width: 100%;
 			bottom: 0;
+			padding-bottom: 15px;
 		}
 	}
 	.place-follow {
 		height: auto;
-		
+		padding-bottom: 15px;
 	}
 }
 

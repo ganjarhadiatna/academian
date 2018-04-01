@@ -334,6 +334,7 @@ a {
         @include grid_3x(1fr, 200px, 200px);
         @media (max-width: $max-width) {
             @include grid_none();
+            marging-top: 15px;
         }
         .fo-lef {
             @include column_1();
