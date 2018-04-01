@@ -21,8 +21,6 @@ class MainController extends Controller
             $id = 0;
         }
         $profile = FollowModel::GetAllFollowing($id);
-        $topStory = StoryModel::TopStory(2, 0);
-        $topAllStory = StoryModel::TopStory(4, 2);
         $timelinesStory = StoryModel::TimelinesStory(7, $profile, Auth::id());
         $newStory = StoryModel::AllStory(7, 0);
         $featuredStory = StoryModel::AllStory(20, 0);
@@ -31,8 +29,6 @@ class MainController extends Controller
         return view('home.index', [
             'title' => 'Official Site',
             'path' => 'home',
-            'topStory' => $topStory,
-            'topAllStory' => $topAllStory,
             'timelinesStory' => $timelinesStory,
             'newStory' => $newStory,
             'featuredStory' => $featuredStory,

@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- ICON -->
-    <link href="{{ asset('img/P/4.png') }}" rel='SHORTCUT ICON'/>
+    <link href="{{ asset('img/2.png') }}" rel='SHORTCUT ICON'/>
 
 	<!-- sass -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/css/fontawesome-all.css') }}">
@@ -163,11 +163,29 @@
 				$(this).removeClass('active');
 				$('#'+pth).addClass('active');
 			});
+			$('#txt-search').focusin(function(event) {
+				$('#field-search').css('border', '1px rgba(0,0,0,0.54) solid');
+			}).focusout(function(event) {
+				$('#field-search').css('border', '1px rgba(0,0,0,0.1) solid');
+			});
 
 			$('#place-search').submit(function(event) {
 				var ctr = $('#txt-search').val();
 				window.location = "{{ url('/search/') }}"+'/'+ctr;
 			});
+
+			/*$('#btn-search').on('click', function(event) {
+				event.preventDefault();
+				var key = $(this).attr('key');
+				if (key == 'hide') {
+					$(this).addClass('active').attr('key','open');
+					$('#place-search').show();
+					$('#txt-search').select();
+				} else {
+					$(this).removeClass('active').attr('key','hide');
+					$('#place-search').hide();
+				}
+			});*/
 
 			$('#nav-more-target').on('click', function(event) {
 				var tr = $(this).attr('key');
@@ -201,15 +219,20 @@
 				<div class="pos lef">
 					<a href="{{ url('/') }}">
 						<div class="logo ctn-serif">
-							A
+							<img src="{{ asset('img/2.png') }}" alt="A">
 						</div>
 					</a>
 				</div>
 				<div class="pos mid" id="main-search">
 					<div class="main-search">
-						<form id="place-search" action="javascript:void(0)">
-							<input type="text" name="q" class="txt txt-sekunder-color txt-radius" id="txt-search" placeholder="Search.." required="true">
-						</form>
+						<div class="field-search" id="field-search">
+							<form id="place-search" action="javascript:void(0)">
+								<button type="submit" class="btn btn-circle btn-sekunder-color btn-no-border" type="submit" id="btn-search" key="hide">
+									<span class="fas fa-lg fa-search"></span>
+								</button>
+								<input type="text" name="q" class="txt txt-main-color txt-radius" id="txt-search" placeholder="Search.." required="true">
+							</form>
+						</div>
 					</div>
 				</div>
 				<div class="pos rig">

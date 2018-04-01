@@ -107,7 +107,7 @@ a {
     width: 100%;
     height: 60px;
     @media (max-width: $max-width) {
-        height: 110px;
+        height: 100px;
     }
     .place {
         position: fixed;
@@ -119,9 +119,9 @@ a {
         @include bdr_bottom();
         .menu {
             position: relative;
-            @include grid_3x(50px, 350px, 1fr);
+            @include grid_3x(70px, 300px, 1fr);
             @media (max-width: $max-width) {
-                @include grid_2x(50px, 1fr);
+                @include grid_2x(70px, 1fr);
             }
             .lef {
                 @include column_1();
@@ -131,12 +131,12 @@ a {
                 @media (max-width: $max-width) {
                     @include column_none();
                     position: fixed;
-                    top: 55px;
+                    top: 50px;
                     left: 0;
                     width: calc(100% - 20px);
                     padding: 7.5px 10px;
-                    background-color: $sek-color;
-                    @include bdr_bottom();
+                    background-color: #fff;
+                    border-bottom: 1px rgba(0,0,0,0.1) solid;
                 }
             }
             .rig {
@@ -149,16 +149,30 @@ a {
             #main-search {
                 &.hide {
                     @media (max-width: $max-width) {
-                        display: none;
+                        display: none; /*hidden*/
                     }
                 }
             }
             .pos {
                 .main-search {
                     width: 100%;
-                    .txt {
-                        width: calc(100% - 40px);
-                        padding: 0 20px;
+                    .field-search {
+                        position: relative;
+                        width: 100%;
+                        height: 38px;
+                        border-radius: 38px;
+                        background-color: #fff;
+                        border: 1px rgba(0,0,0,0.1) solid;
+                        overflow: hidden;
+                        #btn-search {
+                            width: 40px;
+                        }
+                        #txt-search {
+                            float: right;
+                            width: calc(100% - 60px);
+                            padding: 0 10px;
+                            box-shadow: 0 0 0 #fff;
+                        }
                     }
                 }
                 .pp {
@@ -170,20 +184,22 @@ a {
                 }
                 .logo {
                     position: relative;
-                    top: -5px;
-                    width: 40px;
+                    top: 0;
+                    width: 55px;
                     height: 40px;
-                    text-align: center;
-                    font-size: 40px;
+                    font-size: 34px;
                     font-weight: 900;
                     color: $txt-min-color;
                     font-family: $primary-font;
+                    border-right: 1px rgba(0,0,0,0.1) solid;
+                    overflow: hidden;
+                    @media (max-width: $max-width) {
+                        border-right: 0 #fff solid;
+                    }
                     img {
-                        position: relative;
-                        top: 0px;
+                        @include post_top();
                         left: 0;
-                        width: 90%;
-                        margin: 5%;
+                        width: 40px;
                     }
                 }
                 .main-menu {
@@ -242,6 +258,33 @@ a {
 }
 
 #body {
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        margin: 15px 0;
+        @include grid_2x(1fr, 350px);
+        @media (max-width: $max-width) {
+            display: none;
+        }
+        .left {
+            position: relative;
+            @include column_1();
+            .content {
+                @include post_top();
+                text-align: center;
+            }
+        }
+        .side {
+            position: relative;
+            @include column_2();
+            width: 100%;
+            padding-bottom: 100%;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
     .frame-home {
         .ttl-main-color {
             position: relative;

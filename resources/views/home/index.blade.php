@@ -24,37 +24,17 @@
 <div class="frame-home">
 	<div class="col-full">
 		<div id="home-primary-object">
-			<div class="top-banner grid grid-2x padding-10px">
-				<div class="tb-main grid-1">
-					@foreach ($topStory as $story)
-						<div class="frame-image">
-							<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}">
-								<div class="top" >
-									<div class="img" style="background-image: url({{ asset('/story/thumbnails/'.$story->cover) }})"></div>
-								</div>
-							</a>
-							<div class="bot">
-								<div class="mn-title2 ctn ctn-sans-serif">{{ $story->title }}</div>
-							</div>
+			<!--top banner-->
+			<div>
+				<div class="banner">
+					<div class="left">
+						<div class="content">
+							<h1 class="ttl-head ctn-main-font ctn-serif ctn-bold ctn-big ctn-main-color">Everything's are Knowledge.</h1>
+							<h2 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-main-color">"Academian."</h2>
 						</div>
-					@endforeach
-				</div>
-
-				<?php $i = 1; ?>
-				<div class="tb-side grid-2">
-					@foreach ($topAllStory as $story)
-						<div class="frame-image">
-							<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}">
-								<div class="top" >
-									<div class="img" style="background-image: url({{ asset('/story/thumbnails/'.$story->cover) }})"></div>
-								</div>
-							</a>
-							<div class="bot">
-								<div class="mn-title2 ctn ctn-sans-serif">{{ $story->title }}</div>
-							</div>
-						</div>
-						<?php $i += 1; ?>
-					@endforeach
+					</div>
+					<div class="side" style="background-image: url('{{ asset('img/banner/1.png') }}');">
+					</div>
 				</div>
 			</div>
 			@if (Auth::id())

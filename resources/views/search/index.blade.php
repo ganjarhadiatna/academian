@@ -36,8 +36,7 @@
 		</div>
 	</div>
 @endif
-
-<div class="col-full">
+<div class="col-full padding-10px">
 	@if (count($topStory) == 0)
 		@include('main.post-empty')
 	@else
