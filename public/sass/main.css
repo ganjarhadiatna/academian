@@ -1751,8 +1751,12 @@ a {
     text-align: center; }
   .ctn-main-font.ctn-sans-serif {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .ctn-main-font.ctn-sans-serif * {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .ctn-main-font.ctn-serif {
     font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+    .ctn-main-font.ctn-serif * {
+      font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
 
 @media (max-width: 768px) {
   .mobile {

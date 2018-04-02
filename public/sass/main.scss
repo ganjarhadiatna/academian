@@ -90,9 +90,15 @@ a {
     }
     &.ctn-sans-serif {
         font-family: $standar-font;
+        & * {
+            font-family: $standar-font;
+        }
     }
     &.ctn-serif {
         font-family: $primary-font;
+        & * {
+            font-family: $primary-font;
+        }
     }
 }
 
