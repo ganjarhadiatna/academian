@@ -183,7 +183,7 @@
 			e.preventDefault();
 			var stt = $('#btnToolStory #tool-icn').attr('key');
 			if (stt == 'hidden') {
-				var x = ($(this).offset().top - 140);
+				var x = ($(this).offset().top - 130);
 				var y = ($(this).offset().left - 140);
 				$('#toolStory')
 				.css({
