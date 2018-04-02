@@ -82,7 +82,7 @@
 		</div>
 	</div>
 </div>
-<div class="frame-home frame-edit">
+<div class="frame-edit">
 	<div class="compose" id="create">
 		<div class="main">
 			<div class="edit-body">
@@ -121,7 +121,7 @@
 								<span class="fa fa-lg fa-info"></span>
 							</div>
 							<div class="pe-2">
-								<textarea class="txt edit-text txt-primary-color" id="edit-about" contenteditable="true" required="true">{{ $p->about }}</textarea>
+								<textarea class="edt txt edit-text txt-primary-color" id="edit-about" contenteditable="true" required="true">{{ $p->about }}</textarea>
 							</div>
 						</div>
 						<div class="place-edit">

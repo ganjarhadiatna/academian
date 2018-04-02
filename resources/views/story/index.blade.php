@@ -160,7 +160,7 @@
 	<div class="main">
 		<div class="place">
 			<div class="frame-story" id="main-story">
-				<div class="pos top">
+				<div class="pos top bdr-bottom">
 					<div class="profile">
 						<div class="foto">
 							<a href="{{ url('/user/'.$story->id) }}">
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="pos mid">
+				<div class="pos mid bdr-bottom">
 					<div class="main-title padding-bottom-15px">
 						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small"><?php echo $story->title; ?></h1>
 					</div>
@@ -214,8 +214,8 @@
 						@endif
 					</div>
 				</div>
-				<div class="pos bot">
-					<div class="here padding-bottom-5px">
+				<div class="pos mid bdr-bottom">
+					<div class="here">
 						<div class="here-block">
 							<ul class="menu-share">
 								<li class="mn btn btn-color-fb">
@@ -233,41 +233,12 @@
 							</ul>
 						</div>
 					</div>
-					<div class="panel-bottom fixed bdr-top" id="tool-panel">
-						
-							<div class="pb-place">
-								<div class="grid-1">
-									<button class="btn btn-color-gg-2 btn-radius" id="frame-loves">
-										<span class="far fa-lg fa-heart"></span>
-										<span class="ttl-loves" id="ttl-loves">{{ $story->loves }}</span>
-									</button>
-									<button class="btn btn-sekunder-color btn-no-border">
-										<span id="ttl-view">{{ $story->views }} Views</span>
-									</button>
-								</div>
-								<div class="grid-2 text-right crs-default">
-									<button class="btn btn-sekunder-color btn-no-border" onclick="toComment()">
-										<span class="far fa-lg fa-comment"></span>
-										<span class="ttl-loves">{{ $story->ttl_comment }}</span>
-									</button>
-									<button class="btn btn-circle btn-sekunder-color btn-no-border" onclick="addBookmark('{{ $story->idstory }}')">
-										@if (is_int($check))
-											<span class="fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
-										@else
-											<span class="far fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
-										@endif
-									</button>
-									<button class="btn btn-circle btn-sekunder-color btn-focus" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}', '{{ $title }}')">
-										<span class="fa fa-lg fa-ellipsis-h"></span>
-									</button>
-								</div>
-							</div>
-						
-					</div>
-					<div class="loved top-comment" id="tr-comment">
+				</div>
+				<div class="bot bdr-bottom">
+					<div class="top-comment" id="tr-comment">
 						@if (Auth::id())
 							<form method="post" action="javascript:void(0)" id="comment-publish">
-								<div class="comment-head bdr-bottom">
+								<div class="comment-head">
 									<div>
 										<textarea class="txt comment-text txt-sekunder-color" id="comment-description" placeholder="Type comment here.."></textarea>
 									</div>
@@ -279,8 +250,10 @@
 								</div>
 							</form>
 						@endif
-						<div class="comment-content" id="place-comment"></div>
 					</div>
+				</div>
+				<div class="pos mid">
+					<div class="comment-content" id="place-comment"></div>
 					<div class="frame-more" id="frame-more-comment">
 						<input type="hidden" name="offset" id="offset-comment" value="0">
 						<input type="hidden" name="limit" id="limit-comment" value="0">
@@ -293,15 +266,46 @@
 		</div>
 	</div>
 </div>
+<div class="panel-bottom fixed bdr-top" id="tool-panel">
+	<div class="pb-place">
+		<div class="grid-1">
+			<button class="btn btn-color-gg-2 btn-radius" id="frame-loves">
+				<span class="far fa-lg fa-heart"></span>
+				<span class="ttl-loves" id="ttl-loves">{{ $story->loves }}</span>
+			</button>
+			<button class="btn btn-sekunder-color btn-no-border">
+				<span id="ttl-view">{{ $story->views }} Views</span>
+			</button>
+		</div>
+		<div class="grid-2 text-right crs-default">
+			<button class="btn btn-sekunder-color btn-no-border" onclick="toComment()">
+				<span class="far fa-lg fa-comment"></span>
+				<span class="ttl-loves">{{ $story->ttl_comment }}</span>
+			</button>
+			<button class="btn btn-circle btn-sekunder-color btn-no-border" onclick="addBookmark('{{ $story->idstory }}')">
+					@if (is_int($check))
+					<span class="fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
+					@else
+					<span class="far fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
+					@endif
+			</button>
+			<button class="btn btn-circle btn-sekunder-color btn-focus" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}', '{{ $title }}')">
+				<span class="fa fa-lg fa-ellipsis-h"></span>
+			</button>
+		</div>
+	</div>
+</div>
 @endforeach
-<div class="col-full">
+<div class="col-full padding-10px">
 	<div class="block">
+		<div class="need-mrg-left ttl-main-color padding-bottom-15px">
+			<label class="ctn-up">Related Story</label>
+		</div>
 		<div class="post">
 			@foreach ($allStory as $story)
-			@include('main.post')
+				@include('main.post')
 			@endforeach
 		</div>
 	</div>
 </div>
-<div class="padding-10px"></div>
 @endsection

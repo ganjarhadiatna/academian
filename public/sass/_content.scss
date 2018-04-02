@@ -193,12 +193,12 @@
 	.main {
 		position: relative;
 		@include col_set(600px);
-		padding: 10px 20px;
+		padding: 0 20px 10px 20px;
 		border-radius: 5px;
 		overflow: hidden;
 		background-color: $sek-color;
 		@media (max-width: $max-width) {
-			padding: 0 0;
+			padding: 0 0 10px 0;
 		}
 		&.no-margin {
 			margin-top: 0px;

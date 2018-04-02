@@ -36,16 +36,18 @@
 		</div>
 	</div>
 @endif
-<div class="col-full padding-10px">
+<div class="col-full">
 	@if (count($topStory) == 0)
 		@include('main.post-empty')
 	@else
+	<div class="padding-desktop-20px">
 		<div class="post">
 			@foreach ($topStory as $story)
-			@include('main.post')
+				@include('main.post')
 			@endforeach
 		</div>
 		{{ $topStory->links() }}
+	</div>
 	@endif
 </div>
 @endsection

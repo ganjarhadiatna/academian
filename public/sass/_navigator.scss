@@ -41,8 +41,12 @@
 	cursor: default;
 	.sc-place {
 		width: 100%;
-		padding: 15px 0;
+		padding: 10px 0;
 		background-color: $sek-color;
+		@include bdr_bottom();
+		&.no-border {
+			border: 0px #fff solid;
+		}
 		.sc-grid-3x {
 			@include grid_3x(1fr, 200px, 1fr);
 		}
@@ -217,7 +221,7 @@
 	.pb-place {
 		position: relative;
 		padding: 7.5px 0;
-		width: 800px;
+		width: 730px;
 		height: 40px;
 		overflow: hidden;
 		margin: auto;

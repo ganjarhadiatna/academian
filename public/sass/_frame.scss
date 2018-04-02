@@ -178,7 +178,7 @@
 		margin: 10px;
 		@media (max-width: $max-width) {
 			width: 100%;
-			margin:  0 0 10px 0;
+			margin:  10px 0;
 		}
 		.main {
 			.top {
@@ -481,9 +481,9 @@
 
 .frame-story {
 	position: relative;
-	@include col_set(760px);
 	background-color: $sek-color;
 	z-index: 1;
+	@include col_set(730px);
 	@media (max-width: $max-width) {
 		padding: 10px 0;
 	}
@@ -494,7 +494,7 @@
 		width: 100%;
 	}
 	.pos {
-		padding: 20px;
+		padding: 20px 0;
 		@media (max-width: $max-width) {
 			padding: 10px 0;
 		}
@@ -524,7 +524,7 @@
 			}
 		}
 		.profile {
-			padding: 15px 0;
+			padding: 10px 0;
 			@include grid_2x(90px, 1fr);
 			.foto {
 				@include column_1();
@@ -558,10 +558,22 @@
 		}
 	}
 	.top {
-		@include bdr_bottom();
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		@media (max-width: $max-width) {
+			width: 100%;
+			padding: 15px 0;
+		}
 	}
 	.mid {
-		@include bdr_bottom();
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		@media (max-width: $max-width) {
+			width: 100%;
+			padding: 15px 0;
+		}
 		.pict {
 			img {
 				border-radius: 5px;
@@ -581,13 +593,16 @@
 		}
 	}
 	.bot {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 0 15px;
 		color: $txt-min-color;
-		.loved {
-			margin: 15px 0;
+		@media (max-width: $max-width) {
+			width: 100%;
+			padding: 0 0;
 		}
 		.top-comment {
 			.comment-head {
-				@include bdr_top_bottom();
 				padding: 20px 0;
 				.comment-text {
 					min-width: calc(100% - 30px);
@@ -597,7 +612,7 @@
 					max-height: 300px;
 					padding: 15px;
 					color: $txt-sek-color;
-					margin-bottom: 15px;
+					margin-bottom: 20px;
 					&:focus {
 						color: $txt-min-color;
 						border: 1px $txt-min-color solid;
@@ -622,6 +637,7 @@
 	width: 100%;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	background-color: $sek-color;
 	@include grid_2x(45px, 1fr);
 	.dt-1 {
 		@include column_1();
@@ -736,11 +752,13 @@
 }
 
 .frame-edit {
+	position: relative;
 	.create-head {
 		@include bdr_bottom();
 	}
 	.edit-body {
-		padding: 0px 2.5% 30px 2.5%;
+		position: relative;
+		width: 100%;
 		background-color: $sek-color;
 		.edit-block {
 			p {
@@ -793,10 +811,11 @@
 						margin-bottom: 15px;
 					}
 				}
-				.edit-text {
+				.edt {
 					width: calc(100% - 30px);
 					min-width: calc(100% - 30px);
 					max-width: calc(100% - 30px);
+					padding: 15px 15px;
 					height: 80px;
 					min-height: 80px;
 					max-height: 80px;
@@ -805,7 +824,6 @@
 			.change {
 				position: relative;
 				width: 100%;
-				padding-top: 25px;
 				#change-picture {
 					display: none;
 				}

@@ -23,3 +23,28 @@
 .padding-bottom-5px {
 	padding-bottom: 5px;
 }
+
+.padding-desktop-20px {
+	padding: 20px 0;
+	@media (max-width: $max-width) {
+		padding: 0 0;
+	}
+}
+.padding-desktop-15px {
+	padding: 15px 0;
+	@media (max-width: $max-width) {
+		padding: 0 0;
+	}
+}
+.padding-desktop-10px {
+	padding: 10px 0;
+	@media (max-width: $max-width) {
+		padding: 0 0;
+	}
+}
+.padding-desktop-5px {
+	padding: 5px 0;
+	@media (max-width: $max-width) {
+		padding: 0 0;
+	}
+}

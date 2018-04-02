@@ -107,7 +107,7 @@ a {
     width: 100%;
     height: 60px;
     @media (max-width: $max-width) {
-        height: 100px;
+        height: 105px;
     }
     .place {
         position: fixed;
@@ -285,20 +285,18 @@ a {
             background-repeat: no-repeat;
         }
     }
-    .frame-home {
-        .ttl-main-color {
-            position: relative;
-            padding: 15px 0;
-            text-align: left;
-            .ctn-up {
-                padding-top: 10px;
-                border-top: 2px $txt-min-color solid;
-                text-transform: uppercase;
-                font-weight: 600;
-                font-size: $txt-size-desc;
-                color: $txt-min-color;
-                font-family: $primary-font;
-            }
+    .ttl-main-color {
+        position: relative;
+        padding: 15px 0;
+        text-align: left;
+        .ctn-up {
+            padding-top: 10px;
+            border-top: 2px $txt-min-color solid;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: $txt-size-desc;
+            color: $txt-min-color;
+            font-family: $primary-font;
         }
     }
     .post {

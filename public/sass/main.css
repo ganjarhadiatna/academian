@@ -28,6 +28,30 @@
 .padding-bottom-5px {
   padding-bottom: 5px; }
 
+.padding-desktop-20px {
+  padding: 20px 0; }
+  @media (max-width: 768px) {
+    .padding-desktop-20px {
+      padding: 0 0; } }
+
+.padding-desktop-15px {
+  padding: 15px 0; }
+  @media (max-width: 768px) {
+    .padding-desktop-15px {
+      padding: 0 0; } }
+
+.padding-desktop-10px {
+  padding: 10px 0; }
+  @media (max-width: 768px) {
+    .padding-desktop-10px {
+      padding: 0 0; } }
+
+.padding-desktop-5px {
+  padding: 5px 0; }
+  @media (max-width: 768px) {
+    .padding-desktop-5px {
+      padding: 0 0; } }
+
 /*button normal*/
 .btn {
   position: relative;
@@ -339,7 +363,7 @@
     @media (max-width: 768px) {
       .frame.frame-post {
         width: 100%;
-        margin: 0 0 10px 0; } }
+        margin: 10px 0; } }
     .frame.frame-post .main .top {
       width: 100%;
       padding-bottom: 50%;
@@ -603,10 +627,10 @@
 
 .frame-story {
   position: relative;
-  width: 760px;
-  margin: 0 auto;
   background-color: #fff;
-  z-index: 1; }
+  z-index: 1;
+  width: 730px;
+  margin: 0 auto; }
   @media (max-width: 768px) {
     .frame-story {
       width: calc(100% - 15px); } }
@@ -618,7 +642,7 @@
   .frame-story[width] {
     width: 100%; }
   .frame-story .pos {
-    padding: 20px; }
+    padding: 20px 0; }
     @media (max-width: 768px) {
       .frame-story .pos {
         padding: 10px 0; } }
@@ -647,7 +671,7 @@
         -ms-grid-column: 2;
         text-align: right; }
     .frame-story .pos .profile {
-      padding: 15px 0;
+      padding: 10px 0;
       display: grid;
       display: -ms-grid;
       grid-template-columns: 90px 1fr;
@@ -677,9 +701,21 @@
           height: 30px;
           vertical-align: middle; }
   .frame-story .top {
-    border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px; }
+    @media (max-width: 768px) {
+      .frame-story .top {
+        width: 100%;
+        padding: 15px 0; } }
   .frame-story .mid {
-    border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px; }
+    @media (max-width: 768px) {
+      .frame-story .mid {
+        width: 100%;
+        padding: 15px 0; } }
     .frame-story .mid .pict img {
       border-radius: 5px; }
     .frame-story .mid .content {
@@ -691,12 +727,15 @@
       color: rgba(0, 0, 0, 0.84);
       padding-bottom: 10px; }
   .frame-story .bot {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 0 15px;
     color: rgba(0, 0, 0, 0.84); }
-    .frame-story .bot .loved {
-      margin: 15px 0; }
+    @media (max-width: 768px) {
+      .frame-story .bot {
+        width: 100%;
+        padding: 0 0; } }
     .frame-story .bot .top-comment .comment-head {
-      border-top: 1px rgba(0, 0, 0, 0.1) solid;
-      border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
       padding: 20px 0; }
       .frame-story .bot .top-comment .comment-head .comment-text {
         min-width: calc(100% - 30px);
@@ -706,7 +745,7 @@
         max-height: 300px;
         padding: 15px;
         color: rgba(0, 0, 0, 0.54);
-        margin-bottom: 15px; }
+        margin-bottom: 20px; }
         .frame-story .bot .top-comment .comment-head .comment-text:focus {
           color: rgba(0, 0, 0, 0.84);
           border: 1px rgba(0, 0, 0, 0.84) solid; }
@@ -723,6 +762,7 @@
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+  background-color: #fff;
   display: grid;
   display: -ms-grid;
   grid-template-columns: 45px 1fr;
@@ -822,82 +862,85 @@
             color: rgba(0, 0, 0, 0.54);
             font-weight: 500; }
 
-.frame-edit .create-head {
-  border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
-.frame-edit .edit-body {
-  padding: 0px 2.5% 30px 2.5%;
-  background-color: #fff; }
-  .frame-edit .edit-body .edit-block p {
-    font-weight: 900;
-    padding: 15px 0;
-    color: rgba(0, 0, 0, 0.54);
+.frame-edit {
+  position: relative; }
+  .frame-edit .create-head {
     border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
-  .frame-edit .edit-body .edit-block ul li {
-    list-style: none;
-    width: 100%;
-    padding: 15px 0;
-    cursor: pointer;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.54);
-    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
-    display: grid;
-    display: -ms-grid;
-    grid-template-columns: 1fr 50px;
-    -ms-grid-columns: 1fr 50px; }
-    .frame-edit .edit-body .edit-block ul li:hover {
-      color: rgba(0, 0, 0, 0.84); }
-    .frame-edit .edit-body .edit-block ul li .ed-1 {
-      grid-column: 1;
-      -ms-grid-column: 1; }
-    .frame-edit .edit-body .edit-block ul li .ed-2 {
-      grid-column: 2;
-      -ms-grid-column: 2;
-      text-align: center;
-      float: right; }
-  .frame-edit .edit-body .edit-block .place-edit {
+  .frame-edit .edit-body {
     position: relative;
     width: 100%;
-    padding-top: 25px;
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 14px;
-    display: grid;
-    display: -ms-grid;
-    grid-template-columns: 40px 1fr;
-    -ms-grid-columns: 40px 1fr; }
-    .frame-edit .edit-body .edit-block .place-edit .pe-1 {
-      grid-column: 1;
-      -ms-grid-column: 1;
-      line-height: 40px; }
-    .frame-edit .edit-body .edit-block .place-edit .pe-2 {
-      grid-column: 2;
-      -ms-grid-column: 2; }
-    .frame-edit .edit-body .edit-block .place-edit .pe-btn {
-      text-align: right; }
-      .frame-edit .edit-body .edit-block .place-edit .pe-btn .btn {
-        margin-left: 15px;
-        margin-bottom: 15px; }
-    .frame-edit .edit-body .edit-block .place-edit .edit-text {
-      width: calc(100% - 30px);
-      min-width: calc(100% - 30px);
-      max-width: calc(100% - 30px);
-      height: 80px;
-      min-height: 80px;
-      max-height: 80px; }
-  .frame-edit .edit-body .edit-block .change {
-    position: relative;
-    width: 100%;
-    padding-top: 25px; }
-    .frame-edit .edit-body .edit-block .change #change-picture {
-      display: none; }
-    .frame-edit .edit-body .edit-block .change #btn-save-foto {
-      width: 70px;
+    background-color: #fff; }
+    .frame-edit .edit-body .edit-block p {
+      font-weight: 900;
+      padding: 15px 0;
+      color: rgba(0, 0, 0, 0.54);
+      border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+    .frame-edit .edit-body .edit-block ul li {
+      list-style: none;
+      width: 100%;
+      padding: 15px 0;
+      cursor: pointer;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.54);
+      border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+      display: grid;
+      display: -ms-grid;
+      grid-template-columns: 1fr 50px;
+      -ms-grid-columns: 1fr 50px; }
+      .frame-edit .edit-body .edit-block ul li:hover {
+        color: rgba(0, 0, 0, 0.84); }
+      .frame-edit .edit-body .edit-block ul li .ed-1 {
+        grid-column: 1;
+        -ms-grid-column: 1; }
+      .frame-edit .edit-body .edit-block ul li .ed-2 {
+        grid-column: 2;
+        -ms-grid-column: 2;
+        text-align: center;
+        float: right; }
+    .frame-edit .edit-body .edit-block .place-edit {
+      position: relative;
+      width: 100%;
+      padding-top: 25px;
+      color: rgba(0, 0, 0, 0.54);
+      font-size: 14px;
+      display: grid;
+      display: -ms-grid;
+      grid-template-columns: 40px 1fr;
+      -ms-grid-columns: 40px 1fr; }
+      .frame-edit .edit-body .edit-block .place-edit .pe-1 {
+        grid-column: 1;
+        -ms-grid-column: 1;
+        line-height: 40px; }
+      .frame-edit .edit-body .edit-block .place-edit .pe-2 {
+        grid-column: 2;
+        -ms-grid-column: 2; }
+      .frame-edit .edit-body .edit-block .place-edit .pe-btn {
+        text-align: right; }
+        .frame-edit .edit-body .edit-block .place-edit .pe-btn .btn {
+          margin-left: 15px;
+          margin-bottom: 15px; }
+      .frame-edit .edit-body .edit-block .place-edit .edt {
+        width: calc(100% - 30px);
+        min-width: calc(100% - 30px);
+        max-width: calc(100% - 30px);
+        padding: 15px 15px;
+        height: 80px;
+        min-height: 80px;
+        max-height: 80px; }
+    .frame-edit .edit-body .edit-block .change {
+      position: relative;
+      width: 100%; }
+      .frame-edit .edit-body .edit-block .change #change-picture {
+        display: none; }
+      .frame-edit .edit-body .edit-block .change #btn-save-foto {
+        width: 70px;
+        margin: auto;
+        text-align: center;
+        line-height: 40px; }
+    .frame-edit .edit-body .edit-block .foto {
+      position: relative;
       margin: auto;
-      text-align: center;
-      line-height: 40px; }
-  .frame-edit .edit-body .edit-block .foto {
-    position: relative;
-    margin: auto;
-    margin-bottom: 25px; }
+      margin-bottom: 25px; }
 
 .frame-top-tag {
   position: relative;
@@ -1134,7 +1177,7 @@
   position: relative;
   width: 600px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 0 20px 10px 20px;
   border-radius: 5px;
   overflow: hidden;
   background-color: #fff; }
@@ -1143,7 +1186,7 @@
       width: calc(100% - 15px); } }
   @media (max-width: 768px) {
     .compose .main {
-      padding: 0 0; } }
+      padding: 0 0 10px 0; } }
   .compose .main.no-margin {
     margin-top: 0px;
     margin-bottom: 0px; }
@@ -1452,8 +1495,11 @@
   cursor: default; }
   .sc-header .sc-place {
     width: 100%;
-    padding: 15px 0;
-    background-color: #fff; }
+    padding: 10px 0;
+    background-color: #fff;
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+    .sc-header .sc-place.no-border {
+      border: 0px #fff solid; }
     .sc-header .sc-place .sc-grid-3x {
       display: grid;
       display: -ms-grid;
@@ -1617,7 +1663,7 @@
   .panel-bottom .pb-place {
     position: relative;
     padding: 7.5px 0;
-    width: 800px;
+    width: 730px;
     height: 40px;
     overflow: hidden;
     margin: auto;
@@ -1718,7 +1764,7 @@ a {
   height: 60px; }
   @media (max-width: 768px) {
     #header {
-      height: 100px; } }
+      height: 105px; } }
   #header .place {
     position: fixed;
     width: 100%;
@@ -1890,11 +1936,11 @@ a {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat; }
-#body .frame-home .ttl-main-color {
+#body .ttl-main-color {
   position: relative;
   padding: 15px 0;
   text-align: left; }
-  #body .frame-home .ttl-main-color .ctn-up {
+  #body .ttl-main-color .ctn-up {
     padding-top: 10px;
     border-top: 2px rgba(0, 0, 0, 0.84) solid;
     text-transform: uppercase;

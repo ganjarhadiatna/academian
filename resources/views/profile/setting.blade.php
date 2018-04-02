@@ -14,7 +14,7 @@
 		</div>
 	</div>
 </div>
-<div class="frame-home frame-edit">
+<div class="frame-edit">
 	<div class="compose" id="create">
 		<div class="main">
 			<div class="edit-body">
@@ -72,4 +72,5 @@
 		</div>
 	</div>
 </div>
+<div class="padding-bottom-20px"></div>
 @endsection
