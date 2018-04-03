@@ -582,6 +582,10 @@
 		.content {
 			line-height: 1.5;
 			color: $txt-min-color;
+			text-overflow: ellipsis;
+			* {
+				text-overflow: ellipsis;
+			}
 		}
 		.main-title {
 			h1 {
