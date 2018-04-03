@@ -14,18 +14,18 @@
     <link href="{{ asset('img/2.png') }}" rel='SHORTCUT ICON'/>
 
 	<!-- sass -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/css/fontawesome-all.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('sass/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url('/css/css/fontawesome-all.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url('/css/jquery-ui.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url('/css/jquery-ui.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url('/sass/main.css') }}">
 
 	<!-- font 
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Lora|Noto+Serif|Playfair+Display|Slabo+27px" rel="stylesheet"> -->
 
 	<!-- JS -->
-	<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/follow.js') }}"></script>
+	<script type="text/javascript" src="{{ url('/js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ url('/js/jquery-ui.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url('/js/follow.js') }}"></script>
 	<script type="text/javascript">
 		var iduser = '{{ Auth::id() }}';
 
