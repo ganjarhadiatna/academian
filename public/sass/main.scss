@@ -283,7 +283,8 @@ a {
         margin: 15px 0;
         @include grid_2x(1fr, 350px);
         @media (max-width: $max-width) {
-            display: none;
+            @include grid_none();
+            height: auto;
         }
         .left {
             position: relative;
@@ -291,6 +292,10 @@ a {
             .content {
                 @include post_top();
                 text-align: center;
+                @media (max-width: $max-width) {
+                    @include post_none();
+                    padding: 50px 0;
+                }
             }
         }
         .side {
@@ -301,6 +306,9 @@ a {
             background-size: 100%;
             background-position: center;
             background-repeat: no-repeat;
+            @media (max-width: $max-width) {
+                display: none;
+            }
         }
     }
     .ttl-main-color {

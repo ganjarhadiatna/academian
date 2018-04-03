@@ -1928,7 +1928,8 @@ a {
   -ms-grid-columns: 1fr 350px; }
   @media (max-width: 768px) {
     #body .banner {
-      display: none; } }
+      display: block;
+      height: auto; } }
   #body .banner .left {
     position: relative;
     grid-column: 1;
@@ -1942,6 +1943,17 @@ a {
       -o-transform: translate(0, -50%);
       transform: translate(0, -50%);
       text-align: center; }
+      @media (max-width: 768px) {
+        #body .banner .left .content {
+          position: relative;
+          top: 0;
+          left: 0;
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+          padding: 50px 0; } }
   #body .banner .side {
     position: relative;
     grid-column: 2;
@@ -1951,6 +1963,9 @@ a {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat; }
+    @media (max-width: 768px) {
+      #body .banner .side {
+        display: none; } }
 #body .ttl-main-color {
   position: relative;
   padding: 15px 0;
