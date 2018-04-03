@@ -45,8 +45,10 @@
 			}
 			close_progress();
 		})
-		.fail(function() {
-			alert("there is an error, please try again.");
+		.fail(function(data) {
+			/*alert("there is an error, please try again.");*/
+			console.log(data.responseJSON);
+			
 			close_progress();
 		})
 		.always(function() {
