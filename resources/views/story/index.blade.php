@@ -194,7 +194,7 @@
 						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small"><?php echo $story->title; ?></h1>
 					</div>
 					<div class="story-cover">
-						<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title; }}">
+						<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
 					</div>
 					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc">
 						<?php echo $story->description; ?>
