@@ -720,7 +720,10 @@
       border-radius: 5px; }
     .frame-story .mid .content {
       line-height: 1.5;
-      color: rgba(0, 0, 0, 0.84); }
+      color: rgba(0, 0, 0, 0.84);
+      text-overflow: ellipsis; }
+      .frame-story .mid .content * {
+        text-overflow: ellipsis; }
     .frame-story .mid .main-title h1 {
       line-height: 1.2;
       font-weight: 900;
@@ -1082,7 +1085,7 @@
 .more-menu {
   position: absolute;
   top: 40px;
-  right: 15px;
+  right: 0;
   width: 250px;
   background-color: #fff;
   border-radius: 5px;
@@ -1133,7 +1136,7 @@
 .notifications {
   position: absolute;
   top: 40px;
-  right: 15px;
+  right: 0;
   width: 400px;
   z-index: 100;
   display: none; }
