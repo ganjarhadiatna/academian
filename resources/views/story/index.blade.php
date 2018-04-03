@@ -196,8 +196,8 @@
 					<div class="story-cover">
 						<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="cover">
 					</div>
-					<div class="content">
-						<p class="ctn-main-font ctn-main-color ctn-serif ctn-desc"><?php echo $story->description; ?></p>
+					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc">
+						<?php echo $story->description; ?>
 					</div>
 					<div class="padding-bottom-15px"></div>
 					<div>

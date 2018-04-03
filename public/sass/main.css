@@ -1753,9 +1753,17 @@ a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .ctn-main-font.ctn-sans-serif * {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .ctn-main-font.ctn-sans-serif p {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .ctn-main-font.ctn-sans-serif div {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .ctn-main-font.ctn-serif {
     font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
     .ctn-main-font.ctn-serif * {
+      font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+    .ctn-main-font.ctn-serif p {
+      font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+    .ctn-main-font.ctn-serif div {
       font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
 
 @media (max-width: 768px) {

@@ -90,13 +90,25 @@ a {
     }
     &.ctn-sans-serif {
         font-family: $standar-font;
-        & * {
+        * {
+            font-family: $standar-font;
+        }
+        p {
+            font-family: $standar-font;
+        }
+        div {
             font-family: $standar-font;
         }
     }
     &.ctn-serif {
         font-family: $primary-font;
-        & * {
+        * {
+            font-family: $primary-font;
+        }
+        p {
+            font-family: $primary-font;
+        }
+        div {
             font-family: $primary-font;
         }
     }
