@@ -2002,7 +2002,21 @@ a {
 
 #footer {
   position: relative;
-  border-top: 1px rgba(0, 0, 0, 0.1) solid; }
+  width: 85%; }
+  #footer .footer-menu {
+    padding: 15px 0;
+    cursor: default; }
+    #footer .footer-menu ul li {
+      list-style: none;
+      display: inline-block;
+      color: rgba(0, 0, 0, 0.84);
+      font-weight: 600;
+      font-size: 14px; }
+      #footer .footer-menu ul li.icn {
+        position: relative;
+        top: -5px;
+        font-size: 5px;
+        color: rgba(0, 0, 0, 0.54); }
   #footer .footer-place {
     padding-top: 20px;
     padding-bottom: 30px;

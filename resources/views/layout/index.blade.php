@@ -285,61 +285,6 @@
 	<div id="body">
 		@yield("content")
 	</div>
-	<div id="footer">
-		<div class="footer-place col-full">
-			<div class="fo-pos fo-lef">
-				<h3>Who are We ?</h3>
-				<p>Academian is a site for a share a Knowledge and Story, you can read anything and save it to your bookmark.</p>
-			</div>
-			<div class="fo-pos fo-mid">
-				<h3>Find Us</h3>
-				<ul>
-					<a href="#">
-						<li>
-							<span class="fab fa-lg fa-facebook"></span>
-						</li>
-					</a>
-					<a href="#">
-						<li>
-							<span class="fab fa-lg fa-instagram"></span>
-						</li>
-					</a>
-					<a href="#">
-						<li>
-							<span class="fab fa-lg fa-google-plus"></span>
-						</li>
-					</a>
-					<a href="#">
-						<li>
-							<span class="fab fa-lg fa-pinterest"></span>
-						</li>
-					</a>
-					<a href="#">
-						<li>
-							<span class="fab fa-lg fa-twitter"></span>
-						</li>
-					</a>
-				</ul>
-			</div>
-			<div class="fo-pos fo-rig">
-				<h3>Others</h3>
-				<ul>
-					<a href="#">
-						<li>Home</li>
-					</a>
-					<a href="#">
-						<li>About Us</li>
-					</a>
-					<a href="#">
-						<li>Terms & Privace</li>
-					</a>
-					<a href="#">
-						<li>Policy</li>
-					</a>
-				</ul>
-			</div>
-		</div>
-	</div>
 
 	@include('main.loading-bar')
 	@include('main.post-menu')

@@ -108,14 +108,15 @@
 			</div>
 			<div class="post post-2">
 				<?php $i = 1; ?>
-						@foreach ($trendingStory as $story)
-							@if ($i <= 4)
-								@include('main.post-list')
-							@else
-								@include('main.post')
-							@endif
+					@foreach ($trendingStory as $story)
+						@if ($i <= 4)
+							@include('main.post-list')
+						@else
+							@include('main.post')
+						@endif
 					<?php $i += 1; ?>
-						@endforeach
+				@endforeach
+				
 			</div>
 		</div>
 	</div>
@@ -138,6 +139,33 @@
 					@include('main.post-title')
 					<?php $i += 1; ?>
 				@endforeach
+				<div id="footer">
+					<div class="footer-menu">
+						<ul>
+							<a href="#">
+								<li>Home Feeds</li>
+							</a>
+							<li class="icn">
+								<span class="fa fa-lg fa-circle"></span>
+							</li>
+							<a href="#">
+								<li>About Us</li>
+							</a>
+							<li class="icn">
+								<span class="fa fa-lg fa-circle"></span>
+							</li>
+							<a href="#">
+								<li>Terms & Privace</li>
+							</a>
+							<li class="icn">
+								<span class="fa fa-lg fa-circle"></span>
+							</li>
+							<a href="#">
+								<li>Policy</li>
+							</a>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

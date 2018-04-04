@@ -356,7 +356,26 @@ a {
 
 #footer {
     position: relative;
-    @include bdr_top();
+    width: 85%;
+    .footer-menu {
+        padding: 15px 0;
+        cursor: default;
+        ul {
+            li {
+                list-style: none;
+                display: inline-block;
+                color: $txt-min-color;
+                font-weight: 600;
+                font-size: 14px;
+                &.icn {
+                    position: relative;
+                    top: -5px;
+                    font-size: 5px;
+                    color: $txt-sek-color;
+                }
+            }
+        }
+    }
     .footer-place {
         padding-top: 20px;
         padding-bottom: 30px;
