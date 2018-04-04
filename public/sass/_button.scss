@@ -51,6 +51,11 @@
 			border: 1px $txt-sek-color solid;
 		}
 	}
+	&.btn-green-color {
+		background-color: #fff;
+		color: #38807f;
+		border: 1px #38807f solid;
+	}
 	&.btn-no-border {
 		border: 0 $sek-color solid;
 		&:hover {

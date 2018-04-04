@@ -269,8 +269,8 @@
 <div class="panel-bottom fixed bdr-top" id="tool-panel">
 	<div class="pb-place">
 		<div class="grid-1">
-			<button class="btn btn-color-gg-2 btn-radius" id="frame-loves">
-				<span class="far fa-lg fa-heart"></span>
+			<button class="btn btn-green-color btn-radius" id="frame-loves">
+				<span class="fas fa-lg fa-heart"></span>
 				<span class="ttl-loves" id="ttl-loves">{{ $story->loves }}</span>
 			</button>
 			<button class="btn btn-sekunder-color btn-no-border">
