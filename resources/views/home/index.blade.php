@@ -38,20 +38,26 @@
 					@if (is_null(Auth::id()))
 						<div class="other">
 							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">Join with us right now, and let's get started.</h4>
-							<button class="btn btn-main-color">
-								Get Started
-							</button>
-							<button class="btn btn-sekunder-color">
-								Login
-							</button>
+							<a href="{{ url('/register') }}">
+								<button class="btn btn-main-color">
+									Get Started
+								</button>
+							</a>
+							<a href="{{ url('/login') }}">
+								<button class="btn btn-sekunder-color">
+									Login
+								</button>
+							</a>
 						</div>
 					@else
 						<div class="other">
 							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">Let's share your story and create whatever you want.</h4>
-							<button class="btn btn-main-color">
-								<span class="fas fa-lg fa-plus-circle"></span>
-								<span class="ttl-post">Create Story</span>
-							</button>
+							<a href="{{ url('/compose') }}">
+								<button class="btn btn-main-color">
+									<span class="fas fa-lg fa-plus-circle"></span>
+									<span class="ttl-post">Create Story</span>
+								</button>
+							</a>
 						</div>
 					@endif
 				</div>
