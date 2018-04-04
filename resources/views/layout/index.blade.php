@@ -289,8 +289,7 @@
 		<div class="footer-place col-full">
 			<div class="fo-pos fo-lef">
 				<h3>Who are We ?</h3>
-				<p>
-				Penatopia is a blog site for people whos want to be a different. This site is not social media, this is micro bloging site that let you more actractive, creatif and make your brain will be more used.</p>
+				<p>Academian is a site for a share a Knowledge and Story, you can read anything and save it to your bookmark.</p>
 			</div>
 			<div class="fo-pos fo-mid">
 				<h3>Find Us</h3>

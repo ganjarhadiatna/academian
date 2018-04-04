@@ -26,8 +26,34 @@
 		<div class="banner">
 			<div class="left">
 				<div class="content">
-					<h1 class="ttl-head ctn-main-font ctn-serif ctn-bold ctn-big ctn-main-color">Everything's are Knowledge.</h1>
-					<h2 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-main-color">"Academian."</h2>
+					<h1 class="ttl-head ctn-main-font ctn-serif ctn-bold ctn-big ctn-main-color">
+						Everything's are Knowledge.
+					</h1>
+					<div class="padding-15px">
+						<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-thin ctn-main-color">
+							Some peoples have any Story in their lifes and it can be a Knowledge for other peoples.
+							So, share and read anything in here to change our lives together.
+						</h4>
+					</div>
+					@if (is_null(Auth::id()))
+						<div class="other">
+							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">Join with us right now, and let's get started.</h4>
+							<button class="btn btn-main-color">
+								Get Started
+							</button>
+							<button class="btn btn-sekunder-color">
+								Login
+							</button>
+						</div>
+					@else
+						<div class="other">
+							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">Let's share your story and create whatever you want.</h4>
+							<button class="btn btn-main-color">
+								<span class="fas fa-lg fa-plus-circle"></span>
+								<span class="ttl-post">Create Story</span>
+							</button>
+						</div>
+					@endif
 				</div>
 			</div>
 			<div class="side" style="background-image: url('{{ asset('img/banner/1.png') }}');"></div>
