@@ -40,7 +40,7 @@
 							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">Join with us right now, and let's get started.</h4>
 							<a href="{{ url('/register') }}">
 								<button class="btn btn-main-color">
-									Get Started
+									Register
 								</button>
 							</a>
 							<a href="{{ url('/login') }}">
