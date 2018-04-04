@@ -51,7 +51,9 @@
 						</div>
 					@else
 						<div class="other">
-							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">Let's share your story and create whatever you want.</h4>
+							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">
+								Your Story can be a Knowledge. So, let's get started.
+							</h4>
 							<a href="{{ url('/compose') }}">
 								<button class="btn btn-main-color">
 									<span class="fas fa-lg fa-plus-circle"></span>
