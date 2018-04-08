@@ -52,7 +52,7 @@
 					@else
 						<div class="other">
 							<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-bold ctn-main-color padding-bottom-10px">
-								Your Story can be a Knowledge. So, let's get started.
+								Let's get started to share anything that you want.
 							</h4>
 							<a href="{{ url('/compose') }}">
 								<button class="btn btn-main-color">

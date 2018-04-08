@@ -296,8 +296,8 @@
 	</div>
 </div>
 @endforeach
-<div class="col-full padding-10px">
-	<div class="block">
+<div class="col-full">
+	<div class="padding-15px">
 		<div class="need-mrg-left ttl-main-color padding-bottom-15px">
 			<label class="ctn-up">Related Story</label>
 		</div>

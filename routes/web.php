@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/me/setting/password', 'ProfileController@profileSettingPassword');
     Route::get('/timelines', 'MainController@timelines');
     Route::post('/save/profile', 'ProfileController@saveProfile');
+    Route::post('/save/password', 'ProfileController@savePassword');
 
     /*compose*/
     Route::get('/compose', 'MainController@compose');
