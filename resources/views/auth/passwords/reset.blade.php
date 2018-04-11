@@ -68,4 +68,7 @@
         </div>
     </div>
 </div>
+<div class="col-full other-footer">
+    @include('main.footer')
+</div>
 @endsection

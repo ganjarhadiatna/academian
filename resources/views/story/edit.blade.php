@@ -318,4 +318,7 @@
 		</div>
 	</div>
 @endforeach
+<div class="col-full other-footer">
+	@include('main.footer')
+</div>
 @endsection

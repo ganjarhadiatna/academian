@@ -281,6 +281,8 @@
 				}
 				.edit-text {
 					max-height: none;
+					width: calc(100% - 30px);
+					padding: 20px 15px;
 				}
 				#cover {
 					display: none;
@@ -518,6 +520,11 @@
 	padding: 15px;
 	background-color: #fff;
 	border-radius: 5px;
+	@media (max-width: $max-width) {
+		position: relative;
+		width: calc(100% - 20px);
+		padding: 15px 10px;
+	}
 }
 
 .padding-bottom {

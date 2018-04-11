@@ -4,14 +4,9 @@
 @section('content')
 <div class="frame-home">
     <div class="frame-sign">
-        <div class="top">
-            <a href="{{ url('/') }}">
-                <img src="{{ asset('/img/3.png') }}" alt="">
-            </a>
-        </div>
         <div class="mid">
             <div class="block">
-                <h2>Reset Password</h2>
+                <h1 class="ctn-main-font ctn-sans-serif ctn-bold ctn-small">Reset Password</h1>
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
@@ -41,5 +36,8 @@
         </div>
         <div class="bot"></div>
     </div>
+</div>
+<div class="col-full other-footer">
+    @include('main.footer')
 </div>
 @endsection
