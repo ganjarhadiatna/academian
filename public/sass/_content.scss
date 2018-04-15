@@ -325,6 +325,11 @@
 							color: $txt-min-color;
 						}
 					}
+					#btnToolStory {
+						@media (max-width: $max-width) {
+							display: none;
+						}
+					}
 				}
 			}
 		}
@@ -341,8 +346,11 @@
 			.tool {
 				position: absolute;
 				z-index: 10;
-				cursor: default;
 				display: none;
+				cursor: default;
+				@media (max-width: $max-width) {
+					display: none;
+				}
 				ul {
 					li {
 						position: relative;

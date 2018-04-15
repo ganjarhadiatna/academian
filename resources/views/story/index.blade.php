@@ -101,11 +101,16 @@
 		getComment('{{ $story->idstory }}', 'add');
 
 		$(window).scroll(function(event) {
-			clearTimeout($.data(this, 'scrollTimer'));
-			$('#tool-panel').hide();
-			$.data(this, 'scrollTimer', setTimeout(function () {
-				$('#tool-panel').show();
-			}, 500));
+			var hg = $(window).scrollTop();
+			if (hg > 100) {
+				clearTimeout($.data(this, 'scrollTimer'));
+				$('#tool-panel').hide();
+				//$('#header .place').hide();
+				$.data(this, 'scrollTimer', setTimeout(function () {
+					$('#tool-panel').show();
+					//$('#header .place').show();
+				}, 2500));
+			}
 		});
 
 		$('#frame-loves').on('click', function(event) {
@@ -283,11 +288,11 @@
 				<span class="ttl-loves">{{ $story->ttl_comment }}</span>
 			</button>
 			<button class="btn btn-circle btn-sekunder-color btn-no-border" onclick="addBookmark('{{ $story->idstory }}')">
-					@if (is_int($check))
-					<span class="fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
-					@else
-					<span class="far fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
-					@endif
+				@if (is_int($story->is_save))
+					<span class="bookmark-{{ $story->idstory }} fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
+				@else
+					<span class="bookmark-{{ $story->idstory }} far fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
+				@endif
 			</button>
 			<button class="btn btn-circle btn-sekunder-color btn-focus" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}', '{{ $title }}')">
 				<span class="fa fa-lg fa-ellipsis-h"></span>

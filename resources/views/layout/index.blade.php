@@ -74,17 +74,17 @@
 				})
 				.done(function(data) {
 					if (data === 'bookmark') {
-						opAlert('open', 'Story has been saved to bookmark.');
-						$('#bookmark-'+idstory).attr('class', 'fas fa-lg fa-bookmark');
+						//opAlert('open', 'Story has been saved to bookmark.');
+						$('.bookmark-'+idstory).attr('class', 'bookmark-'+idstory+' fas fa-lg fa-bookmark');
 					} else if (data === 'unbookmark') {
-						opAlert('open', 'Story removed from bookmark.');
-						$('#bookmark-'+idstory).attr('class', 'far fa-lg fa-bookmark');
+						//opAlert('open', 'Story removed from bookmark.');
+						$('.bookmark-'+idstory).attr('class', 'bookmark-'+idstory+' far fa-lg fa-bookmark');
 					} else if (data === 'failedadd') {
-						opAlert('open', 'Failed to save story to bookmark.');
-						$('#bookmark-'+idstory).attr('class', 'far fa-lg fa-bookmark');
+						//opAlert('open', 'Failed to save story to bookmark.');
+						$('.bookmark-'+idstory).attr('class', 'bookmark-'+idstory+' far fa-lg fa-bookmark');
 					} else if (data === 'failedremove') {
-						opAlert('open', 'Failed to remove story from bookmark.');
-						$('#bookmark-'+idstory).attr('class', 'fas fa-lg fa-bookmark');
+						//opAlert('open', 'Failed to remove story from bookmark.');
+						$('.bookmark-'+idstory).attr('class', 'bookmark-'+idstory+' fas fa-lg fa-bookmark');
 					} else {
 						opAlert('open', 'There is an error, please try again.');
 					}
@@ -196,6 +196,16 @@
 				$('#nav-more-target').addClass('active');
 				$('#nav-more-target').attr('key', 'open');
 			});
+
+			/*$('.btn-save-now').on('click', function(event) {
+				var ctr = $(this).find('#bookmark').attr('class');
+				if (ctr == 'fas fa-lg fa-bookmark') {
+					$(this).find('#bookmark').attr('class','far fa-lg fa-bookmark');
+				} else {
+					$(this).find('#bookmark').attr('class','fas fa-lg fa-bookmark');
+				}
+				//alert(ctr);
+			});*/
 		});
 	</script>
 </head>

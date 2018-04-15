@@ -72,7 +72,7 @@
 					<div class="need-mrg-left ttl-main-color padding-bottom-15px">
 						<label class="ctn-up">Timelines</label>
 						<a href="{{ url('/timelines') }}" class="vw-more ctn-main-font ctn-bold ctn-14px ctn-sek-color hover-strong">
-							View More
+							More Stories
 						</a>
 					</div>
 					<div class="post">
@@ -90,30 +90,10 @@
 			@endif
 		@endif
 		<div class="padding-15px">
-			<div class="need-mrg-left ttl-main-color padding-bottom-15px">
-				<label class="ctn-up">Fresh</label>
-				<a href="{{ url('/fresh') }}" class="vw-more ctn-main-font ctn-bold ctn-14px ctn-sek-color hover-strong">
-					View More
-				</a>
-			</div>
-			<div class="post">
-				<?php $i = 1; ?>
-				@foreach ($newStory as $story)
-					@if ($i <= 4)
-						@include('main.post-list')
-					@else
-						@include('main.post')
-					@endif
-					<?php $i += 1; ?>
-				@endforeach
-			</div>
-		</div>
-		<div class="padding-15px">
 			<div class="need-mrg-left ttl-main-color padding-bottom-20px">
 				<label class="ctn-up">Trendings</label>
 				<a href="{{ url('/trending') }}" class="vw-more ctn-main-font ctn-bold ctn-14px ctn-sek-color hover-strong">
-					View More
-				</a>
+					More Stories
 			</div>
 			<div class="post post-2">
 				<?php $i = 1; ?>
@@ -132,7 +112,7 @@
 	<div class="post-home grid">
 		<div class="grid-1" id="home-main-object">
 			<div class="need-mrg-left ttl-main-color padding-bottom-20px">
-				<label class="ctn-up">Featured</label>
+				<label class="ctn-up">New Stories</label>
 			</div>
 			@foreach ($featuredStory as $story)
 				@include('main.post-list')
@@ -145,13 +125,20 @@
 						<label class="ctn-up">Tranding Now's</label>
 					</div>
 					@foreach ($topTags as $tg)
-						<div class="padding-bottom-10px">
-							<a href="{{ url('/tags/'.$tg->tag) }}" class="ctn-main-font ctn-bold ctn-main-color ctn-normal hover-underline">{{ $tg->tag }}</a>
-							<div class="ctn-main-font ctn-date ctn-thin ctn-sekunder-color">{{ $tg->ttl_tag }} Stories</div>
+						<div class="frame frame-post-popular">
+							<div class="main">
+								<div class="sd-main">
+									<span class="ctn-main-font ctn-bold ctn-sekunder-color ctn-normal fas fa-lg fa-hashtag"></span>
+								</div>
+								<div class="sd-right">
+									<a href="{{ url('/tags/'.$tg->tag) }}" class="ctn-main-font ctn-bold ctn-main-color ctn-normal hover-underline">{{ $tg->tag }}</a>
+									<div class="ctn-main-font ctn-date ctn-thin ctn-sekunder-color">{{ $tg->ttl_tag }} Stories</div>
+								</div>
+							</div>
 						</div>
 					@endforeach
 				</di>
-				<div class="padding-bottom-15px"></div>
+				<div class="padding-bottom-10px"></div>
 				<div>
 					<div class="ttl-main-color padding-bottom-20px">
 						<label class="ctn-up">Popular Now's</label>

@@ -14,15 +14,26 @@
 						{{ $story->title }}
 					</a>
 				</div>
-			</div>
-			<div class="bot">
 				<div class="date">
 					<span class="ttl-views">{{ date('F d, Y', strtotime($story->created)) }}</span>
 				</div>
-				<div class="info">
-					<a href="{{ url('/u/'.$story->id) }}">
-						<span class="name">By {{ $story->name }}</span>
-					</a>
+			</div>
+			<div class="bot">
+				<div class="bot-1">
+					<div class="info">
+						<a href="{{ url('/u/'.$story->id) }}">
+							<span class="name">{{ $story->name }}</span>
+						</a>
+					</div>
+				</div>
+				<div class="bot-2">
+					<button class="btn btn-circle btn-sekunder-color btn-no-border" key="{{ $story->idstory }}" onclick="addBookmark('{{ $story->idstory }}')">
+						@if (is_int($story->is_save))
+							<span class="bookmark-{{ $story->idstory }} fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
+						@else
+							<span class="bookmark-{{ $story->idstory }} far fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
+						@endif
+					</button>
 				</div>
 			</div>
 		</div>

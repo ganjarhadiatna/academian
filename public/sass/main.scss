@@ -334,20 +334,25 @@ a {
     }
     .ttl-main-color {
         position: relative;
-        padding: 15px 0;
+        padding: 10px 0;
         text-align: left;
         .ctn-up {
-            padding-top: 10px;
-            border-top: 2px $txt-min-color solid;
             text-transform: uppercase;
             font-weight: 600;
-            font-size: $txt-size-desc;
-            color: $txt-min-color;
-            font-family: $primary-font;
+            font-size: $txt-size-small;
+            color: $txt-sek-color;
+            font-family: $sekunder-font;
+            &.bdr-top {
+                padding-top: 10px;
+                border-top: 2px $txt-sek-color solid;
+            }
         }
         .vw-more {
             float: right;
             right: 0;
+            font-size: $txt-size-small;
+            font-family: $sekunder-font;
+            text-transform: uppercase;
         }
     }
     .post {
