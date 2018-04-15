@@ -190,7 +190,7 @@
 					</div>
 				</div>
 				<div class="pos mid bdr-bottom">
-					<div class="main-title padding-bottom-15px">
+					<div class="main-title padding-bottom-10px">
 						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small"><?php echo $story->title; ?></h1>
 					</div>
 					<div class="story-cover">

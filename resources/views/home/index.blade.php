@@ -7,7 +7,7 @@
 		$(window).scroll(function(event) {
 			var top = $(window).scrollTop();
 			var hg = Math.floor($('#home-main-object').height() - $('#home-side-object').height());
-			var top1 = Math.floor($('#home-primary-object').height());
+			var top1 = Math.floor($('#home-primary-object').height() + ($('#home-side-object').height() - $(window).height()) + 80);
 			if (top >= top1) {
 				$('#home-side-object').attr('class', 'side-fixed');
 			}
@@ -71,6 +71,9 @@
 				<div class="padding-15px">
 					<div class="need-mrg-left ttl-main-color padding-bottom-15px">
 						<label class="ctn-up">Timelines</label>
+						<a href="{{ url('/timelines') }}" class="vw-more ctn-main-font ctn-bold ctn-14px ctn-sek-color hover-strong">
+							View More
+						</a>
 					</div>
 					<div class="post">
 						<?php $i = 1; ?>
@@ -89,6 +92,9 @@
 		<div class="padding-15px">
 			<div class="need-mrg-left ttl-main-color padding-bottom-15px">
 				<label class="ctn-up">Fresh</label>
+				<a href="{{ url('/fresh') }}" class="vw-more ctn-main-font ctn-bold ctn-14px ctn-sek-color hover-strong">
+					View More
+				</a>
 			</div>
 			<div class="post">
 				<?php $i = 1; ?>
@@ -104,7 +110,10 @@
 		</div>
 		<div class="padding-15px">
 			<div class="need-mrg-left ttl-main-color padding-bottom-20px">
-				<label class="ctn-up">Trandings</label>
+				<label class="ctn-up">Trendings</label>
+				<a href="{{ url('/trending') }}" class="vw-more ctn-main-font ctn-bold ctn-14px ctn-sek-color hover-strong">
+					View More
+				</a>
 			</div>
 			<div class="post post-2">
 				<?php $i = 1; ?>
@@ -121,7 +130,7 @@
 		</div>
 	</div>
 	<div class="post-home grid">
-		<div class="grid-1 padding-bottom-20px" id="home-main-object">
+		<div class="grid-1" id="home-main-object">
 			<div class="need-mrg-left ttl-main-color padding-bottom-20px">
 				<label class="ctn-up">Featured</label>
 			</div>
@@ -131,15 +140,29 @@
 		</div>
 		<div class="grid-2">
 			<div id="home-side-object">
-				<div class="ttl-main-color padding-bottom-20px">
-					<label class="ctn-up">Popular Now's</label>
+				<div>
+					<div class="ttl-main-color padding-bottom-20px">
+						<label class="ctn-up">Tranding Now's</label>
+					</div>
+					@foreach ($topTags as $tg)
+						<div class="padding-bottom-10px">
+							<a href="{{ url('/tags/'.$tg->tag) }}" class="ctn-main-font ctn-bold ctn-main-color ctn-normal hover-underline">{{ $tg->tag }}</a>
+							<div class="ctn-main-font ctn-date ctn-thin ctn-sekunder-color">{{ $tg->ttl_tag }} Stories</div>
+						</div>
+					@endforeach
+				</di>
+				<div class="padding-bottom-15px"></div>
+				<div>
+					<div class="ttl-main-color padding-bottom-20px">
+						<label class="ctn-up">Popular Now's</label>
+					</div>
+					<?php $i = 1; ?>
+					@foreach ($popularStory as $story)
+						@include('main.post-title')
+						<?php $i += 1; ?>
+					@endforeach
+					@include('main.footer')
 				</div>
-				<?php $i = 1; ?>
-				@foreach ($popularStory as $story)
-					@include('main.post-title')
-					<?php $i += 1; ?>
-				@endforeach
-				@include('main.footer')
 			</div>
 		</div>
 	</div>

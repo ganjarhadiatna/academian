@@ -174,19 +174,6 @@
 				window.location = "{{ url('/search/') }}"+'/'+ctr;
 			});
 
-			/*$('#btn-search').on('click', function(event) {
-				event.preventDefault();
-				var key = $(this).attr('key');
-				if (key == 'hide') {
-					$(this).addClass('active').attr('key','open');
-					$('#place-search').show();
-					$('#txt-search').select();
-				} else {
-					$(this).removeClass('active').attr('key','hide');
-					$('#place-search').hide();
-				}
-			});*/
-
 			$('#nav-more-target').on('click', function(event) {
 				var tr = $(this).attr('key');
 				if (tr == 'hide') {

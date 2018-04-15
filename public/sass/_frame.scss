@@ -317,13 +317,13 @@
 		line-height: 120px;
 		font-size: 48pt;
 		border-radius: 100%;
-		background-color: $pos-color;
+		background-color: $min-color;
 		color: $sek-color;
 	}
 	.ttl {
 		font-size: $txt-size-big;
 		font-weight: 600;
-		color: $sek-color;
+		color: $min-color;
 	}
 }
 
@@ -501,7 +501,7 @@
 		.story-cover {
 			position: relative;
 			width: 100%;
-			max-height: 400px;
+			max-height: auto;
 			overflow: hidden;
 			margin-bottom: 15px;
 		}
@@ -653,7 +653,7 @@
 		line-height: 1.5;
 		font-weight: 500;
 		color: $txt-sek-color;
-		font-size: $txt-size-small;
+		font-size: $txt-size-standar;
 		.fa {
 			position: relative;
 			top: -3px;

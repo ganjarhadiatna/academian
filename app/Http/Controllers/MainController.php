@@ -23,9 +23,10 @@ class MainController extends Controller
         $profile = FollowModel::GetAllFollowing($id);
         $timelinesStory = StoryModel::TimelinesStory(7, $profile, Auth::id());
         $newStory = StoryModel::AllStory(7, 0);
-        $featuredStory = StoryModel::AllStory(20, 0);
+        $featuredStory = StoryModel::AllStory(25, 0);
         $popularStory = StoryModel::PopularStory(5, 0);
         $trendingStory = StoryModel::MostViewsStory(7, 0);
+        $topTags = TagModel::TopTags();
         return view('home.index', [
             'title' => 'Official Site',
             'path' => 'home',
@@ -33,7 +34,8 @@ class MainController extends Controller
             'newStory' => $newStory,
             'featuredStory' => $featuredStory,
             'popularStory' => $popularStory,
-            'trendingStory' => $trendingStory
+            'trendingStory' => $trendingStory,
+            'topTags' => $topTags
         ]);
     }
     function collections()
@@ -64,7 +66,7 @@ class MainController extends Controller
     {
         $topStory = StoryModel::PagTagStory($ctr, 12);
         return view('others.index', [
-            'title' => 'Tags '.$ctr,
+            'title' => $ctr,
             'path' => 'none',
             'topStory' => $topStory
         ]);

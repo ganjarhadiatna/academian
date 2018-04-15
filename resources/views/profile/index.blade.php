@@ -18,7 +18,7 @@
 					<div class="image image-150px image-circle" id="place-picture" style="background-image: url({{ asset('/profile/photos/'.$p->foto) }});"></div>
 				</div>
 				<div class="info">
-						<div class="user-name ctn-main-font ctn-standar" id="edit-name">{{ $p->name }}</div>
+						<h1 class="user-name ctn-main-font ctn-standar" id="edit-name">{{ $p->name }}</h1>
 						<div>
 							<p id="edit-about">{{ $p->about }}</p>
 						</div>

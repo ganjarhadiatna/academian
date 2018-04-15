@@ -315,10 +315,10 @@
   position: relative;
   background-color: #fff; }
   .frame .main .info .name {
-    font-size: 14px;
+    font-size: 11pt;
     color: rgba(0, 0, 0, 0.54); }
   .frame .main .date {
-    font-size: 14px;
+    font-size: 11pt;
     color: rgba(0, 0, 0, 0.54); }
   .frame .main .mid .mn-ttl {
     color: rgba(0, 0, 0, 0.84);
@@ -481,12 +481,12 @@
     line-height: 120px;
     font-size: 48pt;
     border-radius: 100%;
-    background-color: #529ecc;
+    background-color: rgba(0, 0, 0, 0.84);
     color: #fff; }
   .frame-empty .ttl {
     font-size: 32px;
     font-weight: 600;
-    color: #fff; }
+    color: rgba(0, 0, 0, 0.84); }
 
 .frame-other {
   position: relative;
@@ -623,10 +623,10 @@
     grid-column: 2;
     -ms-grid-column: 2; }
     .frame-notif .notif-mid .desc {
-      font-size: 16px;
+      font-size: 14px;
       color: rgba(0, 0, 0, 0.84); }
       .frame-notif .notif-mid .desc.date {
-        font-size: 14px;
+        font-size: 11pt;
         color: rgba(0, 0, 0, 0.54); }
 
 .frame-story {
@@ -637,7 +637,7 @@
   margin: 0 auto; }
   @media (max-width: 768px) {
     .frame-story {
-      width: calc(100% - 15px); } }
+      width: calc(100% - 30px); } }
   @media (max-width: 768px) {
     .frame-story {
       padding: 10px 0; } }
@@ -653,11 +653,11 @@
     .frame-story .pos .story-cover {
       position: relative;
       width: 100%;
-      max-height: 400px;
+      max-height: auto;
       overflow: hidden;
       margin-bottom: 15px; }
     .frame-story .pos .date {
-      font-size: 14px;
+      font-size: 11pt;
       color: rgba(0, 0, 0, 0.54); }
     .frame-story .pos .grid {
       padding-top: 15px;
@@ -798,12 +798,12 @@
         text-decoration: underline; }
   .frame-comment .desk {
     color: rgba(0, 0, 0, 0.84);
-    font-size: 14px;
+    font-size: 11pt;
     font-weight: 500;
     line-height: 1.5; }
     .frame-comment .desk a {
       color: rgba(0, 0, 0, 0.84);
-      font-size: 14px; }
+      font-size: 11pt; }
       .frame-comment .desk a:hover {
         color: rgba(0, 0, 0, 0.84); }
 
@@ -820,7 +820,7 @@
     -ms-grid-columns: 200px 1fr; }
     @media (max-width: 768px) {
       .frame-profile .profile {
-        width: calc(100% - 15px); } }
+        width: calc(100% - 30px); } }
     @media (max-width: 768px) {
       .frame-profile .profile {
         display: block; } }
@@ -834,7 +834,7 @@
     .frame-profile .profile .info {
       position: relative;
       color: rgba(0, 0, 0, 0.54);
-      font-size: 14px;
+      font-size: 11pt;
       margin-bottom: 20px;
       grid-column: 2;
       -ms-grid-column: 2; }
@@ -866,7 +866,7 @@
           float: left;
           text-align: center; }
           .frame-profile .profile .info .other ul li .val {
-            font-size: 14px; }
+            font-size: 11pt; }
           .frame-profile .profile .info .other ul li .ttl {
             color: rgba(0, 0, 0, 0.54);
             font-weight: 500; }
@@ -889,7 +889,7 @@
       width: 100%;
       padding: 15px 0;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 11pt;
       color: rgba(0, 0, 0, 0.54);
       border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
       display: grid;
@@ -911,7 +911,7 @@
       width: 100%;
       padding-top: 25px;
       color: rgba(0, 0, 0, 0.54);
-      font-size: 14px;
+      font-size: 11pt;
       display: grid;
       display: -ms-grid;
       grid-template-columns: 40px 1fr;
@@ -960,7 +960,7 @@
   display: inline-block;
   background-color: #f0f0f0;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 14px;
+  font-size: 11pt;
   font-weight: 600;
   border-radius: 3px; }
   .frame-top-tag:hover {
@@ -1192,7 +1192,7 @@
   background-color: #fff; }
   @media (max-width: 768px) {
     .compose .main {
-      width: calc(100% - 15px); } }
+      width: calc(100% - 30px); } }
   @media (max-width: 768px) {
     .compose .main {
       padding: 0 0 10px 0; } }
@@ -1215,7 +1215,7 @@
       .compose .main .create-body .create-block .mrg-bottom {
         margin-bottom: 15px; }
       .compose .main .create-body .create-block p {
-        font-size: 14px;
+        font-size: 11pt;
         color: rgba(0, 0, 0, 0.54);
         margin-bottom: 5px; }
       .compose .main .create-body .create-block .ttl-head {
@@ -1432,7 +1432,7 @@
   .post-home .side-fixed {
     position: fixed;
     width: 400px;
-    top: 80px; }
+    bottom: 0; }
     @media (max-width: 768px) {
       .post-home .side-fixed {
         position: relative;
@@ -1443,7 +1443,7 @@
     position: absolute;
     right: 0;
     width: 400px;
-    bottom: 30px; }
+    bottom: 0; }
     @media (max-width: 768px) {
       .post-home .side-absolute {
         position: relative;
@@ -1482,7 +1482,7 @@
   .pagination li {
     list-style: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 11pt;
     font-weight: 600;
     width: 45px;
     height: 45px;
@@ -1570,7 +1570,7 @@
       text-align: center; }
       @media (max-width: 768px) {
         .sc-header .sc-place .sc-block {
-          width: calc(100% - 15px); } }
+          width: calc(100% - 30px); } }
   .sc-header .sc-place.pos-fix {
     position: fixed;
     top: 60px;
@@ -1721,14 +1721,14 @@ a {
   margin: 0 auto; }
   @media (max-width: 768px) {
     .col-full {
-      width: calc(100% - 15px); } }
+      width: calc(100% - 30px); } }
 
 .col-small {
   width: 700px;
   margin: 0 auto; }
   @media (max-width: 768px) {
     .col-small {
-      width: calc(100% - 15px); } }
+      width: calc(100% - 30px); } }
 
 .bdr-top {
   border-top: 1px rgba(0, 0, 0, 0.1) solid; }
@@ -1751,8 +1751,10 @@ a {
     font-size: 22pt; }
   .ctn-main-font.ctn-desc {
     font-size: 16pt; }
+  .ctn-main-font.ctn-normal {
+    font-size: 14pt; }
   .ctn-main-font.ctn-date {
-    font-size: 14px; }
+    font-size: 11pt; }
   .ctn-main-font.ctn-main-color {
     color: rgba(0, 0, 0, 0.84); }
   .ctn-main-font.ctn-upp {
@@ -1781,6 +1783,10 @@ a {
       font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
     .ctn-main-font.ctn-serif div {
       font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+  .ctn-main-font.hover-underline:hover {
+    text-decoration: underline; }
+  .ctn-main-font.hover-strong:hover {
+    color: rgba(0, 0, 0, 0.84); }
 
 @media (max-width: 768px) {
   .mobile {
@@ -1826,8 +1832,8 @@ a {
             position: fixed;
             top: 50px;
             left: 0;
-            width: calc(100% - 20px);
-            padding: 7.5px 10px;
+            width: calc(100% - 30px);
+            padding: 7.5px 15px;
             background-color: #fff;
             border-bottom: 1px rgba(0, 0, 0, 0.1) solid; } }
       #header .place .menu .rig {
@@ -1996,6 +2002,9 @@ a {
     font-size: 14pt;
     color: rgba(0, 0, 0, 0.84);
     font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+  #body .ttl-main-color .vw-more {
+    float: right;
+    right: 0; }
 #body .post {
   display: flex;
   flex-wrap: wrap; }
@@ -2004,10 +2013,11 @@ a {
     margin: 10px; }
     @media (max-width: 768px) {
       #body .post .frame-post-list {
+        width: 100%;
         margin: 10px 0; } }
-  #body .post .frame-post-list .main .sd-right {
-    width: 100%;
-    padding: 0; }
+    #body .post .frame-post-list .main .sd-right {
+      width: 100%;
+      padding: 0; }
 
 .other-footer {
   padding-bottom: 30px; }
@@ -2026,10 +2036,11 @@ a {
       display: inline-block;
       color: rgba(0, 0, 0, 0.84);
       font-weight: 600;
-      font-size: 14px; }
+      font-size: 14px;
+      padding: 0 2.5px; }
       #footer .footer-menu ul li.icn {
         position: relative;
-        top: -5px;
+        top: -2.5px;
         font-size: 5px;
         color: rgba(0, 0, 0, 0.54); }
   #footer .footer-place {
@@ -2050,12 +2061,12 @@ a {
       grid-column: 1;
       -ms-grid-column: 1; }
       #footer .footer-place .fo-lef p {
-        font-size: 14px;
+        font-size: 11pt;
         line-height: 1.5;
         margin-bottom: 10px; }
       #footer .footer-place .fo-lef .cl {
         position: relative;
-        font-size: 14px;
+        font-size: 11pt;
         margin-bottom: 10px; }
       #footer .footer-place .fo-lef img {
         width: 150px; }

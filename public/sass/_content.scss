@@ -487,7 +487,7 @@
 	.side-fixed {
 		position: fixed;
 		width: 400px;
-		top: 80px;
+		bottom: 0;
 		@media (max-width: $max-width) {
 			position: relative;
 			width: 100%;
@@ -499,7 +499,7 @@
 		position: absolute;
 		right: 0;
 		width: 400px;
-		bottom: 30px;
+		bottom: 0;
 		@media (max-width: $max-width) {
 			position: relative;
 			width: 100%;

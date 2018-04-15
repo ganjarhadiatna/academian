@@ -38,6 +38,7 @@ class TagModel extends Model
         )
         ->groupBy('tag')
         ->orderBy('ttl_tag', 'desc')
+        ->limit(5)
         ->get();
     }
     function scopeAllTags($query)

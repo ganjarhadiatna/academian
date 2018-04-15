@@ -67,8 +67,11 @@ a {
     &.ctn-desc {
 		font-size: 16pt;
     }
+    &.ctn-normal {
+		font-size: 14pt;
+    }
     &.ctn-date {
-        font-size: 14px;
+        font-size: 11pt;
     }
     &.ctn-main-color {
         color: $txt-min-color;
@@ -112,6 +115,16 @@ a {
             font-family: $primary-font;
         }
     }
+    &.hover-underline {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &.hover-strong {
+        &:hover {
+            color: $txt-min-color;
+        }
+    }
 }
 
 .mobile {
@@ -151,8 +164,8 @@ a {
                     position: fixed;
                     top: 50px;
                     left: 0;
-                    width: calc(100% - 20px);
-                    padding: 7.5px 10px;
+                    width: calc(100% - 30px);
+                    padding: 7.5px 15px;
                     background-color: #fff;
                     border-bottom: 1px rgba(0,0,0,0.1) solid;
                 }
@@ -233,7 +246,7 @@ a {
                             height: 40px;
                             line-height: 40px;
                             color: $txt-sek-color;
-                            font-size: $txt-size-small;
+                            font-size: $txt-size-standar;
                             font-weight: 600;
                             text-transform: uppercase;
                             cursor: pointer;
@@ -332,6 +345,10 @@ a {
             color: $txt-min-color;
             font-family: $primary-font;
         }
+        .vw-more {
+            float: right;
+            right: 0;
+        }
     }
     .post {
         display: flex;
@@ -340,10 +357,9 @@ a {
             width: 480px;
             margin: 10px;
             @media (max-width: $max-width) {
+                width: 100%;
                 margin: 10px 0;
             }
-        }
-        .frame-post-list {
             .main {
                 .sd-right {
                     width: 100%;
@@ -374,9 +390,10 @@ a {
                 color: $txt-min-color;
                 font-weight: 600;
                 font-size: 14px;
+                padding: 0 2.5px;
                 &.icn {
                     position: relative;
-                    top: -5px;
+                    top: -2.5px;
                     font-size: 5px;
                     color: $txt-sek-color;
                 }
