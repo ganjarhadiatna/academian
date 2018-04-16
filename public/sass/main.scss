@@ -328,7 +328,7 @@ a {
             position: relative;
             @include column_2();
             width: 100%;
-            padding-bottom: 100%;
+            height: 400px;
             background-size: 100%;
             background-position: center;
             background-repeat: no-repeat;
