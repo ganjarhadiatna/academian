@@ -65,7 +65,8 @@ class StoryController extends Controller
     }
     function mentions($tags, $idstory)
     {
-        $replace = array('[',']','@','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
+        $replace = array('[',']','@','+','-','*','<','>','-','(',')',';',
+        '&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
         $str1 = str_replace($replace, '', $tags);
         $str2 = str_replace(array(', ', ' , ', ' ,'), ',', $str1);
         $tag = explode(',', $str2);
@@ -104,7 +105,8 @@ class StoryController extends Controller
     		'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
     	]);
     	$image = $request->file('cover');
-    	$chrc = array('[',']','@',' ','+','-','#','*','<','>','_','(',')',';',',','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
+        $chrc = array('[',']','@',' ','+','-','#','*','<','>','_','(',')',';',
+        ',','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
 	    $filename = $id.time().str_replace($chrc, '', $image->getClientOriginalName());
 
 	    //create thumbnail
