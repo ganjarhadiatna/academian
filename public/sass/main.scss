@@ -301,6 +301,11 @@ a {
         }
         .left {
             position: relative;
+            width: 100%;
+            height: 400px;
+            @media (max-width: $max-width) {
+                height: auto;
+            }
             @include column_1();
             .content {
                 @include post_top();
