@@ -34,7 +34,7 @@
 					<div class="frame-comment comment-owner">\
 						<div class="dt-1">\
 							<a href="'+server_user+'" title="'+data[i].name+'">\
-								<div class="image image-35px image-circle" style="background-image: url('+server_foto+')"></div>\
+								<div class="image image-40px image-radius" style="background-image: url('+server_foto+')"></div>\
 							</a>\
 						</div>\
 						<div class="dt-2">\
@@ -95,6 +95,9 @@
 		var top = $('#tr-comment').offset().top;
 		$('html, body').animate({scrollTop : (Math.round(top) - 70)}, 300);
 	}
+	function toUp() {
+		$('html, body').animate({scrollTop : 0}, 300);
+	}
 	$(document).ready(function() {
 		$('#offset-comment').val(0);
 		$('#limit-comment').val(5);
@@ -109,7 +112,7 @@
 				$.data(this, 'scrollTimer', setTimeout(function () {
 					$('#tool-panel').show();
 					//$('#header .place').show();
-				}, 2500));
+				}, 1500));
 			}
 		});
 
@@ -165,7 +168,7 @@
 	<div class="main">
 		<div class="place">
 			<div class="frame-story" id="main-story">
-				<div class="pos top bdr-bottom">
+				<div class="pos top">
 					<div class="profile">
 						<div class="foto">
 							<a href="{{ url('/user/'.$story->id) }}">
@@ -194,9 +197,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="pos mid bdr-bottom">
+				<div class="pos mid">
 					<div class="main-title padding-bottom-10px">
-						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small"><?php echo $story->title; ?></h1>
+						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small">
+							<?php echo $story->title; ?>
+						</h1>
 					</div>
 					<div class="story-cover">
 						<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
@@ -219,27 +224,7 @@
 						@endif
 					</div>
 				</div>
-				<div class="pos mid bdr-bottom">
-					<div class="here">
-						<div class="here-block">
-							<ul class="menu-share">
-								<li class="mn btn btn-color-fb">
-									<span class="fab fa-lg fa-facebook"></span>
-								</li>
-								<li class="mn btn btn-color-tw">
-									<span class="fab fa-lg fa-twitter"></span>
-								</li>
-								<li class="mn btn btn-color-gg-2">
-									<span class="fab fa-lg fa-pinterest"></span>
-								</li>
-								<li class="mn btn btn-color-gg">
-									<span class="fab fa-lg fa-google-plus"></span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="bot bdr-bottom">
+				<div class="bot">
 					<div class="top-comment" id="tr-comment">
 						@if (Auth::id())
 							<form method="post" action="javascript:void(0)" id="comment-publish">
@@ -278,14 +263,20 @@
 				<span class="fas fa-lg fa-heart"></span>
 				<span class="ttl-loves" id="ttl-loves">{{ $story->loves }}</span>
 			</button>
-			<button class="btn btn-sekunder-color btn-no-border">
-				<span id="ttl-view">{{ $story->views }} Views</span>
-			</button>
-		</div>
-		<div class="grid-2 text-right crs-default">
 			<button class="btn btn-sekunder-color btn-no-border" onclick="toComment()">
 				<span class="far fa-lg fa-comment"></span>
 				<span class="ttl-loves">{{ $story->ttl_comment }}</span>
+			</button>
+			<button class="btn btn-sekunder-color btn-no-border" onclick="toUp()">
+				<span id="ttl-view">{{ $story->views }} Reads</span>
+			</button>
+		</div>
+		<div class="grid-2 text-right crs-default">
+			<button class="btn btn-circle btn-sekunder-color btn-no-border">
+				<span class="fab fa-lg fa-facebook-f"></span>
+			</button>
+			<button class="btn btn-circle btn-sekunder-color btn-no-border">
+				<span class="fab fa-lg fa-twitter"></span>
 			</button>
 			<button class="btn btn-circle btn-sekunder-color btn-no-border" onclick="addBookmark('{{ $story->idstory }}')">
 				@if (is_int($story->is_save))
