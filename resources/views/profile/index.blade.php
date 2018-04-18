@@ -74,8 +74,8 @@
 	<div class="padding-5px"></div>
 	<div class="post-nav width-small radius" id="post-nav">
 		<ol>
-			<a href="{{ url('/user/'.$p->id.'/story') }}"><li class="active" id="story">All Stories</li></a>
-		    <a href="{{ url('/user/'.$p->id.'/bookmark') }}"><li id="bookmark">Bookmarks</li></a>
+			<a href="{{ url('/user/'.$p->id.'/story') }}"><li class="active" id="story">Stories</li></a>
+		    <a href="{{ url('/user/'.$p->id.'/bookmark') }}"><li id="bookmark">Saved</li></a>
 		</ol>
 	</div>
 	<div class="block pp-bot col-full">
