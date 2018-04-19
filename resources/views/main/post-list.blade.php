@@ -1,5 +1,9 @@
 <div class="frame frame-post-list">
+	@if ($story->cover != '')
+	<div class="main grid">
+	@else
 	<div class="main">
+	@endif
 		<?php 
 			$replace = array('[',']','@',',','.','#','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
 			$title = str_replace($replace, '', $story->title); 
@@ -34,11 +38,13 @@
 				</div>
 			</div>
 		</div>
+		@if ($story->cover != '')
 		<div class="sd-left">
 			<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}">
 				<div class="top" style="background-image: url({{ asset('/story/thumbnails/'.$story->cover) }})">
 				</div>
 			</a>
 		</div>
+		@endif
 	</div>
 </div>

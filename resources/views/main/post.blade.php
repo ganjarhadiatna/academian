@@ -4,9 +4,11 @@
 			$replace = array('[',']','@',',','.','#','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
 			$title = str_replace($replace, '', $story->title); 
 		?>
-		<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}">
-			<div class="top" style="background-image: url({{ asset('/story/thumbnails/'.$story->cover) }})"></div>
-		</a>		
+		@if ($story->cover != '')
+			<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}">
+				<div class="top" style="background-image: url({{ asset('/story/thumbnails/'.$story->cover) }})"></div>
+			</a>
+		@endif
 		<div class="main-mid">
 			<div class="mid">
 				<div>

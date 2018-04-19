@@ -98,27 +98,30 @@ class StoryController extends Controller
     	$title = $request['title'];
     	$content = $request['content'];
     	$adult = 0;
-    	$commenting = 0;
+        $commenting = 0;
+        $filename = '';
+        
+        //setting cover
+        if ($request->hasfile('cover')) {
+            $this->validate($request, [
+                'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+            ]);
+            $image = $request->file('cover');
+            $chrc = array('[',']','@',' ','+','-','#','*','<','>','_','(',')',';',
+            ',','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
+            $filename = $id.time().str_replace($chrc, '', $image->getClientOriginalName());
 
-    	//setting cover
-    	$this->validate($request, [
-    		'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
-    	]);
-    	$image = $request->file('cover');
-        $chrc = array('[',']','@',' ','+','-','#','*','<','>','_','(',')',';',
-        ',','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
-	    $filename = $id.time().str_replace($chrc, '', $image->getClientOriginalName());
+            //create thumbnail
+            $destination = public_path('story/thumbnails/'.$filename);
+            $img = Image::make($image->getRealPath());
+            $img->resize(400, 400, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destination);
 
-	    //create thumbnail
-	    $destination = public_path('story/thumbnails/'.$filename);
-	    $img = Image::make($image->getRealPath());
-	    $img->resize(400, 400, function ($constraint) {
-	    	$constraint->aspectRatio();
-	    })->save($destination);
-
-	    //create image real
-	    $destination = public_path('story/covers/');
-	    $image->move($destination, $filename);
+            //create image real
+            $destination = public_path('story/covers/');
+            $image->move($destination, $filename);
+        }
 
     	$data = array(
     		'title' => $title,

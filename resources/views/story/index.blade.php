@@ -198,14 +198,16 @@
 					</div>
 				</div>
 				<div class="pos mid">
-					<div class="main-title padding-bottom-10px">
+					<div class="main-title padding-bottom-15px">
 						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small">
 							<?php echo $story->title; ?>
 						</h1>
 					</div>
-					<div class="story-cover">
-						<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
-					</div>
+					@if ($story->cover != '')
+						<div class="story-cover">
+							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
+						</div>
+					@endif
 					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc">
 						<?php echo $story->description; ?>
 					</div>

@@ -6,7 +6,7 @@
 	<div class="sc-place pos-fix">
 		<div class="sc-block">
 			<div class="sc-col-1">
-				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-desc">{{ $ttl_following }} Following</h1>
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-normal">{{ $ttl_following }} Following</h1>
 			</div>
 		</div>
 	</div>

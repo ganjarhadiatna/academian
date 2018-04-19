@@ -148,21 +148,21 @@
 		.done(function(data) {
 		   	if (data === 'failed') {
 		   		opAlert('open', 'failed to publish story.');
-		   		close_progress();
 		   	} else {
 		   		var cover = $('#cover').val('');
 				var title = $('#title-story').val('');
 				var content = $('#write-story').html('');
 				opCreateStory('close');
-				close_progress();
 				window.location = '{{ url("/story/") }}'+'/'+data;
 		   	}
 		   	//console.log(data);
 		})
 		.fail(function(data) {
 		  	opAlert('open', "there is an error, please try again.");
-		   	close_progress();
 		   	//console.log(data.responseJSON);
+		})
+		.always(function() {
+			close_progress();
 		});
 
 		return false;
@@ -207,7 +207,7 @@
 	<div class="sc-place pos-fix">
 		<div class="sc-block">
 			<div class="sc-col-1">
-				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-desc">Create New Story</h1>
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-normal">Create New Story</h1>
 			</div>
 		</div>
 	</div>
@@ -247,38 +247,20 @@
 							<!--progress bar-->
 							<div class="loading mrg-bottom" id="progressbar"></div>
 
-							<div class="mrg-bottom">
-								<input type="file" name="cover" id="cover" required="required" autofocus="autofocus" onchange="loadCover()">
-								<label for="cover">
-									<div class="cover-icon">
-										<div class="icn">
-											<span class="fa fa-lg fa-camera"></span>
-											<span class="ttl-head">Choose Cover</span>
-										</div>
-										<div class="img">
-											<div class="change-cover">
-												<span>To change cover just click again.</span>
-											</div>
-											<img src="" alt="image" id="image-preview">
-										</div>
-									</div>
-								</label>
-							</div>
-							
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">Story Title</p>
+										<p class="ttl">* Story Title</p>
 									</div>
 									<div class="right"></div>
 								</div>
-								<input type="text" name="title" class="mrg-bottom txt txt-main-color txt-box-shadow" id="title-story">
+								<input type="text" name="title" class="mrg-bottom txt txt-main-color txt-box-shadow" id="title-story" required="true">
 							</div>
 
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">Write your Story</p>
+										<p class="ttl">* Write your Story</p>
 									</div>
 									<div class="right">
 										<div class="btn btn-circle btn-sekunder-color btn-focus" id="btnToolStory" title="Add Something" key="hidden">
@@ -286,7 +268,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" id="write-story" contenteditable="true"></div>
+								<div class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" id="write-story" contenteditable="true" required="true"></div>
 							</div>
 							<div class="padding-5px"></div>
 							<div class="block-field place-tags">
@@ -299,6 +281,16 @@
 								<div class="block-field">
 									<input type="text" name="tags" id="tags-story" class="tg txt txt-main-color txt-box-shadow" placeholder="Tags1, Tags2, Tags N...">
 								</div>
+							</div>
+							<div class="padding-5px"></div>
+							<div class="block-field">
+								<div class="pan">
+									<div class="left">
+										<p class="ttl">Use Cover?</p>
+									</div>
+									<div class="right"></div>
+								</div>
+								<input type="file" name="cover" id="cover" autofocus="autofocus" onchange="loadCover()">
 							</div>
 						</div>
 						<div class="create-bot">
