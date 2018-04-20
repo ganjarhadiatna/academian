@@ -42,8 +42,14 @@
 	@else
 	<div class="padding-desktop-20px">
 		<div class="post">
+			<?php $i = 1; ?>
 			@foreach ($topStory as $story)
-				@include('main.post')
+				@if ($i <= 4)
+					@include('main.post-list')
+				@else
+					@include('main.post')
+				@endif
+				<?php $i += 1; ?>
 			@endforeach
 		</div>
 		{{ $topStory->links() }}

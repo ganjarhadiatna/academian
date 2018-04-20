@@ -6,9 +6,28 @@
         <div class="sd-right">
             <div class="mid">
                 <div>
-                    <a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
-                        {{ $story->title }}
-                    </a>
+                    <!--
+					<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
+						{{ $story->title }}
+					</a>
+					-->
+					<?php 
+						$ttl = explode('.', $story->title);
+					?>
+					@if (count($ttl) <= 1)
+						<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
+							{{ $story->title }}
+						</a>
+					@else
+						<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
+							{{ $ttl[0] }}
+						</a>
+						<div class="ctn-main-font ctn-normal ctn-date ctn-sans-serif">
+							@for ($i = 1; $i < count($ttl); $i++)
+								{{ $ttl[$i] }}
+							@endfor
+						</div>
+					@endif
                 </div>
                 <div class="date">
 					<span class="ttl-views">{{ date('F d, Y', strtotime($story->created)) }}</span>

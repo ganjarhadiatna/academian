@@ -274,7 +274,7 @@
 							<div class="block-field place-tags">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">Tags</p>
+										<p class="ttl">Tags (sperated by coma)</p>
 									</div>
 									<div class="right"></div>
 								</div>

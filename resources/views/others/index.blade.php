@@ -20,10 +20,14 @@
 		@include('main.post-empty')
 	@else
 		<div class="post">
+			<?php $i = 1; ?>
 			@foreach ($topStory as $story)
-			<a href="#">
-				@include('main.post')
-			</a>
+				@if ($i <= 4)
+					@include('main.post-list')
+				@else
+					@include('main.post')
+				@endif
+				<?php $i += 1; ?>
 			@endforeach
 		</div>
 		{{ $topStory->links() }}

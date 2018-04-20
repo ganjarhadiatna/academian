@@ -300,8 +300,14 @@
 			<label class="ctn-up">Related Story</label>
 		</div>
 		<div class="post">
+		<?php $i = 1; ?>
 			@foreach ($allStory as $story)
-				@include('main.post')
+				@if ($i <= 4)
+					@include('main.post-list')
+				@else
+					@include('main.post')
+				@endif
+				<?php $i += 1; ?>
 			@endforeach
 		</div>
 	</div>

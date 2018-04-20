@@ -45,7 +45,7 @@ class MainController extends Controller
         } else {
             $id = 0;
         }
-        $topStory = StoryModel::PagAllStory(12);
+        $topStory = StoryModel::PagAllStory(10);
         $topTags = TagModel::TopTags();
         $allTags = TagModel::AllTags();
         $topUsers = ProfileModel::TopUsers($id, 7);
@@ -75,7 +75,7 @@ class MainController extends Controller
     {
         $id = Auth::id();
         $profile = FollowModel::GetAllFollowing($id);
-        $topStory = StoryModel::PagTimelinesStory(21, $profile, Auth::id());
+        $topStory = StoryModel::PagTimelinesStory(10, $profile, Auth::id());
         return view('others.index', [
             'title' => 'Timelines',
             'path' => 'timelines',
@@ -84,7 +84,7 @@ class MainController extends Controller
     }
     function popular()
     {
-        $topStory = StoryModel::PagPopularStory(12);
+        $topStory = StoryModel::PagPopularStory(10);
     	return view('others.index', [
             'title' => 'Popular',
             'path' => 'popular',
@@ -97,7 +97,7 @@ class MainController extends Controller
     }
     function fresh()
     {
-        $topStory = StoryModel::PagAllStory(12);
+        $topStory = StoryModel::PagAllStory(10);
         return view('others.index', [
             'title' => 'Fresh',
             'path' => 'fresh',
@@ -106,7 +106,7 @@ class MainController extends Controller
     }
     function trending()
     {
-        $topStory = StoryModel::PagTrendingStory(12);
+        $topStory = StoryModel::PagTrendingStory(10);
         return view('others.index', [
             'title' => 'Trending',
             'path' => 'trending',
@@ -120,7 +120,7 @@ class MainController extends Controller
         } else {
             $id = 0;
         }
-        $topStory = StoryModel::PagSearchStory($ctr, 12);
+        $topStory = StoryModel::PagSearchStory($ctr, 10);
         $topUsers = ProfileModel::SearchUsers($ctr, $id);
         $topTags = TagModel::SearchTags($ctr);
         return view('search.index', [

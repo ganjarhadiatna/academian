@@ -24,7 +24,7 @@ class StoryController extends Controller
         $iduserMe = Auth::id();
         $iduser = StoryModel::GetIduser($id);
         $getStory = StoryModel::GetStory($id);
-        $allStory = StoryModel::AllStory(6, 0);
+        $allStory = StoryModel::AllStory(10, 0);
         $tags = TagModel::GetTags($id);
         $statusFolow = FollowModel::Check($iduser, $iduserMe);
         $check = BookmarkModel::Check($id, $iduserMe);
