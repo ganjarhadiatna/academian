@@ -78,7 +78,7 @@
 		    <a href="{{ url('/user/'.$p->id.'/bookmark') }}"><li id="bookmark">Saved</li></a>
 		</ol>
 	</div>
-	<div class="block pp-bot col-full">
+	<div class="pp-bot col-full">
 		<div class="padding-5px"></div>
 		@if (count($userStory) == 0)
 			@include('main.post-empty')
