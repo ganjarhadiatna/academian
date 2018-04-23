@@ -112,6 +112,7 @@
 	background-color: $sek-color;
 	.main {
 		.info {
+			@include post_top();
 			.name {
 				font-size: $txt-size-small;
 				color: $txt-min-color;
@@ -119,7 +120,7 @@
 			}
 		}
 		.date {
-			font-size: $txt-size-small;
+			font-size: 12px;
 			color: $txt-sek-color;
 			font-family: $sekunder-font;
 		}
@@ -134,8 +135,12 @@
 		.bot {
 			position: relative;
 			widows: 100%;
-			height: 40px;
-			@include grid_2x(1fr, 40px);
+			height: 30px;
+			padding: 10px 0;
+			@include grid_3x(40px, 1fr, 40px);
+			&.grid-2x {
+				@include grid_2x(1fr, 40px);
+			}
 			.bot-1 {
 				position: relative;
 				@include column_1();
@@ -148,8 +153,15 @@
 				}
 			}
 			.bot-2 {
-				position: relative;
 				@include column_2();
+			}
+			.bot-3 {
+				@include column_3();
+			}
+			.btn {
+				width: 40px;
+				height: 30px;
+				line-height: 30px;
 			}
 		}
 	}
@@ -169,9 +181,6 @@
 				padding: 0 10px;
 				.mid {
 					line-height: 1.5;
-				}
-				.bot {
-					padding: 0 0;
 				}
 			}
 			.sd-left {

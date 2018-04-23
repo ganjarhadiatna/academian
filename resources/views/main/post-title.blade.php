@@ -29,16 +29,16 @@
 						</div>
 					@endif
                 </div>
-                <div class="date">
-					<span class="ttl-views">{{ date('F d, Y', strtotime($story->created)) }}</span>
-				</div>
             </div>
-            <div class="bot">
+            <div class="bot grid-2x">
 				<div class="bot-1">
 					<div class="info">
 						<a href="{{ url('/u/'.$story->id) }}">
 							<span class="name">{{ $story->name }}</span>
 						</a>
+						<div class="date">
+							<span class="ttl-views">{{ date('F d, Y', strtotime($story->created)) }}</span>
+						</div>
 					</div>
 				</div>
 				<div class="bot-2">

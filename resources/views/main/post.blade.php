@@ -35,19 +35,23 @@
 						</div>
 					@endif
 				</div>
-				<div class="date">
-					<span class="ttl-views">{{ date('F d, Y', strtotime($story->created)) }}</span>
-				</div>
 			</div>
 			<div class="bot">
 				<div class="bot-1">
-					<div class="info">
-						<a href="{{ url('/u/'.$story->id) }}">
-							<span class="name">{{ $story->name }}</span>
-						</a>
-					</div>
+					<div class="pp-head image image-30px image-circle" 
+					style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
 				</div>
 				<div class="bot-2">
+					<div class="info">
+						<a href="{{ url('/u/'.$story->id) }}">
+							<div class="name">{{ $story->name }}</div>
+						</a>
+						<div class="date">
+							<span class="ttl-views">{{ date('F d, Y', strtotime($story->created)) }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="bot-3">
 					<button class="btn btn-circle btn-sekunder-color btn-no-border" key="{{ $story->idstory }}" onclick="addBookmark('{{ $story->idstory }}')">
 						@if (is_int($story->is_save))
 							<span class="bookmark-{{ $story->idstory }} fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>

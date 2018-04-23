@@ -315,12 +315,20 @@
 .frame {
   position: relative;
   background-color: #fff; }
-  .frame .main .info .name {
-    font-size: 11pt;
-    color: rgba(0, 0, 0, 0.84);
-    font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .frame .main .info {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+    .frame .main .info .name {
+      font-size: 11pt;
+      color: rgba(0, 0, 0, 0.84);
+      font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .frame .main .date {
-    font-size: 11pt;
+    font-size: 12px;
     color: rgba(0, 0, 0, 0.54);
     font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .frame .main .mid .mn-ttl {
@@ -330,11 +338,17 @@
   .frame .main .bot {
     position: relative;
     widows: 100%;
-    height: 40px;
+    height: 30px;
+    padding: 10px 0;
     display: grid;
     display: -ms-grid;
-    grid-template-columns: 1fr 40px;
-    -ms-grid-columns: 1fr 40px; }
+    grid-template-columns: 40px 1fr 40px;
+    -ms-grid-columns: 40px 1fr 40px; }
+    .frame .main .bot.grid-2x {
+      display: grid;
+      display: -ms-grid;
+      grid-template-columns: 1fr 40px;
+      -ms-grid-columns: 1fr 40px; }
     .frame .main .bot .bot-1 {
       position: relative;
       grid-column: 1;
@@ -351,9 +365,15 @@
         -o-transform: translate(0, -50%);
         transform: translate(0, -50%); }
     .frame .main .bot .bot-2 {
-      position: relative;
       grid-column: 2;
       -ms-grid-column: 2; }
+    .frame .main .bot .bot-3 {
+      grid-column: 3;
+      -ms-grid-column: 3; }
+    .frame .main .bot .btn {
+      width: 40px;
+      height: 30px;
+      line-height: 30px; }
   .frame.frame-post-list {
     width: 100%;
     margin-bottom: 20px; }
@@ -372,8 +392,6 @@
       padding: 0 10px; }
       .frame.frame-post-list .main .sd-right .mid {
         line-height: 1.5; }
-      .frame.frame-post-list .main .sd-right .bot {
-        padding: 0 0; }
     .frame.frame-post-list .main .sd-left {
       grid-column: 2;
       -ms-grid-column: 2; }
