@@ -125,6 +125,19 @@ a {
             color: $txt-min-color;
         }
     }
+    &.ctn-skip-link {
+        a {
+            color: $txt-min-color;
+            font-weight: 600;
+            * {
+                color: $txt-min-color;
+                font-weight: 600;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .mobile {

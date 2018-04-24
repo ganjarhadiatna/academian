@@ -208,7 +208,7 @@
 							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
 						</div>
 					@endif
-					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc">
+					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link">
 						<?php echo $story->description; ?>
 					</div>
 					<div class="padding-bottom-15px"></div>

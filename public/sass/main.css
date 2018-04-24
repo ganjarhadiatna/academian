@@ -1832,6 +1832,14 @@ a {
     text-decoration: underline; }
   .ctn-main-font.hover-strong:hover {
     color: rgba(0, 0, 0, 0.84); }
+  .ctn-main-font.ctn-skip-link a {
+    color: rgba(0, 0, 0, 0.84);
+    font-weight: 600; }
+    .ctn-main-font.ctn-skip-link a * {
+      color: rgba(0, 0, 0, 0.84);
+      font-weight: 600; }
+    .ctn-main-font.ctn-skip-link a:hover {
+      text-decoration: underline; }
 
 @media (max-width: 768px) {
   .mobile {
