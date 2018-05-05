@@ -120,7 +120,7 @@
 			}
 		}
 		.date {
-			font-size: 12px;
+			font-size: 12pt;
 			color: $txt-sek-color;
 			font-family: $sekunder-font;
 		}
@@ -135,8 +135,7 @@
 		.bot {
 			position: relative;
 			widows: 100%;
-			height: 30px;
-			padding: 10px 0;
+			padding: 7.5px 0;
 			@include grid_3x(40px, 1fr, 40px);
 			&.grid-2x {
 				@include grid_2x(1fr, 40px);
@@ -173,12 +172,14 @@
 		}
 		.main {
 			&.grid {
-				@include grid_2x(1fr, 150px);
+				@include grid_2x(1fr, 162.5px);
+				@media (max-width: $max-width) {
+					@include grid_2x(1fr, 100px);
+				}
 			}
 			.sd-right {
 				@include column_1();
-				width: calc(100% - 20px);
-				padding: 0 10px;
+				width: 100%;
 				.mid {
 					line-height: 1.5;
 				}
@@ -186,9 +187,9 @@
 			.sd-left {
 				@include column_2();
 				.top {
-					width: 100%;
-					height: 100%;
-					min-height: 100px;
+					float: right;
+					width: calc(100% - 15px);
+					padding-bottom: calc(100% - 15px);
 					background-size: cover;
 					background-repeat: no-repeat;
 					background-position: 42% 43% !important;
@@ -206,7 +207,7 @@
 		.main {
 			.top {
 				width: 100%;
-				padding-bottom: 50%;
+				padding-bottom: 40%;
 				background-size: 100%;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -526,7 +527,6 @@
 			width: 100%;
 			max-height: auto;
 			overflow: hidden;
-			margin-bottom: 15px;
 		}
 		.date {
 			font-size: $txt-size-small;
@@ -547,8 +547,7 @@
 			}
 		}
 		.profile {
-			padding: 10px 0;
-			@include grid_2x(90px, 1fr);
+			@include grid_2x(60px, 1fr);
 			.foto {
 				@include column_1();
 			}
@@ -665,12 +664,19 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 	background-color: $sek-color;
-	@include grid_2x(55px, 1fr);
-	.dt-1 {
-		@include column_1();
-	}
-	.dt-2 {
-		@include column_2();
+	.grid-2x {
+		position: relative;
+		width: 100%;
+		@include grid_2x(55px, 1fr);
+		.dt-1 {
+			@include column_1();
+		}
+		.dt-2 {
+			@include column_2();
+			.name {
+				@include post_top();
+			}
+		}
 	}
 	.tgl {
 		line-height: 1.5;
@@ -679,7 +685,7 @@
 		font-size: $txt-size-standar;
 		.fa {
 			position: relative;
-			top: -3px;
+			top: -5px;
 			font-size: 5px;
 			color: $txt-sek-color;
 		}
@@ -689,19 +695,6 @@
 			cursor: pointer;
 			&:hover {
 				text-decoration: underline;
-			}
-		}
-	}
-	.desk {
-		color: $txt-min-color;
-		font-size: $txt-size-standar;
-		font-weight: 500;
-		line-height: 1.5;
-		a {
-			color: $txt-min-color;
-			font-size: $txt-size-desc;
-			&:hover {
-				color: $min-color;
 			}
 		}
 	}
@@ -884,7 +877,7 @@
 
 	background-color: #f0f0f0;
 	color: $txt-sek-color;
-	font-size: $txt-size-small;
+	font-size: $txt-size-standar;
 
 	font-weight: 600;
 	border-radius: 3px;

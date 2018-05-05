@@ -293,14 +293,13 @@
 								<input type="file" name="cover" id="cover" autofocus="autofocus" onchange="loadCover()">
 							</div>
 						</div>
-						<div class="create-bot">
+						<div class="create-bot padding-bottom-10px">
 							<input type="button" name="edit-save" class="btn btn-primary-color" value="Cancel" onclick="goBack()">
 							<input type="submit" name="save" class="btn btn-main-color" value="Publish" id="btn-publish">
 						</div>
 					</form>
 
 				</div>
-				<div class="padding-10px"></div>
 			</div>
 		</div>
 

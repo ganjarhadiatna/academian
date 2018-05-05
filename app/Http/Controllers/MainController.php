@@ -95,6 +95,15 @@ class MainController extends Controller
     {
         return view('compose.index', ['title' => 'New Story', 'path' => 'compose']);
     }
+    function home()
+    {
+        $topStory = StoryModel::PagAllStory(10);
+        return view('home.home', [
+            'title' => 'Official Site',
+            'path' => 'home',
+            'topStory' => $topStory
+        ]);
+    }
     function fresh()
     {
         $topStory = StoryModel::PagAllStory(10);

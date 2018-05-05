@@ -9,6 +9,10 @@
 	font-size: 14px;
 	font-weight: 600;
 	cursor: pointer;
+	&:focus {
+		box-shadow: 0 0 0 4px $pos-color;
+		z-index: 1;
+	}
 	&.btn-upp {
 		text-transform: uppercase;
 	}

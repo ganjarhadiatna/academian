@@ -63,6 +63,9 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer; }
+  .btn:focus {
+    box-shadow: 0 0 0 4px #529ecc;
+    z-index: 1; }
   .btn.btn-upp {
     text-transform: uppercase; }
   .btn.btn-radius {
@@ -192,6 +195,10 @@
 .image.image-50px {
   width: 50px;
   height: 50px; }
+
+.image.image-60px {
+  width: 60px;
+  height: 60px; }
 
 .image.image-70px {
   width: 70px;
@@ -324,11 +331,11 @@
     -o-transform: translate(0, -50%);
     transform: translate(0, -50%); }
     .frame .main .info .name {
-      font-size: 11pt;
+      font-size: 12pt;
       color: rgba(0, 0, 0, 0.84);
       font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .frame .main .date {
-    font-size: 12px;
+    font-size: 12pt;
     color: rgba(0, 0, 0, 0.54);
     font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .frame .main .mid .mn-ttl {
@@ -338,8 +345,7 @@
   .frame .main .bot {
     position: relative;
     widows: 100%;
-    height: 30px;
-    padding: 10px 0;
+    padding: 7.5px 0;
     display: grid;
     display: -ms-grid;
     grid-template-columns: 40px 1fr 40px;
@@ -383,22 +389,27 @@
     .frame.frame-post-list .main.grid {
       display: grid;
       display: -ms-grid;
-      grid-template-columns: 1fr 150px;
-      -ms-grid-columns: 1fr 150px; }
+      grid-template-columns: 1fr 162.5px;
+      -ms-grid-columns: 1fr 162.5px; }
+      @media (max-width: 768px) {
+        .frame.frame-post-list .main.grid {
+          display: grid;
+          display: -ms-grid;
+          grid-template-columns: 1fr 100px;
+          -ms-grid-columns: 1fr 100px; } }
     .frame.frame-post-list .main .sd-right {
       grid-column: 1;
       -ms-grid-column: 1;
-      width: calc(100% - 20px);
-      padding: 0 10px; }
+      width: 100%; }
       .frame.frame-post-list .main .sd-right .mid {
         line-height: 1.5; }
     .frame.frame-post-list .main .sd-left {
       grid-column: 2;
       -ms-grid-column: 2; }
       .frame.frame-post-list .main .sd-left .top {
-        width: 100%;
-        height: 100%;
-        min-height: 100px;
+        float: right;
+        width: calc(100% - 15px);
+        padding-bottom: calc(100% - 15px);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 42% 43% !important; }
@@ -411,7 +422,7 @@
         margin: 10px 0; } }
     .frame.frame-post .main .top {
       width: 100%;
-      padding-bottom: 50%;
+      padding-bottom: 40%;
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat; }
@@ -667,7 +678,7 @@
       font-size: 14px;
       color: rgba(0, 0, 0, 0.84); }
       .frame-notif .notif-mid .desc.date {
-        font-size: 11pt;
+        font-size: 12pt;
         color: rgba(0, 0, 0, 0.54); }
 
 .frame-story {
@@ -695,10 +706,9 @@
       position: relative;
       width: 100%;
       max-height: auto;
-      overflow: hidden;
-      margin-bottom: 15px; }
+      overflow: hidden; }
     .frame-story .pos .date {
-      font-size: 11pt;
+      font-size: 12pt;
       color: rgba(0, 0, 0, 0.54); }
     .frame-story .pos .grid {
       padding-top: 15px;
@@ -716,11 +726,10 @@
         -ms-grid-column: 2;
         text-align: right; }
     .frame-story .pos .profile {
-      padding: 10px 0;
       display: grid;
       display: -ms-grid;
-      grid-template-columns: 90px 1fr;
-      -ms-grid-columns: 90px 1fr; }
+      grid-template-columns: 60px 1fr;
+      -ms-grid-columns: 60px 1fr; }
       .frame-story .pos .profile .foto {
         grid-column: 1;
         -ms-grid-column: 1; }
@@ -810,17 +819,28 @@
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #fff;
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 55px 1fr;
-  -ms-grid-columns: 55px 1fr; }
-  .frame-comment .dt-1 {
-    grid-column: 1;
-    -ms-grid-column: 1; }
-  .frame-comment .dt-2 {
-    grid-column: 2;
-    -ms-grid-column: 2; }
+  background-color: #fff; }
+  .frame-comment .grid-2x {
+    position: relative;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 55px 1fr;
+    -ms-grid-columns: 55px 1fr; }
+    .frame-comment .grid-2x .dt-1 {
+      grid-column: 1;
+      -ms-grid-column: 1; }
+    .frame-comment .grid-2x .dt-2 {
+      grid-column: 2;
+      -ms-grid-column: 2; }
+      .frame-comment .grid-2x .dt-2 .name {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        transform: translate(0, -50%); }
   .frame-comment .tgl {
     line-height: 1.5;
     font-weight: 500;
@@ -828,7 +848,7 @@
     font-size: 14px; }
     .frame-comment .tgl .fa {
       position: relative;
-      top: -3px;
+      top: -5px;
       font-size: 5px;
       color: rgba(0, 0, 0, 0.54); }
     .frame-comment .tgl .del {
@@ -837,16 +857,6 @@
       cursor: pointer; }
       .frame-comment .tgl .del:hover {
         text-decoration: underline; }
-  .frame-comment .desk {
-    color: rgba(0, 0, 0, 0.84);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5; }
-    .frame-comment .desk a {
-      color: rgba(0, 0, 0, 0.84);
-      font-size: 14pt; }
-      .frame-comment .desk a:hover {
-        color: rgba(0, 0, 0, 0.84); }
 
 .frame-profile {
   position: relative;
@@ -875,7 +885,7 @@
     .frame-profile .profile .info {
       position: relative;
       color: rgba(0, 0, 0, 0.54);
-      font-size: 11pt;
+      font-size: 12pt;
       margin-bottom: 20px;
       grid-column: 2;
       -ms-grid-column: 2; }
@@ -907,7 +917,7 @@
           float: left;
           text-align: center; }
           .frame-profile .profile .info .other ul li .val {
-            font-size: 11pt; }
+            font-size: 12pt; }
           .frame-profile .profile .info .other ul li .ttl {
             color: rgba(0, 0, 0, 0.54);
             font-weight: 500; }
@@ -930,7 +940,7 @@
       width: 100%;
       padding: 15px 0;
       cursor: pointer;
-      font-size: 11pt;
+      font-size: 12pt;
       color: rgba(0, 0, 0, 0.54);
       border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
       display: grid;
@@ -952,7 +962,7 @@
       width: 100%;
       padding-top: 25px;
       color: rgba(0, 0, 0, 0.54);
-      font-size: 11pt;
+      font-size: 12pt;
       display: grid;
       display: -ms-grid;
       grid-template-columns: 40px 1fr;
@@ -1001,7 +1011,7 @@
   display: inline-block;
   background-color: #f0f0f0;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 11pt;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 3px; }
   .frame-top-tag:hover {
@@ -1256,7 +1266,7 @@
       .compose .main .create-body .create-block .mrg-bottom {
         margin-bottom: 15px; }
       .compose .main .create-body .create-block p {
-        font-size: 11pt;
+        font-size: 12pt;
         color: rgba(0, 0, 0, 0.54);
         margin-bottom: 5px; }
       .compose .main .create-body .create-block .ttl-head {
@@ -1527,7 +1537,7 @@
   .pagination li {
     list-style: none;
     display: inline-block;
-    font-size: 11pt;
+    font-size: 12pt;
     font-weight: 600;
     width: 45px;
     height: 45px;
@@ -1750,7 +1760,7 @@
   margin: 0;
   border: 0;
   outline: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 html {
   background-color: #fff; }
@@ -1796,10 +1806,13 @@ a {
     font-size: 22pt; }
   .ctn-main-font.ctn-desc {
     font-size: 16pt; }
+    @media (max-width: 768px) {
+      .ctn-main-font.ctn-desc {
+        font-size: 14pt; } }
   .ctn-main-font.ctn-normal {
     font-size: 14pt; }
   .ctn-main-font.ctn-date {
-    font-size: 11pt; }
+    font-size: 12pt; }
   .ctn-main-font.ctn-main-color {
     color: rgba(0, 0, 0, 0.84); }
   .ctn-main-font.ctn-upp {
@@ -1812,14 +1825,16 @@ a {
     text-transform: normal; }
   .ctn-main-font.ctn-center {
     text-align: center; }
+  .ctn-main-font.ctn-justify {
+    text-align: justify; }
   .ctn-main-font.ctn-sans-serif {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .ctn-main-font.ctn-sans-serif * {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .ctn-main-font.ctn-sans-serif p {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .ctn-main-font.ctn-sans-serif div {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .ctn-main-font.ctn-serif {
     font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
     .ctn-main-font.ctn-serif * {
@@ -2055,7 +2070,7 @@ a {
   #body .ttl-main-color .ctn-up {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 11pt;
+    font-size: 12pt;
     color: rgba(0, 0, 0, 0.54);
     font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     #body .ttl-main-color .ctn-up.bdr-top {
@@ -2064,7 +2079,7 @@ a {
   #body .ttl-main-color .vw-more {
     float: right;
     right: 0;
-    font-size: 11pt;
+    font-size: 12pt;
     font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase; }
 #body .post {
@@ -2123,12 +2138,12 @@ a {
       grid-column: 1;
       -ms-grid-column: 1; }
       #footer .footer-place .fo-lef p {
-        font-size: 11pt;
+        font-size: 12pt;
         line-height: 1.5;
         margin-bottom: 10px; }
       #footer .footer-place .fo-lef .cl {
         position: relative;
-        font-size: 11pt;
+        font-size: 12pt;
         margin-bottom: 10px; }
       #footer .footer-place .fo-lef img {
         width: 150px; }

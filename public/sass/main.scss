@@ -17,7 +17,7 @@
 	margin: 0;
 	border: 0;
     outline: none;
-    font-family: $standar-font;
+    font-family: $sekunder-font;
 }
 
 html {
@@ -65,13 +65,16 @@ a {
 		font-size: 22pt;
 	}
     &.ctn-desc {
-		font-size: 16pt;
+        font-size: 16pt;
+        @media (max-width: $max-width) {
+            font-size: 14pt;
+        }
     }
     &.ctn-normal {
 		font-size: 14pt;
     }
     &.ctn-date {
-        font-size: 11pt;
+        font-size: 12pt;
     }
     &.ctn-main-color {
         color: $txt-min-color;
@@ -91,16 +94,19 @@ a {
 	&.ctn-center {
 		text-align: center;
     }
+    &.ctn-justify {
+        text-align: justify;
+    }
     &.ctn-sans-serif {
-        font-family: $standar-font;
+        font-family: $sekunder-font;
         * {
-            font-family: $standar-font;
+            font-family: $sekunder-font;
         }
         p {
-            font-family: $standar-font;
+            font-family: $sekunder-font;
         }
         div {
-            font-family: $standar-font;
+            font-family: $sekunder-font;
         }
     }
     &.ctn-serif {

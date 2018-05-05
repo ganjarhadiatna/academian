@@ -31,20 +31,24 @@
 					var op = '';
 				}
 				dt += '\
-					<div class="frame-comment comment-owner">\
-						<div class="dt-1">\
-							<a href="'+server_user+'" title="'+data[i].name+'">\
-								<div class="image image-40px image-radius" style="background-image: url('+server_foto+')"></div>\
-							</a>\
-						</div>\
-						<div class="dt-2">\
-							<div class="desk comment-owner-radius">\
-								<div class="comment-main">\
-									<a href="'+server_user+'" title="'+data[i].name+'"><strong class="comment-name">'+data[i].name+'</strong></a>\
-									<div>'+data[i].description+'</div>\
-								</div>\
+					<div class="frame-comment">\
+						<div class="grid-2x padding-bottom-5px">\
+							<div class="dt-1">\
+								<a href="'+server_user+'" title="'+data[i].name+'">\
+									<div class="image image-40px image-circle" style="background-image: url('+server_foto+')"></div>\
+								</a>\
 							</div>\
-							<div class="tgl">\
+							<div class="dt-2">\
+								<a href="'+server_user+'" title="'+data[i].name+'">\
+									<span class="name ctn-main-font ctn-normal ctn-bold ctn-main-color">'+data[i].name+'</span>\
+								</a>\
+							</div>\
+						</div>\
+						<div>\
+							<div class="ctn-main-font ctn-normal ctn-thin ctn-main-color">\
+								'+data[i].description+'\
+							</div>\
+							<div class="tgl ctn-main-font ctn-date ctn-thin ctn-sek-color">\
 								<span>'+data[i].created+'</span>\
 								'+op+'\
 							</div>\
@@ -172,7 +176,7 @@
 					<div class="profile">
 						<div class="foto">
 							<a href="{{ url('/user/'.$story->id) }}">
-								<div class="image image-70px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
+								<div class="image image-45px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
 							</a>
 						</div>
 						<div class="info">
@@ -191,20 +195,35 @@
 										@endif
 									</span>
 								</div>
-								<div class="ctn-main-font ctn-sekunder-color ctn-thin ctn-sans-serif ctn-date">{{ $story->about }}</div>
 								<div class="ctn-main-font ctn-sekunder-color ctn-thin ctn-sans-serif ctn-date">Published on {{ date('F d, Y h:i:sa', strtotime($story->created)) }}</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="pos mid">
-					<div class="main-title padding-bottom-15px">
-						<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small">
-							<?php echo $story->title; ?>
-						</h1>
-					</div>
+					<?php 
+						$ttl = explode('.', $story->title);
+					?>
+					@if (count($ttl) <= 1)
+						<div class="main-title padding-bottom-15px">
+							<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
+								{{ $story->title }}
+							</h1>
+						</div>
+					@else
+						<div class="main-title">
+							<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
+								{{ $ttl[0] }}
+							</h1>
+						</div>
+						<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link padding-bottom-15px">
+							@for ($i = 1; $i < count($ttl); $i++)
+								{{ $ttl[$i] }}
+							@endfor
+						</div>
+					@endif
 					@if ($story->cover != '')
-						<div class="story-cover">
+						<div class="story-cover padding-bottom-10px">
 							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
 						</div>
 					@endif

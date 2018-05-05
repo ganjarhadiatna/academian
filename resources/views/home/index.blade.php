@@ -26,7 +26,7 @@
 		<div class="banner">
 			<div class="left">
 				<div class="content">
-					<h1 class="ttl-head ctn-main-font ctn-serif ctn-bold ctn-big ctn-main-color">
+					<h1 class="ttl-head ctn-main-font ctn-serif ctn-bold ctn-standar ctn-main-color">
 						Everything's are Knowledge.
 					</h1>
 					<div class="padding-15px">

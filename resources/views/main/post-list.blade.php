@@ -35,12 +35,8 @@
 					@endif
 				</div>
 			</div>
-			<div class="bot">
+			<div class="bot grid-2x">
 				<div class="bot-1">
-					<div class="pp-head image image-30px image-circle" 
-					style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
-				</div>
-				<div class="bot-2">
 					<div class="info">
 						<a href="{{ url('/u/'.$story->id) }}">
 							<div class="name">{{ $story->name }}</div>
@@ -50,7 +46,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="bot-3">
+				<div class="bot-2">
 					<button class="btn btn-circle btn-sekunder-color btn-no-border" key="{{ $story->idstory }}" onclick="addBookmark('{{ $story->idstory }}')">
 						@if (is_int($story->is_save))
 							<span class="bookmark-{{ $story->idstory }} fas fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
