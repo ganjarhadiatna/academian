@@ -2,11 +2,10 @@
 .btn {
 	position: relative;
 	width: auto;
-	height: 40px;
-	line-height: 0;
+	height: 45px;
 	padding: 0 15px;
-	border-radius: 3px;
-	font-size: 14px;
+	border-radius: 5px;
+	font-size: 11pt;
 	font-weight: 600;
 	cursor: pointer;
 	&:focus {
@@ -17,12 +16,12 @@
 		text-transform: uppercase;
 	}
 	&.btn-radius {
-		border-radius: 40px;
+		border-radius: 45px;
 	}
 	&.btn-circle {
-		width: 40px;
-		height: 40px;
-		line-height: 40px;;
+		width: 45px;
+		height: 45px;
+		line-height: 45px;;
 		padding: 0 0;
 		border-radius: 100%;
 		text-align: center;

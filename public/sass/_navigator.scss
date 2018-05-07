@@ -222,13 +222,13 @@
 		position: relative;
 		padding: 7.5px 0;
 		width: 1000px;
-		height: 40px;
+		height: 45px;
 		overflow: hidden;
 		margin: auto;
 		@media (max-width: $max-width) {
 			width: calc(100% - 15px);
 		}
-		@include grid_2x(1fr, 175px);
+		@include grid_2x(1fr, 200px);
 		.grid-1 {
 			@include column_1();
 		}

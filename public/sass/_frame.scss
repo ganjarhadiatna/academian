@@ -110,6 +110,7 @@
 .frame {
 	position: relative;
 	background-color: $sek-color;
+	padding: 15px 0;
 	.main {
 		.info {
 			@include post_top();
@@ -159,14 +160,13 @@
 			}
 			.btn {
 				width: 40px;
-				height: 30px;
-				line-height: 30px;
+				height: 40px;
+				line-height: 40px;
 			}
 		}
 	}
 	&.frame-post-list {
 		width: 100%;
-		margin-bottom: 20px;
 		@media (max-width: $max-width) {
 			margin: 10px 0;
 		}
@@ -199,7 +199,7 @@
 	}
 	&.frame-post {
 		width: (($col-full / 3) - 20);
-		margin: 10px;
+		margin: 0 10px;
 		@media (max-width: $max-width) {
 			width: 100%;
 			margin:  10px 0;
@@ -223,7 +223,7 @@
 	}
 	&.frame-post-popular {
 		width: 100%;
-		padding: 7.5px 0;
+		padding: 10px 0;
 		.main {
 			@include grid_2x(40px, 1fr);
 			.sd-main {

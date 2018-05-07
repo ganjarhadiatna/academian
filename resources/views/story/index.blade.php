@@ -173,10 +173,10 @@
 		<div class="place">
 			<div class="frame-story" id="main-story">
 				<div class="pos top">
-					<div class="profile">
+					<div class="profile padding-top-20px padding-bottom-10px">
 						<div class="foto">
 							<a href="{{ url('/user/'.$story->id) }}">
-								<div class="image image-45px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
+								<div class="image image-50px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
 							</a>
 						</div>
 						<div class="info">
@@ -205,25 +205,25 @@
 						$ttl = explode('.', $story->title);
 					?>
 					@if (count($ttl) <= 1)
-						<div class="main-title padding-bottom-15px">
+						<div class="main-title padding-bottom-10px">
 							<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
 								{{ $story->title }}
 							</h1>
 						</div>
 					@else
-						<div class="main-title">
+						<div class="main-title padding-bottom-10px">
 							<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
 								{{ $ttl[0] }}
 							</h1>
 						</div>
-						<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link padding-bottom-15px">
+						<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link padding-bottom-20px">
 							@for ($i = 1; $i < count($ttl); $i++)
 								{{ $ttl[$i] }}
 							@endfor
 						</div>
 					@endif
 					@if ($story->cover != '')
-						<div class="story-cover padding-bottom-10px">
+						<div class="story-cover padding-top-10px padding-bottom-20px">
 							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
 						</div>
 					@endif
@@ -231,7 +231,7 @@
 						<?php echo $story->description; ?>
 					</div>
 					<div class="padding-bottom-15px"></div>
-					<div>
+					<div class="padding-15px">
 						@if (count($tags) > 0)
 							@foreach($tags as $tag)
 							<?php 
@@ -251,7 +251,7 @@
 							<form method="post" action="javascript:void(0)" id="comment-publish">
 								<div class="comment-head">
 									<div>
-										<textarea class="txt comment-text txt-sekunder-color" id="comment-description" placeholder="Type comment here.."></textarea>
+										<textarea class="txt comment-text txt-sekunder-color ctn-main-font ctn-date" id="comment-description" placeholder="Type comment here.."></textarea>
 									</div>
 									<div class="place-btn">
 										<button type="submit" name="btn-comment" class="btn btn-sekunder-color">

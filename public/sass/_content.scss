@@ -277,12 +277,24 @@
 					color: $txt-min-color;
 				}
 				.txt-main-color:focus {
-					border: 1px $txt-sek-color solid;
+					box-shadow: 0 0 0 1px $txt-sek-color;
 				}
 				.edit-text {
 					max-height: none;
 					width: calc(100% - 30px);
 					padding: 20px 15px;
+				}
+				.holder {
+					&:before {
+						content: attr(placeholder);
+						padding: 5px 0;
+						margin: 1em;
+						color: rgba(0,0,0,0.34);
+						display: block;
+						position: absolute;
+						font-size: 13pt;
+						font-weight: 600;
+					}
 				}
 				#write-story {
 					min-height: 30px;
@@ -408,15 +420,16 @@
 				color: $txt-sek-color;
 			}
 			.mid {
-				width: 95%;
-				padding: 0px 2.5%;
+				width: calc(100% - 20px);
+				padding: 0px 10px;
 				.txt {
-					padding: 5px 2.5%;
+					width: calc(100% - 32px);
+					padding: 0 15px;
 				}
 			}
 			.bot {
-				width: 95%;
-				padding: 10px 2.5%;
+				width: calc(100% - 20px);
+				padding: 10px;
 				text-align: right;
 				.btn {
 					margin-left: 15px;

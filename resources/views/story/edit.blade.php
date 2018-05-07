@@ -6,9 +6,9 @@
 	var server = '{{ url("/") }}';
 	function opDialog(stt, path='') {
 		if (stt === 'open') {
-			$('#'+path).fadeIn();
+			$('#'+path).show();
 		} else {
-			$('.compose .create-dialog').fadeOut();
+			$('.compose .create-dialog').hide();
 		}
 	}
 	function putToText(html) {
@@ -230,7 +230,14 @@
 										</div>
 										<div class="right"></div>
 									</div>
-									<input type="text" name="title" class="mrg-bottom txt txt-main-color txt-box-shadow" id="title-story" value="{{ $story->title }}">
+									<input 
+										type="text" 
+										name="title" 
+										class="mrg-bottom txt txt-main-color ctn-main-font ctn-date" 
+										id="title-story" 
+										value="{{ $story->title }}"
+										placeholder="What's on your mind?" 
+										autofocus>
 								</div>
 
 								<div class="block-field">
@@ -244,7 +251,11 @@
 											</div>
 										</div>
 									</div>
-									<div class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" id="write-story" contenteditable="true">
+									<div 
+										class="txt edit-text txt-main-color ctn-main-font ctn-normal ctn-serif" 
+										id="write-story" 
+										contenteditable="true" 
+										required="true">
 										<?php echo $story->description; ?>
 									</div>
 								</div>
@@ -257,7 +268,13 @@
 									</div>
 									<div class="place-tags">
 										<div class="block-field">
-											<input type="text" name="tags" id="tags-story" class="tg txt txt-main-color txt-box-shadow" placeholder="Tags1, Tags2, Tags N..." value="{{ $tags }}">
+											<input 
+												type="text" 
+												name="tags" 
+												id="tags-story" 
+												class="tg txt txt-main-color ctn-main-font ctn-date" 
+												placeholder="Tags1, Tags2, Tags N..." 
+												value="{{ $tags }}">
 										</div>
 									</div>
 								</div>

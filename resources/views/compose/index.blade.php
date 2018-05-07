@@ -6,9 +6,9 @@
 	var server = '{{ url("/") }}';
 	function opDialog(stt, path='') {
 		if (stt === 'open') {
-			$('#'+path).fadeIn();
+			$('#'+path).show();
 		} else {
-			$('.compose .create-dialog').fadeOut();
+			$('.compose .create-dialog').hide();
 		}
 	}
 	function removeCover() {
@@ -254,9 +254,16 @@
 									</div>
 									<div class="right"></div>
 								</div>
-								<input type="text" name="title" class="mrg-bottom txt txt-main-color txt-box-shadow" id="title-story" required="true">
+								<input 
+									type="text" 
+									name="title" 
+									class="mrg-bottom txt txt-main-color ctn-main-font ctn-date" 
+									id="title-story" 
+									required="true" 
+									placeholder="What's on your mind?" 
+									autofocus>
 							</div>
-
+							<div class="padding-5px"></div>
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
@@ -268,9 +275,16 @@
 										</div>
 									</div>
 								</div>
-								<div class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" id="write-story" contenteditable="true" required="true"></div>
+								<div>
+									<div 
+										class="txt edit-text txt-main-color ctn-main-font ctn-normal ctn-serif" 
+										id="write-story" 
+										contenteditable="true" 
+										required="true"
+										placeholder="Story telling"></div>
+								</div>
 							</div>
-							<div class="padding-5px"></div>
+							<div class="padding-10px"></div>
 							<div class="block-field place-tags">
 								<div class="pan">
 									<div class="left">
@@ -279,10 +293,15 @@
 									<div class="right"></div>
 								</div>
 								<div class="block-field">
-									<input type="text" name="tags" id="tags-story" class="tg txt txt-main-color txt-box-shadow" placeholder="Tags1, Tags2, Tags N...">
+									<input 
+										type="text" 
+										name="tags" 
+										id="tags-story" 
+										class="tg txt txt-main-color ctn-main-font ctn-date" 
+										placeholder="Tags1, Tags2, Tags N...">
 								</div>
 							</div>
-							<div class="padding-5px"></div>
+							<div class="padding-10px"></div>
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
@@ -310,7 +329,7 @@
 					Image URL
 				</div>
 				<div class="mid">
-					<input type="text" name="image-url" class="txt txt-main-color txt-box-shadow" placeholder="http://" id="image-url">
+					<input type="text" name="image-url" class="txt txt-primary-color" placeholder="http://" id="image-url">
 				</div>
 				<div class="bot">
 					<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
@@ -324,7 +343,7 @@
 					Link URL
 				</div>
 				<div class="mid">
-					<input type="text" name="link-url" class="txt txt-main-color txt-box-shadow" placeholder="http://" id="link-url">
+					<input type="text" name="link-url" class="txt txt-primary-color" placeholder="http://" id="link-url">
 				</div>
 				<div class="bot">
 					<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">
@@ -338,7 +357,7 @@
 					Embeded Code
 				</div>
 				<div class="mid">
-					<input type="text" name="embed-code" class="txt txt-main-color txt-box-shadow" placeholder="Code" id="embed-code">
+					<input type="text" name="embed-code" class="txt txt-primary-color" placeholder="Code" id="embed-code">
 				</div>
 				<div class="bot">
 					<input type="button" name="put" class="btn btn-primary-color" value="Cancel" onclick="opDialog('hide')">

@@ -270,7 +270,7 @@
 						<a href="{{ url('/compose') }}">
 							<button class="create btn btn-sekunder-color btn-radius" id="compose">
 								<span class="fas fa-lg fa-plus-circle"></span>
-								<span class="ttl-post">Create Story</span>
+								<span class="">Create Story</span>
 							</button>
 						</a>
 					@endif
