@@ -1,12 +1,12 @@
 .txt {
 	width: calc(100% - 30px);
-	height: 45px;
+	height: 40px;
 	font-size: 14px;
 	font-weight: 900;
 	padding: 0 15px;
 	border-radius: 5px;
 	&.txt-radius {
-		border-radius: 45px;
+		border-radius: 40px;
 	}
 	&.txt-main-color {
 		background-color: #fff;

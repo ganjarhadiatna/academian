@@ -173,7 +173,7 @@
 		<div class="place">
 			<div class="frame-story" id="main-story">
 				<div class="pos top">
-					<div class="profile padding-top-20px padding-bottom-10px">
+					<div class="profile padding-20px">
 						<div class="foto">
 							<a href="{{ url('/user/'.$story->id) }}">
 								<div class="image image-50px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
@@ -200,6 +200,7 @@
 						</div>
 					</div>
 				</div>
+				<div class="padding-5px"></div>
 				<div class="pos mid">
 					<?php 
 						$ttl = explode('.', $story->title);
@@ -223,15 +224,14 @@
 						</div>
 					@endif
 					@if ($story->cover != '')
-						<div class="story-cover padding-top-10px padding-bottom-20px">
+						<div class="story-cover padding-bottom-20px">
 							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
 						</div>
 					@endif
 					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link">
 						<?php echo $story->description; ?>
 					</div>
-					<div class="padding-bottom-15px"></div>
-					<div class="padding-15px">
+					<div class="padding-20px">
 						@if (count($tags) > 0)
 							@foreach($tags as $tag)
 							<?php 

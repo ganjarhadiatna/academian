@@ -2,26 +2,22 @@
 .btn {
 	position: relative;
 	width: auto;
-	height: 45px;
+	height: 40px;
 	padding: 0 15px;
 	border-radius: 5px;
 	font-size: 11pt;
 	font-weight: 600;
 	cursor: pointer;
-	&:focus {
-		box-shadow: 0 0 0 4px $pos-color;
-		z-index: 1;
-	}
 	&.btn-upp {
 		text-transform: uppercase;
 	}
 	&.btn-radius {
-		border-radius: 45px;
+		border-radius: 40px;
 	}
 	&.btn-circle {
-		width: 45px;
-		height: 45px;
-		line-height: 45px;;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;;
 		padding: 0 0;
 		border-radius: 100%;
 		text-align: center;

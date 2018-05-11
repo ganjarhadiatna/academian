@@ -68,23 +68,20 @@
 .btn {
   position: relative;
   width: auto;
-  height: 45px;
+  height: 40px;
   padding: 0 15px;
   border-radius: 5px;
   font-size: 11pt;
   font-weight: 600;
   cursor: pointer; }
-  .btn:focus {
-    box-shadow: 0 0 0 4px #529ecc;
-    z-index: 1; }
   .btn.btn-upp {
     text-transform: uppercase; }
   .btn.btn-radius {
-    border-radius: 45px; }
+    border-radius: 40px; }
   .btn.btn-circle {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     padding: 0 0;
     border-radius: 100%;
     text-align: center; }
@@ -144,13 +141,13 @@
 
 .txt {
   width: calc(100% - 30px);
-  height: 45px;
+  height: 40px;
   font-size: 14px;
   font-weight: 900;
   padding: 0 15px;
   border-radius: 5px; }
   .txt.txt-radius {
-    border-radius: 45px; }
+    border-radius: 40px; }
   .txt.txt-main-color {
     background-color: #fff;
     color: rgba(0, 0, 0, 0.54); }
@@ -776,11 +773,11 @@
   .frame-story .mid {
     position: relative;
     width: calc(100% - 30px);
-    padding: 15px; }
+    padding: 0 15px; }
     @media (max-width: 768px) {
       .frame-story .mid {
         width: 100%;
-        padding: 15px 0; } }
+        padding: 0 0; } }
     .frame-story .mid .pict img {
       border-radius: 5px; }
     .frame-story .mid .content {
@@ -803,26 +800,24 @@
       .frame-story .bot {
         width: 100%;
         padding: 0 0; } }
-    .frame-story .bot .top-comment .comment-head {
-      padding: 5px 0; }
-      .frame-story .bot .top-comment .comment-head .comment-text {
-        min-width: calc(100% - 30px);
-        max-width: calc(100% - 30px);
-        height: 50px;
-        min-height: 50px;
-        max-height: 300px;
-        padding: 15px;
-        color: rgba(0, 0, 0, 0.54);
-        margin-bottom: 20px; }
-        .frame-story .bot .top-comment .comment-head .comment-text:focus {
-          color: rgba(0, 0, 0, 0.84);
-          border: 1px rgba(0, 0, 0, 0.84) solid; }
-      .frame-story .bot .top-comment .comment-head .place-btn {
-        position: relative;
-        width: 100%;
-        text-align: right; }
-      .frame-story .bot .top-comment .comment-head .btn {
-        width: 80px; }
+    .frame-story .bot .top-comment .comment-head .comment-text {
+      min-width: calc(100% - 30px);
+      max-width: calc(100% - 30px);
+      height: 50px;
+      min-height: 50px;
+      max-height: 300px;
+      padding: 15px;
+      color: rgba(0, 0, 0, 0.54);
+      margin-bottom: 20px; }
+      .frame-story .bot .top-comment .comment-head .comment-text:focus {
+        color: rgba(0, 0, 0, 0.84);
+        border: 1px rgba(0, 0, 0, 0.84) solid; }
+    .frame-story .bot .top-comment .comment-head .place-btn {
+      position: relative;
+      width: 100%;
+      text-align: right; }
+    .frame-story .bot .top-comment .comment-head .btn {
+      width: 80px; }
 
 /*start frame-comment*/
 .frame-comment {
@@ -1560,9 +1555,9 @@
     display: inline-block;
     font-size: 12pt;
     font-weight: 600;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     color: rgba(0, 0, 0, 0.54);
     border-radius: 100%; }
@@ -1570,9 +1565,9 @@
     cursor: not-allowed; }
   .pagination a {
     display: block;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.84);
     color: #fff;
@@ -1582,7 +1577,7 @@
   position: relative;
   top: 0;
   left: 0;
-  min-height: 50px;
+  min-height: 40px;
   width: 100%;
   cursor: default; }
   .sc-header .sc-place {
@@ -1735,8 +1730,8 @@
   .place-search-tag .btn {
     position: relative;
     width: 40px;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     border-radius: 0;
     font-size: 20px; }
 
@@ -1756,7 +1751,7 @@
     position: relative;
     padding: 7.5px 0;
     width: 1000px;
-    height: 45px;
+    height: 40px;
     overflow: hidden;
     margin: auto;
     display: grid;
@@ -1942,13 +1937,13 @@ a {
         #header .place .menu .pos .main-search .field-search {
           position: relative;
           width: 100%;
-          height: 45px;
-          border-radius: 45px;
+          height: 40px;
+          border-radius: 40px;
           background-color: #fff;
           border: 1px rgba(0, 0, 0, 0.1) solid;
           overflow: hidden; }
           #header .place .menu .pos .main-search .field-search #btn-search {
-            width: 45px; }
+            width: 40px; }
           #header .place .menu .pos .main-search .field-search #txt-search {
             float: right;
             width: calc(100% - 55px);
@@ -1966,8 +1961,8 @@ a {
       #header .place .menu .pos .logo {
         position: relative;
         top: 0;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         font-size: 34px;
         font-weight: 900;
         color: rgba(0, 0, 0, 0.84);
@@ -1982,7 +1977,7 @@ a {
           -o-transform: translate(0, -50%);
           transform: translate(0, -50%);
           left: 0;
-          width: 45px; }
+          width: 40px; }
       #header .place .menu .pos .main-menu {
         position: relative;
         display: inline-block;
@@ -1992,8 +1987,8 @@ a {
           list-style: none;
           float: left;
           padding: 0 10px;
-          height: 45px;
-          line-height: 45px;
+          height: 40px;
+          line-height: 40px;
           color: rgba(0, 0, 0, 0.54);
           font-size: 14px;
           font-weight: 600;
@@ -2170,9 +2165,9 @@ a {
       #footer .footer-place .fo-mid ul li {
         list-style: none;
         display: inline-block;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
         text-align: center;
         color: rgba(0, 0, 0, 0.84);
         border-radius: 100%;
