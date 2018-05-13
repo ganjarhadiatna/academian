@@ -139,6 +139,11 @@
     background-color: #60d3f5;
     color: #fff; }
 
+[contenteditable=true]:empty:not(:focus):before {
+  content: attr(placeholder);
+  display: block;
+  color: rgba(0, 0, 0, 0.34); }
+
 .txt {
   width: calc(100% - 30px);
   height: 40px;

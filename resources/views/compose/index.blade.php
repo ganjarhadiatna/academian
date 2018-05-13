@@ -183,7 +183,7 @@
 			e.preventDefault();
 			var stt = $('#btnToolStory #tool-icn').attr('key');
 			if (stt == 'hidden') {
-				var x = ($(this).offset().top - 130);
+				var x = ($(this).offset().top - 120);
 				var y = ($(this).offset().left - 140);
 				$('#toolStory')
 				.css({
@@ -257,7 +257,7 @@
 								<input 
 									type="text" 
 									name="title" 
-									class="mrg-bottom txt txt-main-color ctn-main-font ctn-date" 
+									class="mrg-bottom txt txt-sekunder-color ctn-main-font ctn-date" 
 									id="title-story" 
 									required="true" 
 									placeholder="What's on your mind?" 
@@ -277,7 +277,7 @@
 								</div>
 								<div>
 									<div 
-										class="txt edit-text txt-main-color ctn-main-font ctn-normal ctn-serif" 
+										class="txt edit-text txt-sekunder-color ctn-main-font ctn-normal ctn-serif" 
 										id="write-story" 
 										contenteditable="true" 
 										required="true"
@@ -297,7 +297,7 @@
 										type="text" 
 										name="tags" 
 										id="tags-story" 
-										class="tg txt txt-main-color ctn-main-font ctn-date" 
+										class="tg txt txt-sekunder-color ctn-main-font ctn-date" 
 										placeholder="Tags1, Tags2, Tags N...">
 								</div>
 							</div>
