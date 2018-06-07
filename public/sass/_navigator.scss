@@ -91,9 +91,9 @@
 			text-align: center;
 		}
 		&.pos-fix {
-			position: fixed;
-			top: 60px;
-			z-index: 50;
+			position: absolute;
+			top: 0px;
+			z-index: 0;
 			padding: 15px 0;
 			@media (max-width: $max-width) {
 				position: relative;
@@ -222,7 +222,7 @@
 		position: relative;
 		padding: 7.5px 0;
 		width: 1000px;
-		height: 40px;
+		height: 45px;
 		overflow: hidden;
 		margin: auto;
 		@media (max-width: $max-width) {
@@ -239,5 +239,18 @@
 	}
 	.col-small {
 		width: 700px;
+	}
+	.nav-list {
+		li {
+			list-style: none;
+			display: inline-block;
+			&.need-pad {
+				padding: 0 7.5px;
+			}
+			.ttl-view {
+				font-weight: 600;
+				color: $txt-min-color;
+			}
+		}
 	}
 }

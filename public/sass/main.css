@@ -68,7 +68,7 @@
 .btn {
   position: relative;
   width: auto;
-  height: 40px;
+  height: 45px;
   padding: 0 15px;
   border-radius: 5px;
   font-size: 11pt;
@@ -76,12 +76,16 @@
   cursor: pointer; }
   .btn.btn-upp {
     text-transform: uppercase; }
+  .btn.btn-no-pad {
+    padding: 0 0; }
+  .btn.btn-pad-5px {
+    padding: 0 5px; }
   .btn.btn-radius {
-    border-radius: 40px; }
+    border-radius: 45px; }
   .btn.btn-circle {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     padding: 0 0;
     border-radius: 100%;
     text-align: center; }
@@ -100,6 +104,12 @@
   .btn.btn-main4-color {
     background-color: #fff;
     color: rgba(0, 0, 0, 0.84); }
+  .btn.btn-grey-color {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.54); }
+    .btn.btn-grey-color:hover {
+      background-color: #f0f0f0;
+      color: rgba(0, 0, 0, 0.84); }
   .btn.btn-sekunder-color {
     background-color: #fff;
     color: rgba(0, 0, 0, 0.54);
@@ -146,13 +156,13 @@
 
 .txt {
   width: calc(100% - 30px);
-  height: 40px;
+  height: 45px;
   font-size: 14px;
   font-weight: 900;
   padding: 0 15px;
   border-radius: 5px; }
   .txt.txt-radius {
-    border-radius: 40px; }
+    border-radius: 45px; }
   .txt.txt-main-color {
     background-color: #fff;
     color: rgba(0, 0, 0, 0.54); }
@@ -1647,9 +1657,9 @@
         .sc-header .sc-place .sc-block {
           width: calc(100% - 30px); } }
     .sc-header .sc-place.pos-fix {
-      position: fixed;
-      top: 60px;
-      z-index: 50;
+      position: absolute;
+      top: 0px;
+      z-index: 0;
       padding: 15px 0; }
       @media (max-width: 768px) {
         .sc-header .sc-place.pos-fix {
@@ -1756,7 +1766,7 @@
     position: relative;
     padding: 7.5px 0;
     width: 1000px;
-    height: 40px;
+    height: 45px;
     overflow: hidden;
     margin: auto;
     display: grid;
@@ -1775,6 +1785,14 @@
       text-align: right; }
   .panel-bottom .col-small {
     width: 700px; }
+  .panel-bottom .nav-list li {
+    list-style: none;
+    display: inline-block; }
+    .panel-bottom .nav-list li.need-pad {
+      padding: 0 7.5px; }
+    .panel-bottom .nav-list li .ttl-view {
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.84); }
 
 * {
   padding: 0;
@@ -1836,6 +1854,8 @@ a {
     font-size: 12pt; }
   .ctn-main-font.ctn-main-color {
     color: rgba(0, 0, 0, 0.84); }
+  .ctn-main-font.ctn-sekunder-color {
+    color: rgba(0, 0, 0, 0.54); }
   .ctn-main-font.ctn-upp {
     text-transform: uppercase; }
   .ctn-main-font.ctn-bold {
@@ -1887,7 +1907,7 @@ a {
   height: 60px; }
   @media (max-width: 768px) {
     #header {
-      height: 115px; } }
+      height: 100px; } }
   #header .place {
     position: fixed;
     width: 100%;
@@ -1896,6 +1916,9 @@ a {
     z-index: 100;
     cursor: default;
     border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+    @media (max-width: 768px) {
+      #header .place {
+        height: 100px; } }
     #header .place .menu {
       position: relative;
       display: grid;
@@ -1918,13 +1941,12 @@ a {
           #header .place .menu .mid {
             grid-column: none;
             -ms-grid-column: none;
-            position: fixed;
-            top: 60px;
+            position: absolute;
+            top: 45px;
             left: 0;
-            width: calc(100% - 30px);
-            padding: 7.5px 15px;
-            background-color: #fff;
-            border-bottom: 1px rgba(0, 0, 0, 0.1) solid; } }
+            width: 100%;
+            padding: 7.5px 0;
+            background-color: #fff; } }
       #header .place .menu .rig {
         grid-column: 3;
         -ms-grid-column: 3;
@@ -1942,13 +1964,13 @@ a {
         #header .place .menu .pos .main-search .field-search {
           position: relative;
           width: 100%;
-          height: 40px;
-          border-radius: 40px;
+          height: 45px;
+          border-radius: 45px;
           background-color: #fff;
           border: 1px rgba(0, 0, 0, 0.1) solid;
           overflow: hidden; }
           #header .place .menu .pos .main-search .field-search #btn-search {
-            width: 40px; }
+            width: 45px; }
           #header .place .menu .pos .main-search .field-search #txt-search {
             float: right;
             width: calc(100% - 55px);
@@ -1966,8 +1988,8 @@ a {
       #header .place .menu .pos .logo {
         position: relative;
         top: 0;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         font-size: 34px;
         font-weight: 900;
         color: rgba(0, 0, 0, 0.84);
@@ -1982,7 +2004,7 @@ a {
           -o-transform: translate(0, -50%);
           transform: translate(0, -50%);
           left: 0;
-          width: 40px; }
+          width: 45px; }
       #header .place .menu .pos .main-menu {
         position: relative;
         display: inline-block;
@@ -1991,9 +2013,10 @@ a {
           position: relative;
           list-style: none;
           float: left;
-          padding: 0 10px;
-          height: 40px;
-          line-height: 40px;
+          padding: 0 15px;
+          height: 45px;
+          line-height: 45px;
+          border-radius: 45px;
           color: rgba(0, 0, 0, 0.54);
           font-size: 14px;
           font-weight: 600;
@@ -2002,6 +2025,7 @@ a {
           #header .place .menu .pos .main-menu ul li.active {
             color: rgba(0, 0, 0, 0.84); }
           #header .place .menu .pos .main-menu ul li:hover {
+            background-color: #f0f0f0;
             color: rgba(0, 0, 0, 0.84); }
         @media (max-width: 768px) {
           #header .place .menu .pos .main-menu.mobile {
@@ -2015,11 +2039,9 @@ a {
         @media (max-width: 768px) {
           #header .place .menu .pos .create {
             display: none; } }
-      #header .place .menu .pos .btn-circle {
-        color: #header .place .menu .pos .btn-circle txt-sek-color; }
-        #header .place .menu .pos .btn-circle.active {
-          background-color: rgba(225, 225, 225, 0.54);
-          color: #header .place .menu .pos .btn-circle.active txt-min-color; }
+      #header .place .menu .pos .btn-circle.active {
+        background-color: #f0f0f0;
+        color: #header .place .menu .pos .btn-circle.active txt-min-color; }
 
 #body .banner {
   position: relative;

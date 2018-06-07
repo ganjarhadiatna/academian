@@ -128,6 +128,31 @@
 			}
 		}
 
+		function hideElement(path) { 
+			var didScroll;
+			var lastScrollTop = 0;
+			var delta = 5;
+			var navbarHeight = $('#header').outerHeight();
+
+			$(window).scroll(function(event) {
+				didScroll = true;
+			});
+
+			setInterval(function () { 
+				if (didScroll) {
+					//do some stuff
+					var st = $(this).scrollTop();
+					if (st > lastScrollTop && st > navbarHeight) {
+						$(path).hide();
+					} else {
+						$(path).show();
+					}
+					lastScrollTop = st;
+					didScroll = false;
+				}
+			}, 250);
+		}
+
 		window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
@@ -149,15 +174,7 @@
 				setInterval('cekNotif()', 3000);
 			}
 
-			$(window).scroll(function(event) {
-				var hg = $('#header').height();
-				var top = $(this).scrollTop();
-				if (top > hg) {
-					$('#main-search').addClass('hide');
-				} else {
-					$('#main-search').removeClass('hide');
-				}
-			});
+			hideElement('#header .place');
 
 			$('#main-menu a li').each(function(index, el) {
 				$(this).removeClass('active');
@@ -251,18 +268,18 @@
 					</div>
 					@if (is_null(Auth::id()))
 						<a href="{{ url('/login') }}">
-							<button class="btn btn-sekunder-color btn-radius btn-upp" id="login">
+							<button class="btn btn-grey-color btn-radius btn-upp" id="login">
 								<span class="ttl-post">Login</span>
 							</button>
 						</a>
 					@else
-						<button class="btn btn-circle btn-sekunder-color btn-no-border" id="op-notif">
+						<button class="btn btn-circle btn-grey-color btn-no-border" id="op-notif">
 							<div class="notif-icn absolute fas fa-lg fa-circle" id="main-notif-sign" key="hide"></div>
 							<span class="far fa-lg fa-bell"></span>
 						</button>
 						@foreach (ProfileModel::UserSmallData(Auth::id()) as $dt)
 							<a href="{{ url('/user/'.$dt->id) }}">
-								<button class="pp btn btn-circle btn-main4-color" id="profile">
+								<button class="pp btn btn-circle btn-grey-color" id="profile">
 									<span class="pp-head image image-30px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$dt->foto) }});"></span>
 								</button>
 							</a>	

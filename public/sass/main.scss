@@ -79,6 +79,9 @@ a {
     &.ctn-main-color {
         color: $txt-min-color;
     }
+    &.ctn-sekunder-color {
+        color: $txt-sek-color;
+    }
 	&.ctn-upp {
 		text-transform: uppercase;
     }
@@ -157,7 +160,7 @@ a {
     width: 100%;
     height: 60px;
     @media (max-width: $max-width) {
-        height: 115px;
+        height: 100px;
     }
     .place {
         position: fixed;
@@ -167,6 +170,9 @@ a {
         z-index: 100;
         cursor: default;
         @include bdr_bottom();
+        @media (max-width: $max-width) {
+            height: 100px;
+        }
         .menu {
             position: relative;
             @include grid_3x(65px, 300px, 1fr);
@@ -180,13 +186,12 @@ a {
                 @include column_2();
                 @media (max-width: $max-width) {
                     @include column_none();
-                    position: fixed;
-                    top: 60px;
+                    position: absolute;
+                    top: 45px;
                     left: 0;
-                    width: calc(100% - 30px);
-                    padding: 7.5px 15px;
+                    width: 100%;
+                    padding: 7.5px 0;
                     background-color: #fff;
-                    border-bottom: 1px rgba(0,0,0,0.1) solid;
                 }
             }
             .rig {
@@ -209,13 +214,13 @@ a {
                     .field-search {
                         position: relative;
                         width: 100%;
-                        height: 40px;
-                        border-radius: 40px;
+                        height: 45px;
+                        border-radius: 45px;
                         background-color: #fff;
                         border: 1px rgba(0,0,0,0.1) solid;
                         overflow: hidden;
                         #btn-search {
-                            width: 40px;
+                            width: 45px;
                         }
                         #txt-search {
                             float: right;
@@ -236,8 +241,8 @@ a {
                 .logo {
                     position: relative;
                     top: 0;
-                    width: 40px;
-                    height: 40px;
+                    width: 45px;
+                    height: 45px;
                     font-size: 34px;
                     font-weight: 900;
                     color: $txt-min-color;
@@ -246,7 +251,7 @@ a {
                     img {
                         @include post_top();
                         left: 0;
-                        width: 40px;
+                        width: 45px;
                     }
                 }
                 .main-menu {
@@ -258,11 +263,12 @@ a {
                             position: relative;
                             list-style: none;
                             float: left;
-                            padding: 0 10px;
-                            height: 40px;
-                            line-height: 40px;
+                            padding: 0 15px;
+                            height: 45px;
+                            line-height: 45px;
+                            border-radius: 45px;
                             color: $txt-sek-color;
-                            font-size: $txt-size-standar;
+                            font-size: 14px;
                             font-weight: 600;
                             text-transform: uppercase;
                             cursor: pointer;
@@ -270,6 +276,7 @@ a {
                                 color: $txt-min-color;
                             }
                             &:hover {
+                                background-color: #f0f0f0;
                                 color: $txt-min-color;
                             }
                         }
@@ -292,9 +299,8 @@ a {
                     }
                 }
                 .btn-circle {
-                    color: &txt-sek-color;
                     &.active {
-                        background-color: rgba(225,225,225,0.54);
+                        background-color: #f0f0f0;
                         color: &txt-min-color;
                     }
                 }

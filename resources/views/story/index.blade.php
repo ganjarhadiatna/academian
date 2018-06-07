@@ -98,6 +98,7 @@
 	function toComment() {
 		var top = $('#tr-comment').offset().top;
 		$('html, body').animate({scrollTop : (Math.round(top) - 70)}, 300);
+		$('#comment-description').focus();
 	}
 	function toUp() {
 		$('html, body').animate({scrollTop : 0}, 300);
@@ -107,18 +108,7 @@
 		$('#limit-comment').val(5);
 		getComment('{{ $story->idstory }}', 'add');
 
-		$(window).scroll(function(event) {
-			var hg = $(window).scrollTop();
-			if (hg > 100) {
-				clearTimeout($.data(this, 'scrollTimer'));
-				$('#tool-panel').hide();
-				//$('#header .place').hide();
-				$.data(this, 'scrollTimer', setTimeout(function () {
-					$('#tool-panel').show();
-					//$('#header .place').show();
-				}, 1500));
-			}
-		});
+		hideElement('#tool-panel');
 
 		$('#frame-loves').on('click', function(event) {
 			$.ajax({
@@ -205,24 +195,26 @@
 					<?php 
 						$ttl = explode('.', $story->title);
 					?>
-					@if (count($ttl) <= 1)
-						<div class="main-title padding-bottom-10px">
-							<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
-								{{ $story->title }}
-							</h1>
-						</div>
-					@else
-						<div class="main-title padding-bottom-10px">
-							<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
-								{{ $ttl[0] }}
-							</h1>
-						</div>
-						<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link padding-bottom-20px">
-							@for ($i = 1; $i < count($ttl); $i++)
-								{{ $ttl[$i] }}
-							@endfor
-						</div>
-					@endif
+					<div>
+						@if (count($ttl) <= 1)
+							<div class="main-title padding-bottom-10px">
+								<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
+									{{ $story->title }}
+								</h1>
+							</div>
+						@else
+							<div class="main-title padding-bottom-10px">
+								<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small ctn-bold">
+									{{ $ttl[0] }}
+								</h1>
+							</div>
+							<div class="ctn-main-font ctn-sekunder-color ctn-sans-serif ctn-desc ctn-skip-link padding-bottom-20px">
+								@for ($i = 1; $i < count($ttl); $i++)
+									{{ $ttl[$i] }}
+								@endfor
+							</div>
+						@endif
+					</div>
 					@if ($story->cover != '')
 						<div class="story-cover padding-bottom-20px">
 							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
@@ -277,20 +269,26 @@
 		</div>
 	</div>
 </div>
-<div class="panel-bottom fixed bdr-top" id="tool-panel">
-	<div class="pb-place">
+<div class="panel-bottom fixed" id="tool-panel">
+	<div class="pb-place col-900px">
 		<div class="grid-1">
-			<button class="btn btn-green-color btn-radius" id="frame-loves">
-				<span class="fas fa-lg fa-heart"></span>
-				<span class="ttl-loves" id="ttl-loves">{{ $story->loves }}</span>
-			</button>
-			<button class="btn btn-sekunder-color btn-no-border" onclick="toComment()">
-				<span class="far fa-lg fa-comment"></span>
-				<span class="ttl-loves">{{ $story->ttl_comment }}</span>
-			</button>
-			<button class="btn btn-sekunder-color btn-no-border" onclick="toUp()">
-				<span id="ttl-view">{{ $story->views }} Reads</span>
-			</button>
+			<ul class="nav-list">
+				<li>
+					<button class="btn btn-sekunder-color btn-no-border btn-radius btn-pad-5px" id="frame-loves">
+						<span class="fas fa-lg fa-heart"></span>
+						<span class="ttl-view" id="ttl-loves">{{ $story->loves }}</span>
+					</button>
+				</li>
+				<li>
+					<button class="btn btn-sekunder-color btn-no-border btn-radius btn-pad-5px" onclick="toComment()">
+						<span class="far fa-lg fa-comment"></span>
+						<span class="ttl-view">{{ $story->ttl_comment }}</span>
+					</button>
+				</li>
+				<li class="need-pad">
+					<span class="ttl-view">{{ $story->views }} Reads</span>
+				</li>
+			</ul>
 		</div>
 		<div class="grid-2 text-right crs-default">
 			<button class="btn btn-circle btn-sekunder-color btn-no-border">
@@ -306,7 +304,7 @@
 					<span class="bookmark-{{ $story->idstory }} far fa-lg fa-bookmark" id="bookmark-{{ $story->idstory }}"></span>
 				@endif
 			</button>
-			<button class="btn btn-circle btn-sekunder-color btn-focus" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}', '{{ $title }}')">
+			<button class="btn btn-circle btn-primary-color btn-focus" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}', '{{ $title }}')">
 				<span class="fa fa-lg fa-ellipsis-h"></span>
 			</button>
 		</div>
