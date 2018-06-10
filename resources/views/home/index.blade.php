@@ -21,6 +21,53 @@
 	});
 </script>
 <div class="col-full">
+	<div class="sc-header">
+		<div class="sc-place">
+			<div class="col-all">
+				<div class="place-search-tag ctr">
+					<div class="st-lef">
+							<div class="btn btn-circle btn-sekunder-color btn-no-border" onclick="toLeft()">
+							<span class="fa fa-lg fa-angle-left"></span>
+						</div>
+					</div>
+					<div class="st-mid" id="ctnTag">
+						<div class="frame-top-ctr">
+							<a href="{{ url('/timelines') }}">
+								Timelines
+							</a>
+						</div>
+						<div class="frame-top-ctr">
+							<a href="{{ url('/fresh') }}">
+								Fresh
+							</a>
+						</div>
+						<div class="frame-top-ctr">
+							<a href="{{ url('/popular') }}">
+								Populars
+							</a>
+						</div>
+						<div class="frame-top-ctr">
+							<a href="{{ url('/trending') }}">
+								Trendings
+							</a>
+						</div>
+						@foreach ($topTags as $tg)
+						<div class="frame-top-ctr">
+							<a href="{{ url('/tags/'.$tg->tag) }}">
+								{{ $tg->tag }}
+							</a>
+						</div>
+						@endforeach
+					</div>
+					<div class="st-rig">
+						<div class="btn btn-circle btn-sekunder-color btn-no-border" onclick="toRight()">
+							<span class="fa fa-lg fa-angle-right"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="home-primary-object">
 		<!--top banner-->
 		<div class="banner">
@@ -32,6 +79,7 @@
 					<div class="padding-15px">
 						<h4 class="ttl-sub ctn-main-font ctn-sans-serif ctn-thin ctn-main-color">
 							Some peoples have any Story in their lifes and it can be a Knowledge for other peoples.
+							<br>
 							So, share and read anything in here to change our lives together.
 						</h4>
 					</div>

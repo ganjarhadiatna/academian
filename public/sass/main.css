@@ -157,7 +157,7 @@
 .txt {
   width: calc(100% - 30px);
   height: 45px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 900;
   padding: 0 15px;
   border-radius: 5px; }
@@ -194,10 +194,10 @@
 
 .image {
   position: relative;
-  background-size: 100%;
+  background-size: cover !important;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000; }
+  background-color: #f0f0f0; }
 
 .image.image-30px {
   width: 30px;
@@ -698,10 +698,10 @@
     grid-column: 2;
     -ms-grid-column: 2; }
     .frame-notif .notif-mid .desc {
-      font-size: 14px;
+      font-size: 16px;
       color: rgba(0, 0, 0, 0.84); }
       .frame-notif .notif-mid .desc.date {
-        font-size: 12pt;
+        font-size: 14px;
         color: rgba(0, 0, 0, 0.54); }
 
 .frame-story {
@@ -722,9 +722,6 @@
     width: 100%; }
   .frame-story .pos {
     padding: 20px 0; }
-    @media (max-width: 768px) {
-      .frame-story .pos {
-        padding: 10px 0; } }
     .frame-story .pos .story-cover {
       position: relative;
       width: 100%;
@@ -780,7 +777,7 @@
   .frame-story .top {
     position: relative;
     width: calc(100% - 30px);
-    padding: 15px 15px 0 15px; }
+    padding: 15px 15px 15px 15px; }
     @media (max-width: 768px) {
       .frame-story .top {
         width: 100%;
@@ -1026,17 +1023,32 @@
 .frame-top-tag {
   position: relative;
   padding: 0 15px;
-  height: 40px;
-  line-height: 40px;
+  height: 45px;
+  line-height: 45px;
   margin: 2.5px;
   display: inline-block;
   background-color: #f0f0f0;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   border-radius: 3px; }
   .frame-top-tag:hover {
     color: rgba(0, 0, 0, 0.84); }
+
+.frame-top-ctr {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  padding: 0 15px;
+  font-weight: 500;
+  border-radius: 3px; }
+  .frame-top-ctr a {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 16px;
+    text-transform: uppercase; }
+    .frame-top-ctr a:hover {
+      color: rgba(0, 0, 0, 0.84); }
 
 .frame-sign {
   position: relative;
@@ -1095,24 +1107,12 @@
 .place-cover {
   position: relative;
   width: 100%;
-  height: 300px;
+  padding-bottom: 30%;
+  overflow: hidden;
   margin: auto; }
   @media (max-width: 768px) {
     .place-cover {
-      height: 200px; } }
-  .place-cover .main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 450px;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000; }
-    @media (max-width: 768px) {
-      .place-cover .main {
-        height: 200px; } }
+      padding-bottom: 50%; } }
 
 /*content popup*/
 .content-popup {
@@ -1203,7 +1203,8 @@
   .more-menu .mn li {
     width: calc(100% - 20px);
     padding: 0 10px;
-    list-style: none; }
+    list-style: none;
+    border-radius: 0; }
   .more-menu .mn li a {
     color: rgba(0, 0, 0, 0.54);
     font-size: 14px;
@@ -1375,7 +1376,7 @@
           -ms-transform: translate(0, -50%);
           -o-transform: translate(0, -50%);
           transform: translate(0, -50%);
-          font-weight: 600; }
+          font-weight: 500; }
         .compose .main .create-body .create-block .block-field .btn-circle {
           width: 30px;
           height: 30px;
@@ -1570,9 +1571,9 @@
     display: inline-block;
     font-size: 12pt;
     font-weight: 600;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     color: rgba(0, 0, 0, 0.54);
     border-radius: 100%; }
@@ -1580,9 +1581,9 @@
     cursor: not-allowed; }
   .pagination a {
     display: block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.84);
     color: #fff;
@@ -1592,7 +1593,7 @@
   position: relative;
   top: 0;
   left: 0;
-  min-height: 40px;
+  min-height: 45px;
   width: 100%;
   cursor: default; }
   .sc-header .sc-place {
@@ -1657,9 +1658,11 @@
         .sc-header .sc-place .sc-block {
           width: calc(100% - 30px); } }
     .sc-header .sc-place.pos-fix {
-      position: absolute;
-      top: 0px;
-      z-index: 0;
+      position: fixed;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      z-index: 200;
       padding: 15px 0; }
       @media (max-width: 768px) {
         .sc-header .sc-place.pos-fix {
@@ -1668,7 +1671,7 @@
 
 .post-nav {
   position: relative;
-  height: 40px;
+  height: 45px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 3px;
@@ -1686,8 +1689,8 @@
     list-style: none;
     float: left;
     width: 50%;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
     cursor: pointer;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.54);
@@ -1719,7 +1722,7 @@
       border: 0; }
     .menu-share li.btn {
       padding: 0 0;
-      line-height: 40px;
+      line-height: 45px;
       font-weight: normal; }
     .menu-share li .hdr {
       font-size: 14pt; }
@@ -1745,10 +1748,22 @@
   .place-search-tag .btn {
     position: relative;
     width: 40px;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     border-radius: 0;
     font-size: 20px; }
+  .place-search-tag.ctr {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 30px 1fr 30px;
+    -ms-grid-columns: 30px 1fr 30px; }
+    .place-search-tag.ctr .btn {
+      position: relative;
+      width: 30px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 0;
+      font-size: 20px; }
 
 .panel-bottom {
   position: relative;
@@ -1764,7 +1779,7 @@
     z-index: 100; }
   .panel-bottom .pb-place {
     position: relative;
-    padding: 7.5px 0;
+    padding: 4px 0;
     width: 1000px;
     height: 45px;
     overflow: hidden;
@@ -1904,33 +1919,26 @@ a {
 #header {
   position: relative;
   width: 100%;
-  height: 60px; }
-  @media (max-width: 768px) {
-    #header {
-      height: 100px; } }
+  height: 65px; }
   #header .place {
     position: fixed;
     width: 100%;
     padding: 10px 0;
     background-color: #fff;
     z-index: 100;
-    cursor: default;
-    border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
-    @media (max-width: 768px) {
-      #header .place {
-        height: 100px; } }
+    cursor: default; }
     #header .place .menu {
       position: relative;
       display: grid;
       display: -ms-grid;
-      grid-template-columns: 65px 300px 1fr;
-      -ms-grid-columns: 65px 300px 1fr; }
+      grid-template-columns: 185px 300px 1fr;
+      -ms-grid-columns: 185px 300px 1fr; }
       @media (max-width: 768px) {
         #header .place .menu {
           display: grid;
           display: -ms-grid;
-          grid-template-columns: 70px 1fr;
-          -ms-grid-columns: 70px 1fr; } }
+          grid-template-columns: 155px 1fr;
+          -ms-grid-columns: 155px 1fr; } }
       #header .place .menu .lef {
         grid-column: 1;
         -ms-grid-column: 1; }
@@ -1959,27 +1967,11 @@ a {
         #header .place .menu #main-search.hide {
           display: none;
           /*hidden*/ } }
-      #header .place .menu .pos .main-search {
-        width: 100%; }
-        #header .place .menu .pos .main-search .field-search {
-          position: relative;
-          width: 100%;
-          height: 45px;
-          border-radius: 45px;
-          background-color: #fff;
-          border: 1px rgba(0, 0, 0, 0.1) solid;
-          overflow: hidden; }
-          #header .place .menu .pos .main-search .field-search #btn-search {
-            width: 45px; }
-          #header .place .menu .pos .main-search .field-search #txt-search {
-            float: right;
-            width: calc(100% - 55px);
-            padding-left: 0;
-            padding-right: 10px;
-            box-shadow: 0 0 0 #fff; }
       #header .place .menu .pos .pp {
         position: relative;
-        vertical-align: top; }
+        top: -2.5px;
+        display: inline-block;
+        vertical-align: middle; }
         #header .place .menu .pos .pp .pp-head {
           position: absolute;
           top: 50%;
@@ -1988,13 +1980,24 @@ a {
       #header .place .menu .pos .logo {
         position: relative;
         top: 0;
-        width: 45px;
+        width: auto;
         height: 45px;
-        font-size: 34px;
-        font-weight: 900;
-        color: rgba(0, 0, 0, 0.84);
-        font-family: Georgia, Georgia, "Times New Roman", Times, serif;
         overflow: hidden; }
+        #header .place .menu .pos .logo .ttl {
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+          -moz-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+          -o-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          font-size: 28pt;
+          font-weight: 900;
+          color: rgba(0, 0, 0, 0.84);
+          font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+          @media (max-width: 768px) {
+            #header .place .menu .pos .logo .ttl {
+              font-size: 20pt; } }
         #header .place .menu .pos .logo img {
           position: absolute;
           top: 50%;
@@ -2016,10 +2019,9 @@ a {
           padding: 0 15px;
           height: 45px;
           line-height: 45px;
-          border-radius: 45px;
           color: rgba(0, 0, 0, 0.54);
-          font-size: 14px;
-          font-weight: 600;
+          font-size: 16px;
+          font-weight: 500;
           text-transform: uppercase;
           cursor: pointer; }
           #header .place .menu .pos .main-menu ul li.active {
@@ -2027,6 +2029,8 @@ a {
           #header .place .menu .pos .main-menu ul li:hover {
             background-color: #f0f0f0;
             color: rgba(0, 0, 0, 0.84); }
+          #header .place .menu .pos .main-menu ul li.more {
+            border-radius: 45px; }
         @media (max-width: 768px) {
           #header .place .menu .pos .main-menu.mobile {
             display: none; } }
@@ -2035,23 +2039,56 @@ a {
         width: 150px; }
         #header .place .menu .pos .create.active {
           border: 1px rgba(0, 0, 0, 0.84) solid;
-          color: #header .place .menu .pos .create.active txt-min-color; }
+          color: rgba(0, 0, 0, 0.84); }
         @media (max-width: 768px) {
           #header .place .menu .pos .create {
             display: none; } }
-      #header .place .menu .pos .btn-circle.active {
-        background-color: #f0f0f0;
-        color: #header .place .menu .pos .btn-circle.active txt-min-color; }
+      #header .place .menu .pos .btn.active {
+        color: rgba(0, 0, 0, 0.84); }
+  #header .search-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    background-color: #fff;
+    display: none; }
+    #header .search-popup .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      line-height: 65px; }
+    #header .search-popup .main-search {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; }
+      #header .search-popup .main-search .field-search {
+        position: relative;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden; }
+        #header .search-popup .main-search .field-search #txt-search {
+          float: right;
+          width: calc(100% - 30px);
+          padding: 20px 15px;
+          box-shadow: 0 0 0 #fff;
+          font-size: 38px;
+          text-align: center;
+          border-radius: 5px; }
 
 #body .banner {
   position: relative;
   width: 100%;
-  height: 400px;
   margin: 15px 0;
   display: grid;
   display: -ms-grid;
-  grid-template-columns: 1fr 400px;
-  -ms-grid-columns: 1fr 400px; }
+  grid-template-columns: 1fr 300px;
+  -ms-grid-columns: 1fr 300px; }
   @media (max-width: 768px) {
     #body .banner {
       display: block;
@@ -2059,7 +2096,7 @@ a {
   #body .banner .left {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 300px;
     grid-column: 1;
     -ms-grid-column: 1; }
     @media (max-width: 768px) {
@@ -2095,7 +2132,7 @@ a {
     grid-column: 2;
     -ms-grid-column: 2;
     width: 100%;
-    height: 400px;
+    height: 300px;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat; }

@@ -10,9 +10,9 @@
 		font-size: $txt-size-small;
 		font-weight: 600;
 
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
 		text-align: center;
 		color: $txt-sek-color;
 		border-radius: 100%;
@@ -22,9 +22,9 @@
 	}
 	a {
 		display: block;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
 		text-align: center;
 		background-color: $min-color;
 		color: $sek-color;
@@ -36,7 +36,7 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	min-height: 40px;
+	min-height: 45px;
 	width: 100%;
 	cursor: default;
 	.sc-place {
@@ -91,9 +91,11 @@
 			text-align: center;
 		}
 		&.pos-fix {
-			position: absolute;
-			top: 0px;
-			z-index: 0;
+			position: fixed;
+			top: 65px;
+			left: 0;
+			width: 100%;
+			z-index: 200;
 			padding: 15px 0;
 			@media (max-width: $max-width) {
 				position: relative;
@@ -105,7 +107,7 @@
 
 .post-nav {
 	position: relative;
-	height: 40px;
+	height: 45px;
 	margin: 0 auto;
 	overflow: hidden;
 	border-radius: 3px;
@@ -128,8 +130,8 @@
 			float: left;
 			
 			width: 50%;
-			height: 40px;
-			line-height: 40px;
+			height: 45px;
+			line-height: 45px;
 
 			cursor: pointer;
 			font-weight: 600;
@@ -170,7 +172,7 @@
 		}
 		&.btn {
 			padding: 0 0;
-			line-height: 40px;
+			line-height: 45px;
 			font-weight: normal;
 		}
 		.hdr {
@@ -197,11 +199,22 @@
 	.btn {
 		position: relative;
 		width: 40px;
-		height: 40px;
-		line-height: 40px;
+		height: 50px;
+		line-height: 50px;
 		border-radius: 0;
 
 		font-size: 20px;
+	}
+	&.ctr {
+		@include grid_3x(30px, 1fr, 30px);
+		.btn {
+			position: relative;
+			width: 30px;
+			height: 32px;
+			line-height: 32px;
+			border-radius: 0;
+			font-size: 20px;
+		}
 	}
 }
 .panel-bottom {
@@ -220,7 +233,7 @@
 	
 	.pb-place {
 		position: relative;
-		padding: 7.5px 0;
+		padding: 4px 0;
 		width: 1000px;
 		height: 45px;
 		overflow: hidden;

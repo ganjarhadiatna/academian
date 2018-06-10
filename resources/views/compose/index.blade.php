@@ -183,11 +183,11 @@
 			e.preventDefault();
 			var stt = $('#btnToolStory #tool-icn').attr('key');
 			if (stt == 'hidden') {
-				var x = ($(this).offset().top - 120);
-				var y = ($(this).offset().left - 140);
+				var x = ($(this).offset().top);
+				var y = ($(this).offset().left);
 				$('#toolStory')
 				.css({
-					'top': x+'px',
+					'top': '105px',
 					'right': '40px'
 				})
 				.show();
@@ -203,11 +203,11 @@
 		});
 	});
 </script>
-<div class="sc-header padding-10px">
-	<div class="sc-place pos-fix">
+<div class="sc-header padding-20px">
+	<div class="sc-place">
 		<div class="sc-block">
 			<div class="sc-col-1">
-				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-normal">Create New Story</h1>
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold">Create New Story</h1>
 			</div>
 		</div>
 	</div>
@@ -250,7 +250,7 @@
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">* Story Title</p>
+										<p class="ttl">Story Title</p>
 									</div>
 									<div class="right"></div>
 								</div>
@@ -267,7 +267,7 @@
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">* Write your Story</p>
+										<p class="ttl">Write your Story</p>
 									</div>
 									<div class="right">
 										<div class="btn btn-circle btn-sekunder-color btn-focus" id="btnToolStory" title="Add Something" key="hidden">
@@ -277,7 +277,7 @@
 								</div>
 								<div>
 									<div 
-										class="txt edit-text txt-sekunder-color ctn-main-font ctn-normal ctn-serif" 
+										class="txt edit-text txt-sekunder-color ctn-main-font ctn-normal ctn-serif ctn-skip-link" 
 										id="write-story" 
 										contenteditable="true" 
 										required="true"
@@ -288,7 +288,7 @@
 							<div class="block-field place-tags">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">Tags (sperated by coma)</p>
+										<p class="ttl">Tags (optional)</p>
 									</div>
 									<div class="right"></div>
 								</div>
@@ -305,7 +305,7 @@
 							<div class="block-field">
 								<div class="pan">
 									<div class="left">
-										<p class="ttl">Use Cover?</p>
+										<p class="ttl">Use Cover? (optional)</p>
 									</div>
 									<div class="right"></div>
 								</div>

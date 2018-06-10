@@ -12,7 +12,7 @@
 			<div class="mid">
 				<div>
 					<!--
-					<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
+					<a href="{{ url('/story/'.$story->idstory) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
 						{{ $story->title }}
 					</a>
 					-->
@@ -20,11 +20,11 @@
 						$ttl = explode('.', $story->title);
 					?>
 					@if (count($ttl) <= 1)
-						<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
+						<a href="{{ url('/story/'.$story->idstory) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
 							{{ $story->title }}
 						</a>
 					@else
-						<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
+						<a href="{{ url('/story/'.$story->idstory) }}" class="mn-ttl tclr ttl-post ctn-sans-serif">
 							{{ $ttl[0] }}
 						</a>
 						<div class="ctn-main-font ctn-normal ctn-date ctn-sans-serif">
@@ -59,7 +59,7 @@
 		</div>
 		@if ($story->cover != '')
 		<div class="sd-left">
-			<a href="{{ url('/story/'.$story->idstory.'/'.$title) }}">
+			<a href="{{ url('/story/'.$story->idstory) }}">
 				<div class="top" style="background-image: url({{ asset('/story/thumbnails/'.$story->cover) }})">
 				</div>
 			</a>

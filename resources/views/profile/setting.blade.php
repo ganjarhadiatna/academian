@@ -5,11 +5,11 @@
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 	{{ csrf_field() }}
 </form>
-<div class="sc-header padding-10px">
-	<div class="sc-place pos-fix">
+<div class="sc-header padding-20px">
+	<div class="sc-place">
 		<div class="sc-block">
 			<div class="sc-col-1">
-				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-normal">Setting</h1>
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold">Setting</h1>
 			</div>
 		</div>
 	</div>

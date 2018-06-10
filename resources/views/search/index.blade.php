@@ -5,7 +5,7 @@
 
 @if (count($topTags) != 0)
 	<div class="sc-header">
-		<div class="sc-place pos-fix">
+		<div class="sc-place">
 			<div class="col-full">
 				<div class="place-search-tag">
 					<div class="st-lef">

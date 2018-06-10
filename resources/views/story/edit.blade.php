@@ -161,7 +161,7 @@
 				var y = ($(this).offset().left - 140);
 				$('#toolStory')
 				.css({
-					'top': x+'px',
+					'top': '105px',
 					'right': '40px'
 				})
 				.show();
@@ -177,11 +177,11 @@
 		});
 	});
 </script>
-<div class="sc-header padding-10px">
-	<div class="sc-place pos-fix">
+<div class="sc-header padding-20px">
+	<div class="sc-place">
 		<div class="sc-block">
 			<div class="sc-col-1">
-				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold ctn-mikro">Edit Story</h1>
+				<h1 class="ttl-head ctn-main-font ctn-sans-serif ctn-bold">Edit Story</h1>
 			</div>
 		</div>
 	</div>
@@ -252,7 +252,7 @@
 										</div>
 									</div>
 									<div 
-										class="txt edit-text txt-sekunder-color ctn-main-font ctn-normal ctn-serif" 
+										class="txt edit-text txt-sekunder-color ctn-main-font ctn-main-color ctn-normal ctn-serif ctn-skip-link"
 										id="write-story" 
 										contenteditable="true" 
 										required="true"
@@ -264,7 +264,7 @@
 								<div class="block-field">
 									<div class="pan">
 										<div class="left">
-											<p class="ttl">Tags</p>
+											<p class="ttl">Tags (optional)</p>
 										</div>
 									</div>
 									<div class="place-tags">

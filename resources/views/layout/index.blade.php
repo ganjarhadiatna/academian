@@ -38,20 +38,20 @@
 		}
 		function opSearch(stt) {
 			if (stt === 'open') {
-				$('#search').fadeIn();
+				$('#search').show();
 				$('#txt-search').select();
 				setScroll('hide');
 			} else {
-				$('#search').fadeOut();
+				$('#search').hide();
 				setScroll('show');
 			}
 		}
 		function opCreateStory(stt) {
 			if (stt === 'open') {
-				$('#create').fadeIn();
+				$('#create').show();
 				setScroll('hide');
 			} else {
-				$('#create').fadeOut();
+				$('#create').hide();
 				setScroll('show');
 			}
 		}
@@ -153,6 +153,17 @@
 			}, 250);
 		}
 
+		function opSearchPopup(stt) {
+			if (stt == 'open') {
+				$('#search-popup').show();
+				$('#txt-search').select();
+				setScroll('hide');
+			} else {
+				$('#search-popup').hide();
+				setScroll('show');
+			}
+		}
+
 		window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
@@ -179,11 +190,6 @@
 			$('#main-menu a li').each(function(index, el) {
 				$(this).removeClass('active');
 				$('#'+pth).addClass('active');
-			});
-			$('#txt-search').focusin(function(event) {
-				$('#field-search').css('border', '1px rgba(0,0,0,0.54) solid');
-			}).focusout(function(event) {
-				$('#field-search').css('border', '1px rgba(0,0,0,0.1) solid');
 			});
 
 			$('#place-search').submit(function(event) {
@@ -232,39 +238,16 @@
 			<div class="menu col-full">
 				<div class="pos lef">
 					<a href="{{ url('/') }}">
-						<div class="logo ctn-serif">
-							<img src="{{ asset('img/2.png') }}" alt="A">
+						<div class="logo">
+							<div class="ttl ctn-sans-serif">Academian</div>
 						</div>
 					</a>
 				</div>
-				<div class="pos mid" id="main-search">
-					<div class="main-search">
-						<div class="field-search" id="field-search">
-							<form id="place-search" action="javascript:void(0)">
-								<button type="submit" class="btn btn-circle btn-sekunder-color btn-no-border" type="submit" id="btn-search" key="hide">
-									<span class="fas fa-lg fa-search"></span>
-								</button>
-								<input type="text" name="q" class="txt txt-main-color txt-radius" id="txt-search" placeholder="Search.." required="true">
-							</form>
-						</div>
-					</div>
-				</div>
 				<div class="pos rig">
-					<div class="main-menu mobile" id="main-menu">
-						<ul>
-							<a href="{{ url('/') }}">
-								<li id="home">Home Feeds</li>
-							</a>
-						</ul>
-					</div>
 					<div class="main-menu" id="nav-more">
-						<ul>
-							<li class="more" id="nav-more-target" key="hide">
-								More
-								<span class="fa fa-lg fa-angle-down"></span>
-							</li>
-						</ul>
-						@include('main.more-menu')
+						<button class="btn btn-circle btn-grey-color btn-no-border" onclick="opSearchPopup('open')">
+							<span class="fas fa-lg fa-search"></span>
+						</button>
 					</div>
 					@if (is_null(Auth::id()))
 						<a href="{{ url('/login') }}">
@@ -279,13 +262,13 @@
 						</button>
 						@foreach (ProfileModel::UserSmallData(Auth::id()) as $dt)
 							<a href="{{ url('/user/'.$dt->id) }}">
-								<button class="pp btn btn-circle btn-grey-color" id="profile">
-									<span class="pp-head image image-30px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$dt->foto) }});"></span>
+								<button class="btn btn-circle btn-grey-color btn-no-border" id="profile">
+									<span class="far fa-lg fa-user"></span>
 								</button>
 							</a>	
 						@endforeach
 						<a href="{{ url('/compose') }}">
-							<button class="create btn btn-sekunder-color btn-radius" id="compose">
+							<button class="create btn btn-sekunder-color" id="compose">
 								<span class="fas fa-lg fa-plus-circle"></span>
 								<span class="">Create Story</span>
 							</button>
@@ -293,6 +276,18 @@
 					@endif
 				</div>
 				@include('main.notifications')
+			</div>
+		</div>
+		<div class="search-popup" id="search-popup">
+			<button class="close btn btn-circle btn-sekunder-color btn-no-border" onclick="opSearchPopup('hide')">
+				<span class="fas fa-2x fa-times"></span>
+			</button>
+			<div class="main-search">
+				<div class="field-search" id="field-search">
+					<form id="place-search" action="javascript:void(0)">
+						<input type="text" name="q" class="txt txt-main-color txt-radius" id="txt-search" placeholder="Search Story..." required="true">
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -161,6 +161,9 @@
 <div class="place-story">
 	<div class="main">
 		<div class="place">
+			@if ($story->cover != '')
+				<div class="place-cover image" style="background-image: url({{ asset('/story/covers/'.$story->cover) }});"></div>
+			@endif
 			<div class="frame-story" id="main-story">
 				<div class="pos top">
 					<div class="profile padding-20px">
@@ -190,36 +193,31 @@
 						</div>
 					</div>
 				</div>
-				<div class="padding-5px"></div>
 				<div class="pos mid">
 					<?php 
 						$ttl = explode('.', $story->title);
 					?>
 					<div>
 						@if (count($ttl) <= 1)
-							<div class="main-title padding-bottom-10px">
+							<div class="main-title padding-bottom-20px">
 								<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
 									{{ $story->title }}
 								</h1>
 							</div>
 						@else
-							<div class="main-title padding-bottom-10px">
+							<div class="main-title">
 								<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-small ctn-bold">
 									{{ $ttl[0] }}
 								</h1>
 							</div>
-							<div class="ctn-main-font ctn-sekunder-color ctn-sans-serif ctn-desc ctn-skip-link padding-bottom-20px">
+							<div class="ctn-main-font ctn-sekunder-color ctn-sans-serif ctn-desc padding-bottom-20px">
 								@for ($i = 1; $i < count($ttl); $i++)
 									{{ $ttl[$i] }}
 								@endfor
 							</div>
 						@endif
 					</div>
-					@if ($story->cover != '')
-						<div class="story-cover padding-bottom-20px">
-							<img src="{{ asset('/story/covers/'.$story->cover) }}" alt="{{ $story->title }}">
-						</div>
-					@endif
+					<!--cover-->
 					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link">
 						<?php echo $story->description; ?>
 					</div>
@@ -243,7 +241,7 @@
 							<form method="post" action="javascript:void(0)" id="comment-publish">
 								<div class="comment-head">
 									<div>
-										<textarea class="txt comment-text txt-sekunder-color ctn-main-font ctn-date" id="comment-description" placeholder="Type comment here.."></textarea>
+										<textarea class="txt comment-text txt-sekunder-color ctn-main-font ctn-date" id="comment-description" placeholder="Write your response..."></textarea>
 									</div>
 									<div class="place-btn">
 										<button type="submit" name="btn-comment" class="btn btn-sekunder-color">

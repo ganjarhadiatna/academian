@@ -492,10 +492,10 @@
 	.notif-mid {
 		@include column_2();
 		.desc {
-			font-size: $txt-size-standar;
+			font-size: 16px;
 			color: $txt-min-color;
 			&.date {
-				font-size: $txt-size-small;
+				font-size: 14px;
 				color: $txt-sek-color;
 			}
 		}
@@ -519,9 +519,6 @@
 	}
 	.pos {
 		padding: 20px 0;
-		@media (max-width: $max-width) {
-			padding: 10px 0;
-		}
 		.story-cover {
 			position: relative;
 			width: 100%;
@@ -582,7 +579,7 @@
 	.top {
 		position: relative;
 		width: calc(100% - 30px);
-		padding: 15px 15px 0 15px;
+		padding: 15px 15px 15px 15px;
 		@media (max-width: $max-width) {
 			width: 100%;
 			padding: 15px 0;
@@ -869,19 +866,40 @@
 	position: relative;
 
 	padding: 0 15px;
-	height: 40px;
-	line-height: 40px;
+	height: 45px;
+	line-height: 45px;
 	margin: 2.5px;
 	display: inline-block;
 
 	background-color: #f0f0f0;
 	color: $txt-sek-color;
-	font-size: $txt-size-standar;
+	font-size: 16px;
 
 	font-weight: 600;
 	border-radius: 3px;
 	&:hover {
 		color: $txt-min-color;
+	}
+}
+
+.frame-top-ctr {
+	position: relative;
+
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+
+	padding: 0 15px;
+
+	font-weight: 500;
+	border-radius: 3px;
+	a {
+		color: $txt-sek-color;
+		font-size: 16px;
+		text-transform: uppercase;
+		&:hover {
+			color: $txt-min-color;
+		}
 	}
 }
 
