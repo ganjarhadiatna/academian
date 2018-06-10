@@ -360,7 +360,7 @@ a {
                 @include post_top();
                 @media (max-width: $max-width) {
                     @include post_none();
-                    padding: 50px 0;
+                    padding: 15px 0;
                 }
                 .ttl-head {
                     line-height: 1.2;
