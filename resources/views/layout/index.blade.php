@@ -240,12 +240,13 @@
 					<a href="{{ url('/') }}">
 						<div class="logo">
 							<div class="ttl ctn-sans-serif">Academian</div>
+							<!--<img src="{{ asset('/img/1.2.png') }}" alt="Academian">-->
 						</div>
 					</a>
 				</div>
 				<div class="pos rig">
 					<div class="main-menu" id="nav-more">
-						<button class="btn btn-circle btn-grey-color btn-no-border" onclick="opSearchPopup('open')">
+						<button class="btn btn-circle btn-sekunder-color btn-no-border" onclick="opSearchPopup('open')">
 							<span class="fas fa-lg fa-search"></span>
 						</button>
 					</div>
@@ -256,13 +257,13 @@
 							</button>
 						</a>
 					@else
-						<button class="btn btn-circle btn-grey-color btn-no-border" id="op-notif">
+						<button class="btn btn-circle btn-sekunder-color btn-no-border" id="op-notif">
 							<div class="notif-icn absolute fas fa-lg fa-circle" id="main-notif-sign" key="hide"></div>
 							<span class="far fa-lg fa-bell"></span>
 						</button>
 						@foreach (ProfileModel::UserSmallData(Auth::id()) as $dt)
 							<a href="{{ url('/user/'.$dt->id) }}">
-								<button class="btn btn-circle btn-grey-color btn-no-border" id="profile">
+								<button class="btn btn-circle btn-sekunder-color btn-no-border" id="profile">
 									<span class="far fa-lg fa-user"></span>
 								</button>
 							</a>	
@@ -270,7 +271,7 @@
 						<a href="{{ url('/compose') }}">
 							<button class="create btn btn-sekunder-color" id="compose">
 								<span class="fas fa-lg fa-plus-circle"></span>
-								<span class="">Create Story</span>
+								<span>Create Story</span>
 							</button>
 						</a>
 					@endif

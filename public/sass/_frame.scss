@@ -115,20 +115,20 @@
 		.info {
 			@include post_top();
 			.name {
-				font-size: $txt-size-small;
+				font-size: 14px;
 				color: $txt-min-color;
 				font-family: $sekunder-font;
 			}
 		}
 		.date {
-			font-size: 12pt;
+			font-size: 14px;
 			color: $txt-sek-color;
 			font-family: $sekunder-font;
 		}
 		.mid {
 			.mn-ttl {
 				color: $txt-min-color;
-				font-size: $txt-size-desc;
+				font-size: 16px;
 				font-weight: 600;
 			}
 			
@@ -386,7 +386,7 @@
 		@include column_2();
 		.fl-ttl {
 			@include post-top;
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: 600;
 			a {
 				color: $txt-sek-color;
@@ -401,7 +401,7 @@
 		.btn {
 			width: 100%;
 			height: 35px;
-			font-size: 12px;
+			font-size: 14px;
 			padding: 0 0;
 		}
 	}

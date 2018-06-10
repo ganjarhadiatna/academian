@@ -200,9 +200,9 @@
 					<div>
 						@if (count($ttl) <= 1)
 							<div class="main-title padding-bottom-20px">
-								<h1 class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title">
+								<div class="ctn-main-font ctn-main-color ctn-sans-serif ctn-title ctn-bold">
 									{{ $story->title }}
-								</h1>
+								</div>
 							</div>
 						@else
 							<div class="main-title">
@@ -210,7 +210,7 @@
 									{{ $ttl[0] }}
 								</h1>
 							</div>
-							<div class="ctn-main-font ctn-sekunder-color ctn-sans-serif ctn-desc padding-bottom-20px">
+							<div class="ctn-main-font ctn-main-color ctn-sans-serif ctn-keep padding-bottom-20px">
 								@for ($i = 1; $i < count($ttl); $i++)
 									{{ $ttl[$i] }}
 								@endfor
@@ -218,7 +218,7 @@
 						@endif
 					</div>
 					<!--cover-->
-					<div class="content ctn-main-font ctn-main-color ctn-serif ctn-desc ctn-skip-link">
+					<div class="content ctn-main-font ctn-main-color ctn-serif-sekunder ctn-desc ctn-skip-link ctn-thin">
 						<?php echo $story->description; ?>
 					</div>
 					<div class="padding-20px">

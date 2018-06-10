@@ -70,7 +70,7 @@ a {
             font-size: 14pt;
         }
     }
-    &.ctn-normal {
+    &.ctn-keep {
 		font-size: 14pt;
     }
     &.ctn-date {
@@ -113,6 +113,18 @@ a {
         }
     }
     &.ctn-serif {
+        font-family: $main-font;
+        * {
+            font-family: $main-font;
+        }
+        p {
+            font-family: $main-font;
+        }
+        div {
+            font-family: $main-font;
+        }
+    }
+    &.ctn-serif-sekunder {
         font-family: $primary-font;
         * {
             font-family: $primary-font;
@@ -137,10 +149,11 @@ a {
     &.ctn-skip-link {
         a {
             color: $txt-min-color;
-            font-weight: 600;
+            font-weight: 500;
+            text-decoration: underline;
             * {
-                color: $txt-min-color;
-                font-weight: 600;
+                color: $min-color;
+                font-weight: 500;
             }
             &:hover {
                 text-decoration: underline;
@@ -218,19 +231,18 @@ a {
                     height: 45px;
                     overflow: hidden;
                     .ttl {
-                        @include post_top();
-                        font-size: 28pt;
-                        font-weight: 900;
+                        line-height: 40px;
+                        font-size: 26pt;
                         color: $txt-min-color;
-                        font-family: $primary-font;
+                        font-family: $main-font;
                         @media (max-width: $max-width) {
-                            font-size: 20pt;
+                            font-size: 22pt;
                         }
                     }
                     img {
                         @include post_top();
                         left: 0;
-                        width: 45px;
+                        width: 100%;
                     }
                 }
                 .main-menu {
@@ -254,7 +266,6 @@ a {
                                 color: $txt-min-color;
                             }
                             &:hover {
-                                background-color: #f0f0f0;
                                 color: $txt-min-color;
                             }
                             &.more {
@@ -269,8 +280,9 @@ a {
                     }
                 }
                 .create {
-                    margin-left: 10px;
-                    width: 150px;
+                    margin-left: 20px;
+                    width: 160px;
+                    padding: 0 0;
                     &.active {
                         border: 1px $txt-min-color solid;
                         color: $txt-min-color;
@@ -279,7 +291,7 @@ a {
                         display: none;
                     }
                 }
-                .btn {
+                .btn-circle {
                     &.active {
                         color: $txt-min-color;
                     }

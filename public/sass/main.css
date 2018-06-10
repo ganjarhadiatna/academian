@@ -1,9 +1,12 @@
 @font-face {
   font-family: "FontFirst";
-  src: url("../fonts/Serif/Noto_Serif/NotoSerif-Regular.ttf"); }
+  src: url("../fonts/Serif/Playfair_Display/PlayfairDisplay-Bold.ttf"); }
 @font-face {
   font-family: "FontFirst2";
-  src: url("../fonts/Sans-Serif/Source_Sans_Pro/SourceSansPro-Regular.ttf"); }
+  src: url("../fonts/Sans-Serif/droid-sans/DroidSans.ttf"); }
+@font-face {
+  font-family: "FontFirst3";
+  src: url("../fonts/Serif/Playfair_Display/PlayfairDisplay-Regular.ttf"); }
 .padding-20px {
   padding: 20px 0; }
 
@@ -355,16 +358,16 @@
     -o-transform: translate(0, -50%);
     transform: translate(0, -50%); }
     .frame .main .info .name {
-      font-size: 12pt;
+      font-size: 14px;
       color: rgba(0, 0, 0, 0.84);
       font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .frame .main .date {
-    font-size: 12pt;
+    font-size: 14px;
     color: rgba(0, 0, 0, 0.54);
     font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .frame .main .mid .mn-ttl {
     color: rgba(0, 0, 0, 0.84);
-    font-size: 14pt;
+    font-size: 16px;
     font-weight: 600; }
   .frame .main .bot {
     position: relative;
@@ -604,7 +607,7 @@
       -ms-transform: translate(0, -50%);
       -o-transform: translate(0, -50%);
       transform: translate(0, -50%);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600; }
       .frame-follow .ff-mid .fl-ttl a {
         color: rgba(0, 0, 0, 0.54); }
@@ -616,7 +619,7 @@
     .frame-follow .ff-bot .btn {
       width: 100%;
       height: 35px;
-      font-size: 12px;
+      font-size: 14px;
       padding: 0 0; }
 
 .frame-trending {
@@ -1863,7 +1866,7 @@ a {
     @media (max-width: 768px) {
       .ctn-main-font.ctn-desc {
         font-size: 14pt; } }
-  .ctn-main-font.ctn-normal {
+  .ctn-main-font.ctn-keep {
     font-size: 14pt; }
   .ctn-main-font.ctn-date {
     font-size: 12pt; }
@@ -1892,23 +1895,32 @@ a {
     .ctn-main-font.ctn-sans-serif div {
       font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .ctn-main-font.ctn-serif {
-    font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+    font-family: "FontFirst", Georgia, "Times New Roman", Times, serif; }
     .ctn-main-font.ctn-serif * {
-      font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+      font-family: "FontFirst", Georgia, "Times New Roman", Times, serif; }
     .ctn-main-font.ctn-serif p {
-      font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+      font-family: "FontFirst", Georgia, "Times New Roman", Times, serif; }
     .ctn-main-font.ctn-serif div {
-      font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+      font-family: "FontFirst", Georgia, "Times New Roman", Times, serif; }
+  .ctn-main-font.ctn-serif-sekunder {
+    font-family: "Times New Roman", Georgia, Georgia, Times, serif; }
+    .ctn-main-font.ctn-serif-sekunder * {
+      font-family: "Times New Roman", Georgia, Georgia, Times, serif; }
+    .ctn-main-font.ctn-serif-sekunder p {
+      font-family: "Times New Roman", Georgia, Georgia, Times, serif; }
+    .ctn-main-font.ctn-serif-sekunder div {
+      font-family: "Times New Roman", Georgia, Georgia, Times, serif; }
   .ctn-main-font.hover-underline:hover {
     text-decoration: underline; }
   .ctn-main-font.hover-strong:hover {
     color: rgba(0, 0, 0, 0.84); }
   .ctn-main-font.ctn-skip-link a {
     color: rgba(0, 0, 0, 0.84);
-    font-weight: 600; }
+    font-weight: 500;
+    text-decoration: underline; }
     .ctn-main-font.ctn-skip-link a * {
       color: rgba(0, 0, 0, 0.84);
-      font-weight: 600; }
+      font-weight: 500; }
     .ctn-main-font.ctn-skip-link a:hover {
       text-decoration: underline; }
 
@@ -1984,20 +1996,13 @@ a {
         height: 45px;
         overflow: hidden; }
         #header .place .menu .pos .logo .ttl {
-          position: absolute;
-          top: 50%;
-          -webkit-transform: translate(0, -50%);
-          -moz-transform: translate(0, -50%);
-          -ms-transform: translate(0, -50%);
-          -o-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-          font-size: 28pt;
-          font-weight: 900;
+          line-height: 40px;
+          font-size: 26pt;
           color: rgba(0, 0, 0, 0.84);
-          font-family: Georgia, Georgia, "Times New Roman", Times, serif; }
+          font-family: "FontFirst", Georgia, "Times New Roman", Times, serif; }
           @media (max-width: 768px) {
             #header .place .menu .pos .logo .ttl {
-              font-size: 20pt; } }
+              font-size: 22pt; } }
         #header .place .menu .pos .logo img {
           position: absolute;
           top: 50%;
@@ -2007,7 +2012,7 @@ a {
           -o-transform: translate(0, -50%);
           transform: translate(0, -50%);
           left: 0;
-          width: 45px; }
+          width: 100%; }
       #header .place .menu .pos .main-menu {
         position: relative;
         display: inline-block;
@@ -2027,7 +2032,6 @@ a {
           #header .place .menu .pos .main-menu ul li.active {
             color: rgba(0, 0, 0, 0.84); }
           #header .place .menu .pos .main-menu ul li:hover {
-            background-color: #f0f0f0;
             color: rgba(0, 0, 0, 0.84); }
           #header .place .menu .pos .main-menu ul li.more {
             border-radius: 45px; }
@@ -2035,15 +2039,16 @@ a {
           #header .place .menu .pos .main-menu.mobile {
             display: none; } }
       #header .place .menu .pos .create {
-        margin-left: 10px;
-        width: 150px; }
+        margin-left: 20px;
+        width: 160px;
+        padding: 0 0; }
         #header .place .menu .pos .create.active {
           border: 1px rgba(0, 0, 0, 0.84) solid;
           color: rgba(0, 0, 0, 0.84); }
         @media (max-width: 768px) {
           #header .place .menu .pos .create {
             display: none; } }
-      #header .place .menu .pos .btn.active {
+      #header .place .menu .pos .btn-circle.active {
         color: rgba(0, 0, 0, 0.84); }
   #header .search-popup {
     position: fixed;

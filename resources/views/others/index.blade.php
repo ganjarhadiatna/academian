@@ -7,7 +7,7 @@
 		<div class="padding-20px">
 			<div class="sc-block">
 				<div class="sc-col-1">
-					<h1 class="ttl-head ctn-main-font ctn-serif ctn-bold ctn-standar ctn-main-color">
+					<h1 class="ttl-head ctn-main-font ctn-serif ctn-thin ctn-standar ctn-main-color">
 						What's New on {{ $title }}
 					</h1>
 				</div>
