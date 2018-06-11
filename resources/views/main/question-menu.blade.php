@@ -1,11 +1,11 @@
 <script type="text/javascript">
 	function opQuestion(stt, msg='', target='') {
 		if (stt === 'open') {
-			$('#question-popup').fadeIn();
+			$('#question-popup').show();
 			$('#question-popup #message').html(msg);
 			$('#question-popup #btn-yes').attr('onclick', target);
 		} else {
-			$('#question-popup').fadeOut();
+			$('#question-popup').hide();
 		}
 	}
 </script>

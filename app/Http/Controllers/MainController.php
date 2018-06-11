@@ -26,7 +26,7 @@ class MainController extends Controller
         $featuredStory = StoryModel::AllStory(25, 0);
         $popularStory = StoryModel::PopularStory(5, 0);
         $trendingStory = StoryModel::MostViewsStory(7, 0);
-        $topTags = TagModel::TopTags();
+        $topTags = TagModel::TopTags(10);
         return view('home.index', [
             'title' => 'Official Site',
             'path' => 'home',
@@ -120,6 +120,15 @@ class MainController extends Controller
             'title' => 'Trending',
             'path' => 'trending',
             'topStory' => $topStory
+        ]);
+    }
+    function searchLending()
+    {
+        $topTags = TagModel::TopTags(10);
+        return view('search.lending', [
+            'title' => 'Discover',
+            'path' => 'home-search',
+            'topTags' => $topTags
         ]);
     }
     function search($ctr)

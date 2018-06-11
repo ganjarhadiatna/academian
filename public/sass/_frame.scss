@@ -168,7 +168,7 @@
 	&.frame-post-list {
 		width: 100%;
 		@media (max-width: $max-width) {
-			margin: 10px 0;
+			margin: 0 0;
 		}
 		.main {
 			&.grid {
@@ -198,11 +198,11 @@
 		}
 	}
 	&.frame-post {
-		width: (($col-full / 3) - 20);
-		margin: 0 10px;
+		width: 100%;
+		margin: 0 0;
 		@media (max-width: $max-width) {
 			width: 100%;
-			margin:  10px 0;
+			margin:  0 0;
 		}
 		.main {
 			.top {
@@ -865,20 +865,21 @@
 .frame-top-tag {
 	position: relative;
 
-	padding: 0 15px;
-	height: 45px;
-	line-height: 45px;
-	margin: 2.5px;
+	padding: 10px 15px;
 	display: inline-block;
 
-	background-color: #f0f0f0;
+	border: 1px $txt-sek-color solid;
+	background-color: #fff;
 	color: $txt-sek-color;
-	font-size: 16px;
+	font-size: 14px;
 
-	font-weight: 600;
+	font-weight: 500;
 	border-radius: 3px;
+
+	margin: 5px;
 	&:hover {
 		color: $txt-min-color;
+		border: 1px $txt-min-color solid;
 	}
 }
 

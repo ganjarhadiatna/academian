@@ -28,7 +28,7 @@ class TagModel extends Model
         ->where('tags.idstory', $idstory)
         ->delete();
     }
-    function scopeTopTags($query)
+    function scopeTopTags($query, $limit=5)
     {
     	return DB::table('tags')
         ->select(
@@ -38,7 +38,7 @@ class TagModel extends Model
         )
         ->groupBy('tag')
         ->orderBy('ttl_tag', 'desc')
-        ->limit(5)
+        ->limit($limit)
         ->get();
     }
     function scopeAllTags($query)

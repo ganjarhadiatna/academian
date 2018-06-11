@@ -220,7 +220,6 @@
 .panel-bottom {
 	position: relative;
 	width: 100%;
-	padding: 4px 0;
 	background-color: #fff;
 	opacity: 0.90;
 	cursor: default;
@@ -229,7 +228,7 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		z-index: 100;
+		z-index: 10;
 	}
 	
 	.pb-place {

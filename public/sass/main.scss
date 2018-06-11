@@ -318,26 +318,33 @@ a {
         }
         .main-search {
             @include post_center();
-            width: 100%;
-            .field-search {
-                position: relative;
-                width: 100%;
-                border-radius: 5px;
-                overflow: hidden;
-                #txt-search {
-                    float: right;
-                    width: calc(100% - 30px);
-                    padding: 20px 15px;
-                    box-shadow: 0 0 0 #fff;
-                    font-size: 38px;
-                    text-align: center;
-                    border-radius: 5px;
-                }
+        }
+        .field-search {
+            .txt-search {
+                text-align: center;
+                width: calc(100% - 30px);
+                padding: 20px 15px;
             }
         }
     }
 }
-
+.main-search {
+    width: 100%;
+    .field-search {
+        position: relative;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        .txt-search {
+            float: right;
+            width: 100%;
+            padding: 20px 0;
+            box-shadow: 0 0 0 #fff;
+            font-size: 42px;
+            border-radius: 5px;
+        }
+    }
+}
 #body {
     .banner {
         position: relative;
@@ -360,7 +367,7 @@ a {
                 @include post_top();
                 @media (max-width: $max-width) {
                     @include post_none();
-                    padding: 15px 0;
+                    padding: 0 0;
                 }
                 .ttl-head {
                     line-height: 1.2;
@@ -406,7 +413,6 @@ a {
             right: 0;
             font-size: $txt-size-small;
             font-family: $sekunder-font;
-            text-transform: uppercase;
         }
     }
     .post {
@@ -417,13 +423,21 @@ a {
             margin: 10px;
             @media (max-width: $max-width) {
                 width: 100%;
-                margin: 10px 0;
+                margin: 0 0;
             }
             .main {
                 .sd-right {
                     width: 100%;
                     padding: 0;
                 }
+            }
+        }
+        .frame-post {
+            width: (($col-full / 3) - 20);
+            margin: 0 10px;
+            @media (max-width: $max-width) {
+                width: 100%;
+                margin: 0 0;
             }
         }
     }

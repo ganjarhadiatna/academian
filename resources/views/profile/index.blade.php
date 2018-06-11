@@ -71,12 +71,13 @@
 				</div>
 		@endforeach
 	</div>
-	<div class="padding-5px"></div>
-	<div class="post-nav width-small radius" id="post-nav">
-		<ol>
-			<a href="{{ url('/user/'.$p->id.'/story') }}"><li class="active" id="story">Stories</li></a>
-		    <a href="{{ url('/user/'.$p->id.'/bookmark') }}"><li id="bookmark">Saved</li></a>
-		</ol>
+	<div class="padding-20px">
+		<div class="post-nav width-small radius" id="post-nav">
+			<ol>
+				<a href="{{ url('/user/'.$p->id.'/story') }}"><li class="active" id="story">Stories</li></a>
+			    <a href="{{ url('/user/'.$p->id.'/bookmark') }}"><li id="bookmark">Saved</li></a>
+			</ol>
+		</div>
 	</div>
 	<div class="pp-bot col-full">
 		<div class="padding-5px"></div>

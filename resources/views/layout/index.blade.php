@@ -246,14 +246,22 @@
 				</div>
 				<div class="pos rig">
 					<div class="main-menu" id="nav-more">
-						<button class="btn btn-circle btn-sekunder-color btn-no-border" onclick="opSearchPopup('open')">
-							<span class="fas fa-lg fa-search"></span>
-						</button>
+						<a href="{{ url('/search') }}">
+							<button class="btn btn-circle btn-sekunder-color btn-no-border" id="home-search">
+								<span class="fas fa-lg fa-search"></span>
+							</button>
+						</a>
 					</div>
 					@if (is_null(Auth::id()))
 						<a href="{{ url('/login') }}">
-							<button class="btn btn-grey-color btn-radius btn-upp" id="login">
-								<span class="ttl-post">Login</span>
+							<button class="btn btn-sekunder-color btn-no-border" id="login">
+								<span class="fas fa-lg fa-sign-in-alt"></span>
+							</button>
+						</a>
+						<a href="{{ url('/register') }}">
+							<button class="create btn btn-sekunder-color" id="login">
+								<span class="fas fa-lg fa-user-plus"></span>
+								<span class="ttl-post">Register</span>
 							</button>
 						</a>
 					@else
@@ -286,7 +294,7 @@
 			<div class="main-search">
 				<div class="field-search" id="field-search">
 					<form id="place-search" action="javascript:void(0)">
-						<input type="text" name="q" class="txt txt-main-color txt-radius" id="txt-search" placeholder="Search Story..." required="true">
+						<input type="text" name="q" class="txt txt-main-color txt-radius txt-search" id="txt-search" placeholder="Search academian" required="true">
 					</form>
 				</div>
 			</div>
