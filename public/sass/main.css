@@ -1771,6 +1771,7 @@
 .panel-bottom {
   position: relative;
   width: 100%;
+  padding: 4px 0;
   background-color: #fff;
   opacity: 0.90;
   cursor: default; }
@@ -1782,7 +1783,6 @@
     z-index: 100; }
   .panel-bottom .pb-place {
     position: relative;
-    padding: 4px 0;
     width: 1000px;
     height: 45px;
     overflow: hidden;

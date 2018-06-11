@@ -166,7 +166,7 @@
 			@endif
 			<div class="frame-story" id="main-story">
 				<div class="pos top">
-					<div class="profile padding-20px">
+					<div class="profile padding-10px">
 						<div class="foto">
 							<a href="{{ url('/user/'.$story->id) }}">
 								<div class="image image-50px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$story->foto) }});"></div>
