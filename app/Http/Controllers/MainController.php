@@ -22,10 +22,10 @@ class MainController extends Controller
         }
         $profile = FollowModel::GetAllFollowing($id);
         $timelinesStory = StoryModel::TimelinesStory(7, $profile, Auth::id());
-        $newStory = StoryModel::AllStory(7, 0);
-        $featuredStory = StoryModel::AllStory(25, 0);
-        $popularStory = StoryModel::PopularStory(5, 0);
-        $trendingStory = StoryModel::MostViewsStory(7, 0);
+        $newStory = StoryModel::AllStory(15, 0);
+        $featuredStory = StoryModel::AllStory(15, 0);
+        $popularStory = StoryModel::PopularStory(15, 0);
+        $trendingStory = StoryModel::MostViewsStory(15, 0);
         $topTags = TagModel::TopTags(10);
         return view('home.index', [
             'title' => 'Official Site',

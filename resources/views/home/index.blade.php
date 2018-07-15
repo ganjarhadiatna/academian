@@ -114,57 +114,37 @@
 			</div>
 			<div class="side" style="background-image: url('{{ asset('img/banner/1.png') }}');"></div>
 		</div>
-		@if (Auth::id())
-			@if (count($timelinesStory) != 0)
-				<div class="padding-15px">
-					<div class="need-mrg-left ttl-main-color">
-						<label class="ctn-main-font ctn-sekunder-color ctn-keep">Timelines</label>
-						<a href="{{ url('/timelines') }}" class="vw-more ctn-main-font ctn-sekunder-color ctn-keep hover-strong">
-							More Stories
-						</a>
-					</div>
-					<div class="post">
-						<?php $i = 1; ?>
-						@foreach ($timelinesStory as $story)
-							@if ($i <= 4)
-								@include('main.post-list')
-							@else
-								@include('main.post')
-							@endif
-							<?php $i += 1; ?>
-						@endforeach
-					</div>
-				</div>
-			@endif
-		@endif
-		<div class="padding-15px">
-			<div class="need-mrg-left ttl-main-color">
-				<label class="ctn-main-font ctn-sekunder-color ctn-keep">Trendings</label>
-				<a href="{{ url('/trending') }}" class="vw-more ctn-main-font ctn-sekunder-color ctn-keep hover-strong">
-					More Stories
-			</div>
-			<div class="post post-2">
-				<?php $i = 1; ?>
-					@foreach ($trendingStory as $story)
-						@if ($i <= 4)
-							@include('main.post-list')
-						@else
-							@include('main.post')
-						@endif
-					<?php $i += 1; ?>
-				@endforeach
-				
-			</div>
-		</div>
 	</div>
 	<div class="post-home grid">
 		<div class="grid-1" id="home-main-object">
-			<div class="need-mrg-left ttl-main-color">
-				<label class="ctn-main-font ctn-sekunder-color ctn-keep">New Stories</label>
+			@if (Auth::id())
+				@if (count($timelinesStory) != 0)
+					<div>
+						<div class="need-mrg-left ttl-main-color">
+							<label class="ctn-main-font ctn-sekunder-color ctn-keep">Timelines Stories</label>
+						</div>
+						@foreach ($timelinesStory as $story)
+							@include('main.post-list')
+						@endforeach
+					</div>
+				@endif
+			@endif
+			<div>
+				<div class="need-mrg-left ttl-main-color">
+					<label class="ctn-main-font ctn-sekunder-color ctn-keep">Trending Stories</label>
+				</div>
+				@foreach ($trendingStory as $story)
+					@include('main.post-list')
+				@endforeach
 			</div>
-			@foreach ($featuredStory as $story)
-				@include('main.post-list')
-			@endforeach
+			<div>
+				<div class="need-mrg-left ttl-main-color">
+					<label class="ctn-main-font ctn-sekunder-color ctn-keep">New Stories</label>
+				</div>
+				@foreach ($featuredStory as $story)
+					@include('main.post-list')
+				@endforeach
+			</div>
 		</div>
 		<div class="grid-2">
 			<div id="home-side-object">
@@ -172,6 +152,7 @@
 					<div class="ttl-main-color">
 						<label class="ctn-main-font ctn-sekunder-color ctn-keep">Tranding Now's</label>
 					</div>
+					<div class="padding-bottom-10px"></div>
 					@foreach ($topTags as $tg)
 						<?php 
 							$replace = array('[',']','@',',','.','#','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
